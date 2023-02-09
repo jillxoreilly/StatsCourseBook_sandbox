@@ -81,7 +81,7 @@ difference between the predicted level of life satisfaction and
 observed value. These have been added to the data table.
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable_res.png
-:width: 50%
+:width: 70%
 :align: center
 ```
 
