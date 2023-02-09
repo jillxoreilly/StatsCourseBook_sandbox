@@ -22,7 +22,7 @@ scipy.version.version
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_50442/3500221194.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_2811/3500221194.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mscipy[0m[0;34m.[0m[0mversion[0m[0;34m.[0m[0mversion[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'scipy' is not defined

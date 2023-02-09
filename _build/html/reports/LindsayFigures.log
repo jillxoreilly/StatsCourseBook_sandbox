@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sns.scatterplot(data=happiness, x='GDPpc (in $ 000)', y='LifeSat')
+
+# Loop through the data points 
+for i in range(len(happiness)):
+    plt.text(happiness['GDPpc (in $ 000)'][i]+0.2, happiness['LifeSat'][i]+0.05, happiness['Country'][i])
+
+plt.xlim([0,140])
+plt.ylim([5,8])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_2668/3786884835.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0msns[0m[0;34m.[0m[0mscatterplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mhappiness[0m[0;34m,[0m [0mx[0m[0;34m=[0m[0;34m'GDPpc (in $ 000)'[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;34m'LifeSat'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;34m[0m[0m
+[1;32m      3[0m [0;31m# Loop through the data points[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mlen[0m[0;34m([0m[0mhappiness[0m[0;34m)[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     [0mplt[0m[0;34m.[0m[0mtext[0m[0;34m([0m[0mhappiness[0m[0;34m[[0m[0;34m'GDPpc (in $ 000)'[0m[0;34m][0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m+[0m[0;36m0.2[0m[0;34m,[0m [0mhappiness[0m[0;34m[[0m[0;34m'LifeSat'[0m[0;34m][0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m+[0m[0;36m0.05[0m[0;34m,[0m [0mhappiness[0m[0;34m[[0m[0;34m'Country'[0m[0;34m][0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_decorators.py[0m in [0;36minner_f[0;34m(*args, **kwargs)[0m
+[1;32m     44[0m             )
+[1;32m     45[0m         [0mkwargs[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0;34m{[0m[0mk[0m[0;34m:[0m [0marg[0m [0;32mfor[0m [0mk[0m[0;34m,[0m [0marg[0m [0;32min[0m [0mzip[0m[0;34m([0m[0msig[0m[0;34m.[0m[0mparameters[0m[0;34m,[0m [0margs[0m[0;34m)[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 46[0;31m         [0;32mreturn[0m [0mf[0m[0;34m([0m[0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     47[0m     [0;32mreturn[0m [0minner_f[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     48[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/relational.py[0m in [0;36mscatterplot[0;34m(x, y, hue, style, size, data, palette, hue_order, hue_norm, sizes, size_order, size_norm, markers, style_order, x_bins, y_bins, units, estimator, ci, n_boot, alpha, x_jitter, y_jitter, legend, ax, **kwargs)[0m
+[1;32m    806[0m [0;34m[0m[0m
+[1;32m    807[0m     [0mvariables[0m [0;34m=[0m [0m_ScatterPlotter[0m[0;34m.[0m[0mget_semantics[0m[0;34m([0m[0mlocals[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 808[0;31m     p = _ScatterPlotter(
+[0m[1;32m    809[0m         [0mdata[0m[0;34m=[0m[0mdata[0m[0;34m,[0m [0mvariables[0m[0;34m=[0m[0mvariables[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    810[0m         [0mx_bins[0m[0;34m=[0m[0mx_bins[0m[0;34m,[0m [0my_bins[0m[0;34m=[0m[0my_bins[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/relational.py[0m in [0;36m__init__[0;34m(self, data, variables, x_bins, y_bins, estimator, ci, n_boot, alpha, x_jitter, y_jitter, legend)[0m
+[1;32m    585[0m         )
+[1;32m    586[0m [0;34m[0m[0m
+[0;32m--> 587[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mdata[0m[0;34m,[0m [0mvariables[0m[0;34m=[0m[0mvariables[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    588[0m [0;34m[0m[0m
+[1;32m    589[0m         [0mself[0m[0;34m.[0m[0malpha[0m [0;34m=[0m [0malpha[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_core.py[0m in [0;36m__init__[0;34m(self, data, variables)[0m
+[1;32m    603[0m     [0;32mdef[0m [0m__init__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdata[0m[0;34m=[0m[0;32mNone[0m[0;34m,[0m [0mvariables[0m[0;34m=[0m[0;34m{[0m[0;34m}[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    604[0m [0;34m[0m[0m
+[0;32m--> 605[0;31m         [0mself[0m[0;34m.[0m[0massign_variables[0m[0;34m([0m[0mdata[0m[0;34m,[0m [0mvariables[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    606[0m [0;34m[0m[0m
+[1;32m    607[0m         [0;32mfor[0m [0mvar[0m[0;34m,[0m [0mcls[0m [0;32min[0m [0mself[0m[0;34m.[0m[0m_semantic_mappings[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_core.py[0m in [0;36massign_variables[0;34m(self, data, variables)[0m
+[1;32m    666[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    667[0m             [0mself[0m[0;34m.[0m[0minput_format[0m [0;34m=[0m [0;34m"long"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 668[0;31m             plot_data, variables = self._assign_variables_longform(
+[0m[1;32m    669[0m                 [0mdata[0m[0;34m,[0m [0;34m**[0m[0mvariables[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    670[0m             )
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_core.py[0m in [0;36m_assign_variables_longform[0;34m(self, data, **kwargs)[0m
+[1;32m    901[0m [0;34m[0m[0m
+[1;32m    902[0m                 [0merr[0m [0;34m=[0m [0;34mf"Could not interpret value `{val}` for parameter `{key}`"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 903[0;31m                 [0;32mraise[0m [0mValueError[0m[0;34m([0m[0merr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    904[0m [0;34m[0m[0m
+[1;32m    905[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: Could not interpret value `GDPpc (in $ 000)` for parameter `x`
+ValueError: Could not interpret value `GDPpc (in $ 000)` for parameter `x`
+

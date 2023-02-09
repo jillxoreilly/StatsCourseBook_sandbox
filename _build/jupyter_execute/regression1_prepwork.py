@@ -233,20 +233,13 @@ y_bar = heightFinger.FingerLength.mean()
 # In[13]:
 
 
-a = 6.7 + (49.4*0.055) 
-a
-
-
-# In[14]:
-
-
 a = y_bar - b*x_bar
 a
 
 
 # Let’s run a regression model in Python for the finger length data, to check our results. 
 
-# In[15]:
+# In[14]:
 
 
 # run the regression model on height/finger data

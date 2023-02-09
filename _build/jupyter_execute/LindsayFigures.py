@@ -33,7 +33,7 @@ plt.xlim([0,140])
 plt.ylim([5,8])
 
 
-# In[4]:
+# In[21]:
 
 
 sns.regplot(data=happiness, x='GDPpc (in $ 000)', y='LifeSat', ci=None)
@@ -46,7 +46,7 @@ plt.xlim([0,140])
 plt.ylim([0,8])
 
 
-# In[5]:
+# In[22]:
 
 
 happiness_res=pandas.read_csv('data/happiness10_res.csv')

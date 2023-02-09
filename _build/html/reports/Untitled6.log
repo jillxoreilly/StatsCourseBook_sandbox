@@ -32,7 +32,7 @@ plt.ylabel='height'
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_50475/4116936935.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_2849/4116936935.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0mmy_pal_2[0m [0;34m=[0m [0;34m{[0m[0;34m"brother"[0m[0;34m:[0m [0;34m[[0m[0;36m0.5[0m[0;34m,[0m[0;36m0.5[0m[0;34m,[0m[0;36m1[0m[0;34m][0m[0;34m,[0m [0;34m"sister"[0m[0;34m:[0m [0;34m[[0m[0;36m1[0m[0;34m,[0m[0;36m0.5[0m[0;34m,[0m[0;36m0.5[0m[0;34m][0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;34m[0m[0m
 [0;32m----> 4[0;31m [0msns[0m[0;34m.[0m[0mviolinplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mdata[0m[0;34m,[0m [0mpalette[0m[0;34m=[0m[0mmy_pal_1[0m[0;34m,[0m [0malpha[0m[0;34m=[0m[0;36m0.2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

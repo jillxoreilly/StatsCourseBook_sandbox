@@ -76,7 +76,7 @@ happy
 # 
 # It’s time to run the regression model. 
 # 
-# The basic code is added for you, but you need to complete it. 
+# The basic code can be copied from the worked examples in the previous notebook, but you will need to modify it. 
 # 
 # Where do you tell Python which is the $y$ variable, and which is the $x$?
 
@@ -163,9 +163,6 @@ happy
 # 
 # We will learn more about the assumptions of regression in the next week or two, but looking back at the scatterplot, have you noticed any potential concerns about the model?
 # 
-# ### Further exercises
-# 
-# Other possible exercises: find outliers with stats, e.g. dfbeta or Cook’s distance.
 # 
 
 # In[ ]:

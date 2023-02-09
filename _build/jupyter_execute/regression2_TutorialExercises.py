@@ -213,14 +213,14 @@ print(5.9264 + -0.0118*44 + 0.0390*1 + -0.6699*1 + 1.1811*0)
 # 
 # Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable. We will do this by adding an interaction term of age*vote to the model.
 # 
-# The code in Python for an interaction between A and B is A:B
+# When we want to include an interaction between, say, age and vote, we use age*vote in the model. This actually adds three explanatory variables to the regression - age, vote, and the interaction ageXvote - age was already in our old model so we need to remove it or it will be included twice
 
 # In[11]:
 
 
 # Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk, x5=age*vote
 # first we run this line to tell statsmodels where to find the data and the explanatory variables
-reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ age + sex + C(educ, Treatment(reference="Upper secondary")) + bornuk + age:vote')
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ sex + C(educ, Treatment(reference="Upper secondary")) + bornuk + age*vote')
                                                           
                                                         
 # then we run this line to fit the regression (work out the values of intercept and slope)

@@ -22,7 +22,7 @@ k = # your code here
 print('k = ' + str(k))
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_50677/1608705857.py"[0;36m, line [0;32m2[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_3069/1608705857.py"[0;36m, line [0;32m2[0m
 [0;31m    k = # your code here[0m
 [0m        ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
