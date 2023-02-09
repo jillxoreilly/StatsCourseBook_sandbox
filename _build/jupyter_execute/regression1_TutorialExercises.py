@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Regression models in Python
+# # Tutorial Exercises
 # 
 # We will be using the statsmodels package in Python, so we will need to import this along with the other Python packages we have been using.
 # 
