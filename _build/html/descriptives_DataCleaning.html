@@ -1,0 +1,1995 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2.6. Data cleaning &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.7. Grouping data" href="descriptives_groupby.html" />
+    <link rel="prev" title="2.5. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   2. Describing data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     2.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_MeanAndMedian.html">
+     2.4. Mean and Median
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_SDandIQR.html">
+     2.5. Standard deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.6. Data cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_groupby.html">
+     2.7. Grouping data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_PythonCheck.html">
+     2.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plotting_intro.html">
+   3. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_histogram.html">
+     3.3. Histogram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_KDE.html">
+     3.4. KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_boxplot.html">
+     3.5. Boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_scatterplot.html">
+     3.6. Scatterplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_pandas.html">
+     3.7. Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_tweaks.html">
+     3.8. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_additionalMaterials.html">
+     3.9. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_TutorialExercises.html">
+     3.10. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CorrCov_intro.html">
+   4. Correlation and Covariance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_outcomes.html">
+     4.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_conceptCheck.html">
+     4.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_introCorrCov.html">
+     4.4. Covariance and Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_ClimateExample.html">
+     4.6. Climate example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_Spearman.html">
+     4.7. Spearman’s Rank Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_PythonCheck.html">
+     4.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_TutorialExercises.html">
+     4.9. Tutorial Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_HandInAssignment.html">
+     4.10. Hand-in Assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="binomial_overallIntro.html">
+   5. Data generating distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_intro.html">
+     5.1. The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_objectives.html">
+     5.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_singlecoin.html">
+     5.3. Simulated coin toss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_10000reps.html">
+     5.4. Repeat the simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_nandp.html">
+     5.5. Changing
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(p\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PMFandCDF.html">
+     5.6. Binomial PMF and CDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_normal.html">
+     5.7. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PythonCheck.html">
+     5.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises1.html">
+     5.9. Tutorial Exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises2.html">
+     5.10. Tutorial Exercises II
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
+   6. The Central Limit Theorem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_outcomes.html">
+     6.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_sampling.html">
+     6.3. Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_CI.html">
+     6.5. Estimating the sampling distribution
+     <i>
+      from a sample
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_TutorialExercises.html">
+     6.7. Tutorial exercises I: The Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_Tutorial2tdist.html">
+     6.10. Tutorial Exercises II: the
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Assignment_intro.html">
+   8. Christmas vacation assignment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IMDb_exercise.html">
+     8.1. Movie data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Cheatsheet_intro.html">
+   9. Python Cheatsheet
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coding_cheatsheet.html">
+     9.1. Coding support sheet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="permutation_intro.html">
+   10. Permutation Testing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     10.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_paired.html">
+     10.4. Permutation test for paired data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_independentSamples.html">
+     10.5. Permutation test for unpaired or independent samples data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_correlation.html">
+     10.6. Permutation test for correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_more.html">
+     10.7. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="power_intro.html">
+   12. Power analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_outcomes.html">
+     12.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_conceptCheck.html">
+     12.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_analysis.html">
+     12.4. Sensitivity, power, reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_placeholder.html">
+     12.9. Tutorial work and Hand in assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CSVreading_instructions.html">
+     12.10. Loading data from a .csv file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression1_intro.html">
+   13. Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_outcomes.html">
+     13.1. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_concepts.html">
+     13.2. Regression Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_interpretingSlope.html">
+     13.3. Interpreting the slope and intercept, prediction and residuals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_QandA.html">
+     13.4. Regression, Covariance and Correlation Q&amp;A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_prepwork.html">
+     13.5. Regression models in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_TutorialExercises.html">
+     13.7. Regression models in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression2_intro.html">
+   14. Multivariate Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_concepts.html">
+     14.2. Multivariate Analysis Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_typesOfRelationship.html">
+     14.3. Different types of multivariate relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_QandA.html">
+     14.4. Multiple Regression Q &amp; A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_TutorialExercises.html">
+     14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/descriptives_DataCleaning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/descriptives_DataCleaning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fdescriptives_DataCleaning.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/descriptives_DataCleaning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-an-outlier">
+   Removing an outlier
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-the-data">
+     Import the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-descriptives">
+     Get descriptives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nan-an-outlier-value">
+   NaN an outlier value
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Import the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Get descriptives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-nans">
+     Find NaNs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delete-or-tt-nan-tt">
+   Delete or
+   <tt>
+    NaN
+   </tt>
+   ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partial-data-records-are-valuable">
+     Partial data records are valuable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-data-could-be-misleaading">
+     Deleting data could be misleaading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-errors-really-are-errors">
+     Some errors really are errors
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data cleaning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-an-outlier">
+   Removing an outlier
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-the-data">
+     Import the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-descriptives">
+     Get descriptives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nan-an-outlier-value">
+   NaN an outlier value
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Import the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Get descriptives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-nans">
+     Find NaNs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delete-or-tt-nan-tt">
+   Delete or
+   <tt>
+    NaN
+   </tt>
+   ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partial-data-records-are-valuable">
+     Partial data records are valuable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-data-could-be-misleaading">
+     Deleting data could be misleaading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-errors-really-are-errors">
+     Some errors really are errors
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-cleaning">
+<h1><span class="section-number">2.6. </span>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h1>
+<p>As we have seen, outliers can distort the values of statistics such as the mean and standard deviation</p>
+<p>In real datasets, outliers are common, arising from one of the following:</p>
+<ul>
+    <li> Real but unusual values (eg many basketball players are outliers in terms of height)
+    <li> Noise in a data recording system (eg in brain imaging data, noise signals from head movement are much larger than the real brain activity we are trying to record)
+    <li> Data entry error (human types the wrong number)
+</ul>
+<p>Identifying and removing outliers and bad data points is a crucial step in the process of preparing our data for analysis, sometimes called <i>data wrangling</i></p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="removing-an-outlier">
+<h2>Removing an outlier<a class="headerlink" href="#removing-an-outlier" title="Permalink to this heading">#</a></h2>
+<p>In some cases, we can identify that an outlier datapoint should not be in our dataset, and remove it.</p>
+<p>Let’s try an example:</p>
+<section id="import-the-data">
+<h3>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
+<p>Let’s import a dataframe with size information on a random sample of cars</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier1.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.9187</td>
+      <td>1.5320</td>
+      <td>1.8030</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.6486</td>
+      <td>1.5936</td>
+      <td>1.6463</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.5785</td>
+      <td>1.5447</td>
+      <td>1.7140</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5563</td>
+      <td>1.5549</td>
+      <td>1.7331</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.0321</td>
+      <td>1.5069</td>
+      <td>1.7320</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>978</th>
+      <td>5.0897</td>
+      <td>1.8396</td>
+      <td>1.8356</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>979</th>
+      <td>4.0224</td>
+      <td>1.5860</td>
+      <td>1.7862</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>980</th>
+      <td>3.4771</td>
+      <td>1.5340</td>
+      <td>1.7418</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>981</th>
+      <td>5.2096</td>
+      <td>1.6396</td>
+      <td>1.8229</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>982</th>
+      <td>3.7549</td>
+      <td>1.5096</td>
+      <td>1.8274</td>
+      <td>car</td>
+    </tr>
+  </tbody>
+</table>
+<p>983 rows × 4 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="get-descriptives">
+<h3>Get descriptives<a class="headerlink" href="#get-descriptives" title="Permalink to this heading">#</a></h3>
+<p>We can get the descriptive statistics using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><tt>decribe()</tt></a> method in <tt>pandas</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>983.000000</td>
+      <td>983.000000</td>
+      <td>983.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.219838</td>
+      <td>1.586132</td>
+      <td>1.793355</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.708656</td>
+      <td>0.131954</td>
+      <td>0.056570</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.110900</td>
+      <td>1.430400</td>
+      <td>1.624100</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.816750</td>
+      <td>1.540050</td>
+      <td>1.760250</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.121600</td>
+      <td>1.574600</td>
+      <td>1.790400</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.520250</td>
+      <td>1.612350</td>
+      <td>1.821000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>15.361000</td>
+      <td>4.201700</td>
+      <td>2.499800</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Hm, the maximum value for car length looks very high.</p>
+<p>Let’s plot the data (don’t worry about the plotting code, there is a session on this later)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">cars</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;length&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/descriptives_DataCleaning_8_1.png" src="_images/descriptives_DataCleaning_8_1.png" />
+</div>
+</div>
+<p>There must be a cars of length up to 15.36m (the max length in the descriptives table) but we can’t see them in the plot - although we can see the x axis is stretched out to accommodate them.</p>
+<p>Let’s zoom in a bit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">cars</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">cars</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/descriptives_DataCleaning_10_0.png" src="_images/descriptives_DataCleaning_10_0.png" />
+</div>
+</div>
+<p>Hm, a couple of outliers.</p>
+<p>Let’s check it in the dataframe by pulling out any cars longer than 8m:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="p">[</span><span class="n">cars</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>15.361</td>
+      <td>4.1914</td>
+      <td>2.4998</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>14.508</td>
+      <td>4.2017</td>
+      <td>2.4890</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>ahh, the value of <tt>type</tt> for the two vehicles that exceed 8m is ‘truck’.</p>
+<p>Let’s check what other types we have:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car      981
+truck      2
+Name: type, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hm, 981 cars and 2 trucks. I think the trucks were included by mistake. Let’s drop them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars_clean</span> <span class="o">=</span> <span class="n">cars</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span><span class="mi">101</span><span class="p">])</span> <span class="c1"># 100 is the row index of the truck - you can see it above</span>
+<span class="n">cars_clean</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1"># check if we still have any trucks in the sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car    981
+Name: type, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We got the row indices for the trucks from the cell above where we pulled out rows with length &gt;8m and inspected it.</p>
+<p>if you were working with lots of files, it could be useful to cut out the middle man and find the row index using code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ix</span> <span class="o">=</span> <span class="n">cars</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">cars</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;truck&#39;</span><span class="p">]</span> <span class="c1"># find the row index for the truck and save it as &#39;ix&#39;</span>
+<span class="n">cars_clean</span> <span class="o">=</span> <span class="n">cars</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+<span class="n">cars_clean</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1"># check if we still have any trucks in the sample</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car    981
+Name: type, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="nan-an-outlier-value">
+<h2>NaN an outlier value<a class="headerlink" href="#nan-an-outlier-value" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, we don’t want to remove an entire entry.</p>
+<p>Say for example there is a data entry error for one of the vehicle heights. We might not be that interested in vehicle height, and wish to retain other data on this vehicle.</p>
+<p>Then we can replace just the offending value with the value <tt>NaN</tt></p>
+<p><tt>NaN</tt> stands for Not a Number and is code across many programming languages for a missing value that should be ignored.</p>
+<p>Let’s try an example</p>
+<section id="id1">
+<h3>Import the data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Let’s import a dataframe with size information on a random sample of cars</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span> <span class="o">=</span> <span class="c1"># your code here to read the file &#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier2.csv&#39;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_50771/3927329001.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">cars</span> <span class="o">=</span> <span class="c1"># your code here to read the file &#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier2.csv&#39;</span>
+           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Get descriptives<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>We can get the descriptive statistics using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><tt>decribe()</tt></a> method in <tt>pandas</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to get the descriptives - check above for an example!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like there are some very high cars in the sample, but the maximum length and width are as expected.</p>
+<p>Let’s have a look at the rows of the dataframe containing the very high cars</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to display the rows of the dataframe with car height greater than 8m</span>
+<span class="c1"># check above for an example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Hm, these height values appear to be about 10x the mean height</p>
+<p>Maybe a data entry error (the decimal point is in the wrong place)</p>
+<p>We can replace the values with a <tt>NaN</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars_clean</span> <span class="o">=</span> <span class="n">cars</span> <span class="c1"># make a copy of the dataframe to work on</span>
+
+<span class="n">cars_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">100</span><span class="p">,</span><span class="mi">101</span><span class="p">],[</span><span class="s1">&#39;height&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="c1"># or cut out the middle man and find the offending row numbers using code</span>
+<span class="c1">#cars.loc[(cars[&#39;height&#39;]&gt;8),[&#39;height&#39;]]=np.nan</span>
+
+<span class="c1"># let&#39;s view the edited dataframe</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cars_clean</span><span class="p">[</span><span class="mi">98</span><span class="p">:</span><span class="mi">105</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>4.3451</td>
+      <td>1.6417</td>
+      <td>1.8773</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>4.4613</td>
+      <td>1.6514</td>
+      <td>1.7431</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>15.3610</td>
+      <td>NaN</td>
+      <td>2.4998</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>14.5080</td>
+      <td>NaN</td>
+      <td>2.4890</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>3.9694</td>
+      <td>1.5171</td>
+      <td>1.7158</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>4.2810</td>
+      <td>1.5981</td>
+      <td>1.7840</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>3.4394</td>
+      <td>1.5124</td>
+      <td>1.7424</td>
+      <td>car</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can see that the mean and max height should now have gone back to reasonable values, as Python just ignores the NaNs when calculating the descriptive statistics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars_clean</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>983.000000</td>
+      <td>981.000000</td>
+      <td>983.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.219838</td>
+      <td>1.580810</td>
+      <td>1.793355</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.708656</td>
+      <td>0.059263</td>
+      <td>0.056570</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.110900</td>
+      <td>1.430400</td>
+      <td>1.624100</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.816750</td>
+      <td>1.540000</td>
+      <td>1.760250</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.121600</td>
+      <td>1.574500</td>
+      <td>1.790400</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.520250</td>
+      <td>1.611900</td>
+      <td>1.821000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>15.361000</td>
+      <td>1.899300</td>
+      <td>2.499800</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="find-nans">
+<h3>Find NaNs<a class="headerlink" href="#find-nans" title="Permalink to this heading">#</a></h3>
+<p>If you download a dataset, it can be useful to check which rows have missing values.</p>
+<p>You can do this using the method <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html"><tt>isna</tt></a>, which returns a True for NaN values and False elsewhere.</p>
+<p>For example we can check the section of the dataframe where we replaced some values with <tt>NaN</tt>s</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars_clean</span><span class="p">[</span><span class="mi">98</span><span class="p">:</span><span class="mi">105</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If you want to find the rows in which ‘height’ is <tt>NaN</tt>, you can use isna() to give indices like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars_clean</span><span class="p">[</span><span class="n">cars_clean</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>15.361</td>
+      <td>NaN</td>
+      <td>2.4998</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>14.508</td>
+      <td>NaN</td>
+      <td>2.4890</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="delete-or-tt-nan-tt">
+<h2>Delete or <tt>NaN</tt>?<a class="headerlink" href="#delete-or-tt-nan-tt" title="Permalink to this heading">#</a></h2>
+<p>When should you delete the entire row and when should you replace a missing value with a <tt>NaN</tt>?</p>
+<p>In general, it is better to replace bad or missing values with a <tt>NaN</tt></p>
+<p>I think there are three main considerations:</p>
+<section id="partial-data-records-are-valuable">
+<h3>Partial data records are valuable<a class="headerlink" href="#partial-data-records-are-valuable" title="Permalink to this heading">#</a></h3>
+<p>If you have many data values for each record or row in your dataframe (in this case, records correspond to individual cars, but they could be patients for example), you may not wish ot junk all the data just because some variables are incomplete or have bad values.</p>
+<p>For example, say we run a study which involves a hospital visit for a battery of tests (blood pressure, thyroid function, levels of vitamin B12…) and the lab looses a batch of samples for the B12 analysis. The remaining data on the patients may still be useful - maybe we didn’t even care that much about vitamin B12.</p>
+<p>In this case, it is better to put a missing value for B12 in the affected patients and retain the rest of their data as normal.</p>
+</section>
+<section id="deleting-data-could-be-misleaading">
+<h3>Deleting data could be misleaading<a class="headerlink" href="#deleting-data-could-be-misleaading" title="Permalink to this heading">#</a></h3>
+<p>Say one of the measures in our patient study is a follow-up questionairre and only 60% of patients complete this.</p>
+<p>If we simply delete all the patients who didn’t complete the follow-up from our database, we will have a biased sample (an no-one will ever know!)</p>
+<p>For this reason it is good practice to retain incomplete data records, with <tt>Nan</tt>s as appropriate, so another researcher can see the full picture.</p>
+</section>
+<section id="some-errors-really-are-errors">
+<h3>Some errors really are errors<a class="headerlink" href="#some-errors-really-are-errors" title="Permalink to this heading">#</a></h3>
+<p>However, if a record is clearly an error (completely empty) or a duplicate (two identical files for the same NHS number), it would be appropriate to delete it</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="descriptives_SDandIQR.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.5. </span>Standard deviation and IQR</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="descriptives_groupby.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Grouping data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
