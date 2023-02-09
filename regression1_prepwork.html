@@ -1,0 +1,2076 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>13.5. Regression models in Python &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="13.7. Regression models in Python" href="regression1_TutorialExercises.html" />
+    <link rel="prev" title="13.4. Regression, Covariance and Correlation Q&amp;A" href="regression1_QandA.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   2. Describing data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     2.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_MeanAndMedian.html">
+     2.4. Mean and Median
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_SDandIQR.html">
+     2.5. Standard deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_DataCleaning.html">
+     2.6. Data cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_groupby.html">
+     2.7. Grouping data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_PythonCheck.html">
+     2.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plotting_intro.html">
+   3. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_histogram.html">
+     3.3. Histogram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_KDE.html">
+     3.4. KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_boxplot.html">
+     3.5. Boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_scatterplot.html">
+     3.6. Scatterplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_pandas.html">
+     3.7. Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_tweaks.html">
+     3.8. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_additionalMaterials.html">
+     3.9. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_TutorialExercises.html">
+     3.10. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CorrCov_intro.html">
+   4. Correlation and Covariance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_outcomes.html">
+     4.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_conceptCheck.html">
+     4.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_introCorrCov.html">
+     4.4. Covariance and Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_ClimateExample.html">
+     4.6. Climate example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_Spearman.html">
+     4.7. Spearman’s Rank Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_PythonCheck.html">
+     4.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_TutorialExercises.html">
+     4.9. Tutorial Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_HandInAssignment.html">
+     4.10. Hand-in Assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="binomial_overallIntro.html">
+   5. Data generating distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_intro.html">
+     5.1. The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_objectives.html">
+     5.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_singlecoin.html">
+     5.3. Simulated coin toss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_10000reps.html">
+     5.4. Repeat the simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_nandp.html">
+     5.5. Changing
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(p\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PMFandCDF.html">
+     5.6. Binomial PMF and CDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_normal.html">
+     5.7. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PythonCheck.html">
+     5.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises1.html">
+     5.9. Tutorial Exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises2.html">
+     5.10. Tutorial Exercises II
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
+   6. The Central Limit Theorem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_outcomes.html">
+     6.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_sampling.html">
+     6.3. Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_CI.html">
+     6.5. Estimating the sampling distribution
+     <i>
+      from a sample
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_TutorialExercises.html">
+     6.7. Tutorial exercises I: The Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_Tutorial2tdist.html">
+     6.10. Tutorial Exercises II: the
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Assignment_intro.html">
+   8. Christmas vacation assignment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IMDb_exercise.html">
+     8.1. Movie data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Cheatsheet_intro.html">
+   9. Python Cheatsheet
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coding_cheatsheet.html">
+     9.1. Coding support sheet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="permutation_intro.html">
+   10. Permutation Testing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     10.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_paired.html">
+     10.4. Permutation test for paired data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_independentSamples.html">
+     10.5. Permutation test for unpaired or independent samples data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_correlation.html">
+     10.6. Permutation test for correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_more.html">
+     10.7. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="power_intro.html">
+   12. Power analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_outcomes.html">
+     12.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_conceptCheck.html">
+     12.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_analysis.html">
+     12.4. Sensitivity, power, reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_placeholder.html">
+     12.9. Tutorial work and Hand in assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CSVreading_instructions.html">
+     12.10. Loading data from a .csv file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="regression1_intro.html">
+   13. Regression
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_outcomes.html">
+     13.1. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_concepts.html">
+     13.2. Regression Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_interpretingSlope.html">
+     13.3. Interpreting the slope and intercept, prediction and residuals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_QandA.html">
+     13.4. Regression, Covariance and Correlation Q&amp;A
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     13.5. Regression models in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_TutorialExercises.html">
+     13.7. Regression models in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression2_intro.html">
+   14. Multivariate Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_concepts.html">
+     14.2. Multivariate Analysis Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_typesOfRelationship.html">
+     14.3. Different types of multivariate relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_QandA.html">
+     14.4. Multiple Regression Q &amp; A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_TutorialExercises.html">
+     14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/regression1_prepwork.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/regression1_prepwork.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fregression1_prepwork.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/regression1_prepwork.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   13.5. Regression models in Python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#happiness-toy-example">
+     Happiness toy example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-and-view-data">
+       Import and view data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-the-regression-using-statsmodels">
+       Run the regression using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         statsmodels
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interpreting-the-output">
+       Interpreting the output
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#predicted-values-residuals">
+       Predicted values, residuals
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-changed-when-we-excluded-outliers">
+       What changed when we excluded outliers?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-calculation-for-the-slope-and-intercept">
+   13.6. The calculation for the slope and intercept
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-extra-questions">
+     Quick extra questions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Regression models in Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   13.5. Regression models in Python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#happiness-toy-example">
+     Happiness toy example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-and-view-data">
+       Import and view data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-the-regression-using-statsmodels">
+       Run the regression using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         statsmodels
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interpreting-the-output">
+       Interpreting the output
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#predicted-values-residuals">
+       Predicted values, residuals
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-changed-when-we-excluded-outliers">
+       What changed when we excluded outliers?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-calculation-for-the-slope-and-intercept">
+   13.6. The calculation for the slope and intercept
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-extra-questions">
+     Quick extra questions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="regression-models-in-python">
+<h1><span class="section-number">13.5. </span>Regression models in Python<a class="headerlink" href="#regression-models-in-python" title="Permalink to this heading">#</a></h1>
+<p>We will be using the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> package in Python, so we will need to import this along with the other Python packages we have been using.</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If that threw an error, you may need to install <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> before you can import it.</p>
+<p>Try this code block:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install statsmodels
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (0.13.2)
+Requirement already satisfied: pandas&gt;=0.25 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.4.4)
+Requirement already satisfied: scipy&gt;=1.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
+Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: patsy&gt;=0.5.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (0.5.2)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.21.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
+Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>… and then rerun the importing block above</p>
+</section>
+<section id="happiness-toy-example">
+<h2>Happiness toy example<a class="headerlink" href="#happiness-toy-example" title="Permalink to this heading">#</a></h2>
+<p>The python code, once you get the hang of it, is pretty straightforward. The output that Python gives is a whole table of statistics, some of which are important to us in this class, and some will be important later, and some we won’t need in the course at all.</p>
+<p>So, when looking at the Python output, the key objective for the moment is to know where to find the key things, e.g., the intercept and slope coefficients.</p>
+<p>Let’s run a regression model in Python for the ‘toy’ country happiness data.</p>
+<section id="import-and-view-data">
+<h3>Import and view data<a class="headerlink" href="#import-and-view-data" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import and view data</span>
+<span class="n">happiness</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/happiness10.csv&#39;</span><span class="p">)</span>
+<span class="n">happiness</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>GDPpc</th>
+      <th>LifeSat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Austria</td>
+      <td>51.9</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czechia</td>
+      <td>38.5</td>
+      <td>6.9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Finland</td>
+      <td>47.2</td>
+      <td>7.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Greece</td>
+      <td>27.1</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ireland</td>
+      <td>90.8</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Luxembourg</td>
+      <td>112.6</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Poland</td>
+      <td>32.4</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Slovakia</td>
+      <td>30.5</td>
+      <td>6.4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Sweden</td>
+      <td>50.9</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ukraine</td>
+      <td>12.4</td>
+      <td>5.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="run-the-regression-using-statsmodels">
+<h3>Run the regression using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#run-the-regression-using-statsmodels" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run the regression model</span>
+
+<span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happiness</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;LifeSat ~ GDPpc&#39;</span><span class="p">)</span>
+
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+
+<span class="c1"># note you get a warning message because the dataset is quite small - disregard this</span>
+                                             
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py:1736: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=10
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.418</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.345</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.738</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>15:51:57</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    10</td>      <th>  AIC:               </th> <td>   22.22</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     8</td>      <th>  BIC:               </th> <td>   22.82</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    5.8485</td> <td>    0.421</td> <td>   13.878</td> <td> 0.000</td> <td>    4.877</td> <td>    6.820</td>
+</tr>
+<tr>
+  <th>GDPpc</th>     <td>    0.0176</td> <td>    0.007</td> <td>    2.395</td> <td> 0.043</td> <td>    0.001</td> <td>    0.035</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.349</td> <th>  Durbin-Watson:     </th> <td>   1.689</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.840</td> <th>  Jarque-Bera (JB):  </th> <td>   0.448</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.289</td> <th>  Prob(JB):          </th> <td>   0.799</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.139</td> <th>  Cond. No.          </th> <td>    113.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+</section>
+<section id="interpreting-the-output">
+<h3>Interpreting the output<a class="headerlink" href="#interpreting-the-output" title="Permalink to this heading">#</a></h3>
+<p>The summary output is three tables</p>
+<p>The <strong>top table</strong> tells us about the regression we ran, including</p>
+<ul class="simple">
+<li><p>what was the dependent variable</p></li>
+<li><p>how many observations there were</p></li>
+<li><p>type of regression model used (in this case Ordinary Least Squares, OLS - don’t worry about this for now)</p></li>
+<li><p>various measures of model fit such as <span class="math notranslate nohighlight">\(R^2\)</span>, AIC, BIC, Log-Likelihood - some (but not all) of these will be covered in later weeks</p></li>
+</ul>
+<p>The <strong>middle table</strong> gives the output of the regression</p>
+<ul class="simple">
+<li><p>coefficients (beta values) - in this simple regression these are the intercept and the slope</p></li>
+<li><p>statistical significance of the effects (t and p values)</p></li>
+</ul>
+<p>The <strong>bottom table</strong> contains some information about whether the assummptions of linear regression were satisfied</p>
+</section>
+<section id="predicted-values-residuals">
+<h3>Predicted values, residuals<a class="headerlink" href="#predicted-values-residuals" title="Permalink to this heading">#</a></h3>
+<p>For now let’s focus on the middle table</p>
+<ul class="simple">
+<li><p>find the values for the intercept and the slope. Can you write out the regression equation in the form</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \hat{y} = \beta_0 + \beta_1 x \]</div>
+<p>… replacing the <span class="math notranslate nohighlight">\(\beta\)</span> values with numbers?</p>
+<p>You could work out the predicted value of <span class="math notranslate nohighlight">\(y\)</span>, namely <span class="math notranslate nohighlight">\(\hat{y}\)</span>, for each value of $x4 from the equation.
+However <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> can give us the predicted values and residuals.</p>
+<ul class="simple">
+<li><p>Run the following code which will give us the predicted values <span class="math notranslate nohighlight">\(\hat{y}\)</span> for each row of the data. Display the result.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return predicted values</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">fittedvalues</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    6.763547
+1    6.527300
+2    6.680684
+3    6.326313
+4    7.449370
+5    7.833713
+6    6.419754
+7    6.386256
+8    6.745917
+9    6.067146
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>… and the residuals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return residuals</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">resid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.436453
+1    0.372700
+2    1.119316
+3   -0.426313
+4   -0.449370
+5   -0.433713
+6   -0.319754
+7    0.013744
+8    0.654083
+9   -0.967146
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>These would be easier to view if we added them in as new columns in our dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happiness</span><span class="p">[</span><span class="s1">&#39;yhat&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">reg_results</span><span class="o">.</span><span class="n">fittedvalues</span>
+<span class="n">happiness</span><span class="p">[</span><span class="s1">&#39;residuals&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">reg_results</span><span class="o">.</span><span class="n">resid</span>
+<span class="n">happiness</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>GDPpc</th>
+      <th>LifeSat</th>
+      <th>yhat</th>
+      <th>residuals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Austria</td>
+      <td>51.9</td>
+      <td>7.2</td>
+      <td>6.763547</td>
+      <td>0.436453</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czechia</td>
+      <td>38.5</td>
+      <td>6.9</td>
+      <td>6.527300</td>
+      <td>0.372700</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Finland</td>
+      <td>47.2</td>
+      <td>7.8</td>
+      <td>6.680684</td>
+      <td>1.119316</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Greece</td>
+      <td>27.1</td>
+      <td>5.9</td>
+      <td>6.326313</td>
+      <td>-0.426313</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ireland</td>
+      <td>90.8</td>
+      <td>7.0</td>
+      <td>7.449370</td>
+      <td>-0.449370</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Luxembourg</td>
+      <td>112.6</td>
+      <td>7.4</td>
+      <td>7.833713</td>
+      <td>-0.433713</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Poland</td>
+      <td>32.4</td>
+      <td>6.1</td>
+      <td>6.419754</td>
+      <td>-0.319754</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Slovakia</td>
+      <td>30.5</td>
+      <td>6.4</td>
+      <td>6.386256</td>
+      <td>0.013744</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Sweden</td>
+      <td>50.9</td>
+      <td>7.4</td>
+      <td>6.745917</td>
+      <td>0.654083</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ukraine</td>
+      <td>12.4</td>
+      <td>5.1</td>
+      <td>6.067146</td>
+      <td>-0.967146</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This should look familiar! We had the same table back in concepts section. (There may be small differences due to rounding).</p>
+<p>Hopefully you can see that:</p>
+<ul class="simple">
+<li><p>The <span class="math notranslate nohighlight">\(\hat{y}\)</span> values are fairly similar to the corresponding values of <span class="math notranslate nohighlight">\(y\)</span>, LifeSat</p></li>
+<li><p>The residuals are positive when <span class="math notranslate nohighlight">\(y&gt;\hat{y}\)</span> and negative <span class="math notranslate nohighlight">\(y&lt;\hat{y}\)</span></p></li>
+<li><p>The size of the residual is larger when the difference between <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(\hat{y}\)</span> is larger</p></li>
+</ul>
+<p>Do you think there are any outliers in the data? As we noted earlier, there was one very high and one very low value among the residuals.</p>
+<p>Let’s try re-running the regression model without these two potential outliers: Finland and Ukraine. Let’s change the happiness measure to ‘NaN’ for these two countries and re-run the regression command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code for changing Finland and Ukraine to NaN</span>
+<span class="n">happiness_clean</span> <span class="o">=</span> <span class="n">happiness</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">happiness_clean</span><span class="p">[</span><span class="n">happiness_clean</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Ukraine&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">happiness_clean</span><span class="p">[</span><span class="n">happiness_clean</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Finland&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">happiness_clean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>GDPpc</th>
+      <th>LifeSat</th>
+      <th>yhat</th>
+      <th>residuals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Austria</td>
+      <td>51.9</td>
+      <td>7.2</td>
+      <td>6.763547</td>
+      <td>0.436453</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czechia</td>
+      <td>38.5</td>
+      <td>6.9</td>
+      <td>6.527300</td>
+      <td>0.372700</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Greece</td>
+      <td>27.1</td>
+      <td>5.9</td>
+      <td>6.326313</td>
+      <td>-0.426313</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ireland</td>
+      <td>90.8</td>
+      <td>7.0</td>
+      <td>7.449370</td>
+      <td>-0.449370</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Luxembourg</td>
+      <td>112.6</td>
+      <td>7.4</td>
+      <td>7.833713</td>
+      <td>-0.433713</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Poland</td>
+      <td>32.4</td>
+      <td>6.1</td>
+      <td>6.419754</td>
+      <td>-0.319754</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Slovakia</td>
+      <td>30.5</td>
+      <td>6.4</td>
+      <td>6.386256</td>
+      <td>0.013744</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Sweden</td>
+      <td>50.9</td>
+      <td>7.4</td>
+      <td>6.745917</td>
+      <td>0.654083</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># re-run the regression model</span>
+
+<span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happiness_clean</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;LifeSat ~ GDPpc&#39;</span><span class="p">)</span>
+
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py:1736: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=8
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.467</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.379</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.266</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>15:51:57</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>     8</td>      <th>  AIC:               </th> <td>   11.99</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     6</td>      <th>  BIC:               </th> <td>   12.15</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    6.0904</td> <td>    0.345</td> <td>   17.671</td> <td> 0.000</td> <td>    5.247</td> <td>    6.934</td>
+</tr>
+<tr>
+  <th>GDPpc</th>     <td>    0.0128</td> <td>    0.006</td> <td>    2.295</td> <td> 0.062</td> <td>   -0.001</td> <td>    0.027</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 1.068</td> <th>  Durbin-Watson:     </th> <td>   1.229</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.586</td> <th>  Jarque-Bera (JB):  </th> <td>   0.669</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.315</td> <th>  Prob(JB):          </th> <td>   0.716</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 1.731</td> <th>  Cond. No.          </th> <td>    131.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+</section>
+<section id="what-changed-when-we-excluded-outliers">
+<h3>What changed when we excluded outliers?<a class="headerlink" href="#what-changed-when-we-excluded-outliers" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Has the slope value become bigger or smaller?</p></li>
+<li><p>Has the conclusion changed?</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-calculation-for-the-slope-and-intercept">
+<h1><span class="section-number">13.6. </span>The calculation for the slope and intercept<a class="headerlink" href="#the-calculation-for-the-slope-and-intercept" title="Permalink to this heading">#</a></h1>
+<p>Back in Week 4 when you were learning about correlation and covariance, you saw the formula for calculating <span class="math notranslate nohighlight">\(b\)</span>, the slope coefficient.</p>
+<p>Remember the Height/ Finger length example?</p>
+<p>The equation for finding <span class="math notranslate nohighlight">\(b\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ b = \frac{s_{xy}}{s^2_x} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and view the data</span>
+<span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">heightFinger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Height</th>
+      <th>FingerLength</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>56</td>
+      <td>3.875</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57</td>
+      <td>4.000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>58</td>
+      <td>3.875</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>58</td>
+      <td>4.000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>58</td>
+      <td>4.000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2995</th>
+      <td>74</td>
+      <td>4.875</td>
+    </tr>
+    <tr>
+      <th>2996</th>
+      <td>74</td>
+      <td>5.000</td>
+    </tr>
+    <tr>
+      <th>2997</th>
+      <td>74</td>
+      <td>5.000</td>
+    </tr>
+    <tr>
+      <th>2998</th>
+      <td>74</td>
+      <td>5.250</td>
+    </tr>
+    <tr>
+      <th>2999</th>
+      <td>77</td>
+      <td>4.375</td>
+    </tr>
+  </tbody>
+</table>
+<p>3000 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>The equation for finding <span class="math notranslate nohighlight">\(b\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ b = \frac{s_{xy}}{s^2_x} \]</div>
+<p>Let’s apply that in Python</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s_x</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">s_y</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;FingerLength&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">s_xy</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;FingerLength&#39;</span><span class="p">])</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">s_xy</span><span class="o">/</span><span class="p">(</span><span class="n">s_x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b = 0.0550010848727285
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the value of the intercept? The equation for finding the intercept is as follows:</p>
+<div class="math notranslate nohighlight">
+\[ a = \bar{y} - b\bar{x} \]</div>
+<p><span class="math notranslate nohighlight">\(\bar{x}\)</span> and <span class="math notranslate nohighlight">\(\bar{y}\)</span> are the means of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> for the 10 data points.</p>
+<p>Use Python to find the mean of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_bar</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="o">.</span><span class="n">Height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">y_bar</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="o">.</span><span class="n">FingerLength</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you calculate <span class="math notranslate nohighlight">\(a\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">6.7</span> <span class="o">+</span> <span class="p">(</span><span class="mf">49.4</span><span class="o">*</span><span class="mf">0.055</span><span class="p">)</span> 
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.417
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">y_bar</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="n">x_bar</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9465806367945135
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s run a regression model in Python for the finger length data, to check our results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run the regression model on height/finger data</span>
+
+<span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;FingerLength ~ Height&#39;</span><span class="p">)</span>
+
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>      <td>FingerLength</td>   <th>  R-squared:         </th> <td>   0.423</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.423</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   2200.</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>15:51:57</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>  3000</td>      <th>  AIC:               </th> <td>  -2323.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>  2998</td>      <th>  BIC:               </th> <td>  -2311.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    0.9466</td> <td>    0.077</td> <td>   12.321</td> <td> 0.000</td> <td>    0.796</td> <td>    1.097</td>
+</tr>
+<tr>
+  <th>Height</th>    <td>    0.0550</td> <td>    0.001</td> <td>   46.909</td> <td> 0.000</td> <td>    0.053</td> <td>    0.057</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>20.597</td> <th>  Durbin-Watson:     </th> <td>   0.182</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  28.786</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.062</td> <th>  Prob(JB):          </th> <td>5.61e-07</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.464</td> <th>  Cond. No.          </th> <td>1.68e+03</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 1.68e+03. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div></div>
+</div>
+<p>Find <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in the regression output tablbe (they are not called <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> in the table - what are they called?). Do they match the values we calculated ourselves using the equation?</p>
+<p>Great! Our calculations based on the equations are confirmed by Python’s regression table.</p>
+<section id="quick-extra-questions">
+<h2>Quick extra questions<a class="headerlink" href="#quick-extra-questions" title="Permalink to this heading">#</a></h2>
+<p>Here are some extra questions on the Regression output table, to see if you can begin to pick out all the important information.</p>
+<ol class="simple">
+<li><p>In the top left, it gives the method as ‘Least Squares’. Above, it gives the model type as ‘OLS’. Do you know what OLS stand for?</p>
+<ul class="simple">
+<li><p>Ordinary Least Squares</p></li>
+</ul>
+</li>
+<li><p>How many observations are in the Height vs Finger model according to the regression output table?</p>
+<ul class="simple">
+<li><p>3000</p></li>
+</ul>
+</li>
+<li><p>What do you think ‘std err’ might stand for, in the column after ‘coef’?</p>
+<ul class="simple">
+<li><p>Standard Error. You learned about this important concept in Week 6, and we’ll come back to it again in a couple of weeks.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="regression1_QandA.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">13.4. </span>Regression, Covariance and Correlation Q&amp;A</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="regression1_TutorialExercises.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">13.7. </span>Regression models in Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

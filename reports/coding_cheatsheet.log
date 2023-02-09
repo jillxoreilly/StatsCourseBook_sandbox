@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+display(df.groupby(['Type', 'Colour']).size())
+df.groupby(['Type', 'Colour']).size().columns
+# as you can see, this spits out an error because 'Type' and 'Colour' are indices not columns
+# the actual output displayed is a pandas series, not a dataframe
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_50765/2378309076.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mdisplay[0m[0;34m([0m[0mdf[0m[0;34m.[0m[0mgroupby[0m[0;34m([0m[0;34m[[0m[0;34m'Type'[0m[0;34m,[0m [0;34m'Colour'[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0msize[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mdf[0m[0;34m.[0m[0mgroupby[0m[0;34m([0m[0;34m[[0m[0;34m'Type'[0m[0;34m,[0m [0;34m'Colour'[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0msize[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mcolumns[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;31m# as you can see, this spits out an error because 'Type' and 'Colour' are indices not columns[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;31m# the actual output displayed is a pandas series, not a dataframe[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py[0m in [0;36m__getattr__[0;34m(self, name)[0m
+[1;32m   5573[0m         ):
+[1;32m   5574[0m             [0;32mreturn[0m [0mself[0m[0;34m[[0m[0mname[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 5575[0;31m         [0;32mreturn[0m [0mobject[0m[0;34m.[0m[0m__getattribute__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mname[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   5576[0m [0;34m[0m[0m
+[1;32m   5577[0m     [0;32mdef[0m [0m__setattr__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mname[0m[0;34m:[0m [0mstr[0m[0;34m,[0m [0mvalue[0m[0;34m)[0m [0;34m->[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mAttributeError[0m: 'Series' object has no attribute 'columns'
+AttributeError: 'Series' object has no attribute 'columns'
+

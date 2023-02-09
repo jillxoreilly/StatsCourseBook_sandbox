@@ -1,0 +1,140 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# run the regression model
+
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = happiness, formula = 'LifeSat ~ GDPpc')
+
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
+
+# note you get a warning message because the dataset is quite small - disregard this
+                                             
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/compat.py[0m in [0;36mcall_and_wrap_exc[0;34m(msg, origin, f, *args, **kwargs)[0m
+[1;32m     35[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 36[0;31m         [0;32mreturn[0m [0mf[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     37[0m     [0;32mexcept[0m [0mException[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/eval.py[0m in [0;36meval[0;34m(self, expr, source_name, inner_namespace)[0m
+[1;32m    164[0m         [0mcode[0m [0;34m=[0m [0mcompile[0m[0;34m([0m[0mexpr[0m[0;34m,[0m [0msource_name[0m[0;34m,[0m [0;34m"eval"[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mflags[0m[0;34m,[0m [0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 165[0;31m         return eval(code, {}, VarLookupDict([inner_namespace]
+[0m[1;32m    166[0m                                             + self._namespaces))
+
+[0;32m<string>[0m in [0;36m<module>[0;34m[0m
+
+[0;31mNameError[0m: name 'GDPpc' is not defined
+
+The above exception was the direct cause of the following exception:
+
+[0;31mPatsyError[0m                                Traceback (most recent call last)
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_96869/1881271342.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0;34m[0m[0m
+[1;32m      3[0m [0;31m# first we run this line to tell statsmodels where to find the data and the explanatory variables[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m [0mreg_formula[0m [0;34m=[0m [0msm[0m[0;34m.[0m[0mregression[0m[0;34m.[0m[0mlinear_model[0m[0;34m.[0m[0mOLS[0m[0;34m.[0m[0mfrom_formula[0m[0;34m([0m[0mdata[0m [0;34m=[0m [0mhappiness[0m[0;34m,[0m [0mformula[0m [0;34m=[0m [0;34m'LifeSat ~ GDPpc'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0;34m[0m[0m
+[1;32m      6[0m [0;31m# then we run this line to fit the regression (work out the values of intercept and slope)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/statsmodels/base/model.py[0m in [0;36mfrom_formula[0;34m(cls, formula, data, subset, drop_cols, *args, **kwargs)[0m
+[1;32m    198[0m             [0mmissing[0m [0;34m=[0m [0;34m'raise'[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    199[0m [0;34m[0m[0m
+[0;32m--> 200[0;31m         tmp = handle_formula_data(data, None, formula, depth=eval_env,
+[0m[1;32m    201[0m                                   missing=missing)
+[1;32m    202[0m         [0;34m([0m[0;34m([0m[0mendog[0m[0;34m,[0m [0mexog[0m[0;34m)[0m[0;34m,[0m [0mmissing_idx[0m[0;34m,[0m [0mdesign_info[0m[0;34m)[0m [0;34m=[0m [0mtmp[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/statsmodels/formula/formulatools.py[0m in [0;36mhandle_formula_data[0;34m(Y, X, formula, depth, missing)[0m
+[1;32m     61[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     62[0m         [0;32mif[0m [0mdata_util[0m[0;34m.[0m[0m_is_using_pandas[0m[0;34m([0m[0mY[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 63[0;31m             result = dmatrices(formula, Y, depth, return_type='dataframe',
+[0m[1;32m     64[0m                                NA_action=na_action)
+[1;32m     65[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py[0m in [0;36mdmatrices[0;34m(formula_like, data, eval_env, NA_action, return_type)[0m
+[1;32m    307[0m     """
+[1;32m    308[0m     [0meval_env[0m [0;34m=[0m [0mEvalEnvironment[0m[0;34m.[0m[0mcapture[0m[0;34m([0m[0meval_env[0m[0;34m,[0m [0mreference[0m[0;34m=[0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 309[0;31m     (lhs, rhs) = _do_highlevel_design(formula_like, data, eval_env,
+[0m[1;32m    310[0m                                       NA_action, return_type)
+[1;32m    311[0m     [0;32mif[0m [0mlhs[0m[0;34m.[0m[0mshape[0m[0;34m[[0m[0;36m1[0m[0;34m][0m [0;34m==[0m [0;36m0[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py[0m in [0;36m_do_highlevel_design[0;34m(formula_like, data, eval_env, NA_action, return_type)[0m
+[1;32m    162[0m     [0;32mdef[0m [0mdata_iter_maker[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    163[0m         [0;32mreturn[0m [0miter[0m[0;34m([0m[0;34m[[0m[0mdata[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 164[0;31m     design_infos = _try_incr_builders(formula_like, data_iter_maker, eval_env,
+[0m[1;32m    165[0m                                       NA_action)
+[1;32m    166[0m     [0;32mif[0m [0mdesign_infos[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py[0m in [0;36m_try_incr_builders[0;34m(formula_like, data_iter_maker, eval_env, NA_action)[0m
+[1;32m     64[0m     [0;32mif[0m [0misinstance[0m[0;34m([0m[0mformula_like[0m[0;34m,[0m [0mModelDesc[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     65[0m         [0;32massert[0m [0misinstance[0m[0;34m([0m[0meval_env[0m[0;34m,[0m [0mEvalEnvironment[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 66[0;31m         return design_matrix_builders([formula_like.lhs_termlist,
+[0m[1;32m     67[0m                                        formula_like.rhs_termlist],
+[1;32m     68[0m                                       [0mdata_iter_maker[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/build.py[0m in [0;36mdesign_matrix_builders[0;34m(termlists, data_iter_maker, eval_env, NA_action)[0m
+[1;32m    691[0m     [0;31m# on some data to find out what type of data they return.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    692[0m     (num_column_counts,
+[0;32m--> 693[0;31m      [0mcat_levels_contrasts[0m[0;34m)[0m [0;34m=[0m [0m_examine_factor_types[0m[0;34m([0m[0mall_factors[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    694[0m                                                    [0mfactor_states[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    695[0m                                                    [0mdata_iter_maker[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/build.py[0m in [0;36m_examine_factor_types[0;34m(factors, factor_states, data_iter_maker, NA_action)[0m
+[1;32m    441[0m     [0;32mfor[0m [0mdata[0m [0;32min[0m [0mdata_iter_maker[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    442[0m         [0;32mfor[0m [0mfactor[0m [0;32min[0m [0mlist[0m[0;34m([0m[0mexamine_needed[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 443[0;31m             [0mvalue[0m [0;34m=[0m [0mfactor[0m[0;34m.[0m[0meval[0m[0;34m([0m[0mfactor_states[0m[0;34m[[0m[0mfactor[0m[0;34m][0m[0;34m,[0m [0mdata[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    444[0m             [0;32mif[0m [0mfactor[0m [0;32min[0m [0mcat_sniffers[0m [0;32mor[0m [0mguess_categorical[0m[0;34m([0m[0mvalue[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    445[0m                 [0;32mif[0m [0mfactor[0m [0;32mnot[0m [0;32min[0m [0mcat_sniffers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/eval.py[0m in [0;36meval[0;34m(self, memorize_state, data)[0m
+[1;32m    562[0m [0;34m[0m[0m
+[1;32m    563[0m     [0;32mdef[0m [0meval[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmemorize_state[0m[0;34m,[0m [0mdata[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 564[0;31m         return self._eval(memorize_state["eval_code"],
+[0m[1;32m    565[0m                           [0mmemorize_state[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    566[0m                           data)
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/eval.py[0m in [0;36m_eval[0;34m(self, code, memorize_state, data)[0m
+[1;32m    545[0m     [0;32mdef[0m [0m_eval[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mcode[0m[0;34m,[0m [0mmemorize_state[0m[0;34m,[0m [0mdata[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    546[0m         [0minner_namespace[0m [0;34m=[0m [0mVarLookupDict[0m[0;34m([0m[0;34m[[0m[0mdata[0m[0;34m,[0m [0mmemorize_state[0m[0;34m[[0m[0;34m"transforms"[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 547[0;31m         return call_and_wrap_exc("Error evaluating factor",
+[0m[1;32m    548[0m                                  [0mself[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    549[0m                                  [0mmemorize_state[0m[0;34m[[0m[0;34m"eval_env"[0m[0;34m][0m[0;34m.[0m[0meval[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/compat.py[0m in [0;36mcall_and_wrap_exc[0;34m(msg, origin, f, *args, **kwargs)[0m
+[1;32m     41[0m                                  origin)
+[1;32m     42[0m             [0;31m# Use 'exec' to hide this syntax from the Python 2 parser:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 43[0;31m             [0mexec[0m[0;34m([0m[0;34m"raise new_exc from e"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     44[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     45[0m             [0;31m# In python 2, we just let the original exception escape -- better[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/patsy/compat.py[0m in [0;36m<module>[0;34m[0m
+
+[0;31mPatsyError[0m: Error evaluating factor: NameError: name 'GDPpc' is not defined
+    LifeSat ~ GDPpc
+              ^^^^^
+PatsyError: Error evaluating factor: NameError: name 'GDPpc' is not defined
+    LifeSat ~ GDPpc
+              ^^^^^
+
