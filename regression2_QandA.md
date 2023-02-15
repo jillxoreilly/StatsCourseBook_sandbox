@@ -19,8 +19,7 @@ As many as you like! Although there will usually be constraints due to sample si
 ```
 
 1. Last week, we saw the regression equation $y=a+bx$ 
-What is the form of the regression equation when there are more than
-one $x$ variables?
+What is the form of the regression equation when there are several $x$ variables?
 
 
 ```{admonition} Click to reveal answer
