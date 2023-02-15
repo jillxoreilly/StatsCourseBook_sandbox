@@ -685,7 +685,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -1109,6 +1109,7 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.graphics</span> <span class="k">as</span> <span class="nn">smg</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
@@ -1121,10 +1122,10 @@ title="Print to PDF"
 <p>This file contains several explanatory/ controls variables:</p>
 <ul class="simple">
 <li><p>age (a continuous measure in years)</p></li>
-<li><p>sex (a binary measure where 0 = male and 1 = female)</p></li>
-<li><p>educ (a categorical measure of education where 1 = lower secondary qualifications or below, 2 = upper secondary (e.g., A Levels) and vocational qualifications, and 3 = Tertiary (university degree))</p></li>
+<li><p>sex (Male, Female)</p></li>
+<li><p>educ (a categorical measure with 3 levels, where ‘tertiary’ is higher education such as university)</p></li>
 <li><p>vote (a categorical measure of the party the respondent last voted for where 1 = Conservatives, 2 = Labour, 3 = any other party)</p></li>
-<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 0 = No, and 1 = Yes).</p></li>
+<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent was not born in the UK, and 1 indicates they were).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1312,7 +1313,7 @@ title="Print to PDF"
 <section id="multiple-regression-model">
 <h3>Multiple regression model<a class="headerlink" href="#multiple-regression-model" title="Permalink to this heading">#</a></h3>
 <p>We are going to add a further explanatory variable to the model: sex.</p>
-<p>This is a binary variable where male takes the value 0, and female takes the value 1.</p>
+<p>This is a string variable with two categories: Male and Female.</p>
 <p>Add sex to your model, keeping age in the model too. ou will need to change the formula from <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span></code> to <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span> <span class="pre">+</span> <span class="pre">sex</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1381,10 +1382,10 @@ title="Print to PDF"
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+  <th>Date:</th>             <td>Wed, 15 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:11:37</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>11:14:08</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -1473,10 +1474,10 @@ title="Print to PDF"
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+  <th>Date:</th>             <td>Wed, 15 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:11:37</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>11:14:08</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -1581,13 +1582,14 @@ title="Print to PDF"
 </section>
 <section id="interaction-terms">
 <h3>Interaction terms<a class="headerlink" href="#interaction-terms" title="Permalink to this heading">#</a></h3>
-<p>Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable. We will do this by adding an interaction term of age*vote to the model.</p>
-<p>When we want to include an interaction between, say, age and vote, we use age*vote in the model. This actually adds three explanatory variables to the regression - age, vote, and the interaction ageXvote - age was already in our old model so we need to remove it or it will be included twice</p>
+<p>Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable.</p>
+<p>We will do this by modelling the effect of ‘age’ and ‘vote’ on ‘better’, and adding an <strong>interaction term</strong> of age*vote to the model.</p>
+<p>The code in Python for an interaction between A and B is A:B</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk, x5=age*vote</span>
 <span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
-<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ess</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;better ~ sex + C(educ, Treatment(reference=&quot;Upper secondary&quot;)) + bornuk + age*vote&#39;</span><span class="p">)</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ess</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;better ~ age + sex + vote + age:vote&#39;</span><span class="p">)</span>
                                                           
                                                         
 <span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
@@ -1604,28 +1606,28 @@ title="Print to PDF"
 <div class="output text_html"><table class="simpletable">
 <caption>OLS Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>         <td>better</td>      <th>  R-squared:         </th> <td>   0.156</td>
+  <th>Dep. Variable:</th>         <td>better</td>      <th>  R-squared:         </th> <td>   0.077</td>
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.150</td>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.073</td>
 </tr>
 <tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   29.92</td>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   20.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>3.01e-48</td>
+  <th>Date:</th>             <td>Wed, 15 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:11:38</td>     <th>  Log-Likelihood:    </th> <td> -3286.5</td>
+  <th>Time:</th>                 <td>11:14:09</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>  1471</td>      <th>  AIC:               </th> <td>   6593.</td>
+  <th>No. Observations:</th>      <td>  1511</td>      <th>  AIC:               </th> <td>   6903.</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>  1461</td>      <th>  BIC:               </th> <td>   6646.</td>
+  <th>Df Residuals:</th>          <td>  1504</td>      <th>  BIC:               </th> <td>   6940.</td>
 </tr>
 <tr>
-  <th>Df Model:</th>              <td>     9</td>      <th>                     </th>     <td> </td>   
+  <th>Df Model:</th>              <td>     6</td>      <th>                     </th>     <td> </td>   
 </tr>
 <tr>
   <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
@@ -1633,53 +1635,57 @@ title="Print to PDF"
 </table>
 <table class="simpletable">
 <tr>
-                                   <td></td>                                     <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+              <td></td>                <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>Intercept</th>                                                          <td>    6.1381</td> <td>    0.459</td> <td>   13.368</td> <td> 0.000</td> <td>    5.237</td> <td>    7.039</td>
+  <th>Intercept</th>                <td>    6.9235</td> <td>    0.464</td> <td>   14.909</td> <td> 0.000</td> <td>    6.013</td> <td>    7.834</td>
 </tr>
 <tr>
-  <th>sex[T.Male]</th>                                                        <td>    0.0164</td> <td>    0.119</td> <td>    0.138</td> <td> 0.890</td> <td>   -0.217</td> <td>    0.250</td>
+  <th>sex[T.Male]</th>              <td>    0.0403</td> <td>    0.123</td> <td>    0.329</td> <td> 0.742</td> <td>   -0.200</td> <td>    0.281</td>
 </tr>
 <tr>
-  <th>C(educ, Treatment(reference="Upper secondary"))[T.Lower secondary]</th> <td>   -0.5276</td> <td>    0.154</td> <td>   -3.418</td> <td> 0.001</td> <td>   -0.830</td> <td>   -0.225</td>
+  <th>vote[T.Conservative]</th>     <td>   -0.6885</td> <td>    0.589</td> <td>   -1.170</td> <td> 0.242</td> <td>   -1.843</td> <td>    0.466</td>
 </tr>
 <tr>
-  <th>C(educ, Treatment(reference="Upper secondary"))[T.Tertiary]</th>        <td>    1.0986</td> <td>    0.139</td> <td>    7.896</td> <td> 0.000</td> <td>    0.826</td> <td>    1.372</td>
+  <th>vote[T.Labour]</th>           <td>    1.1944</td> <td>    0.564</td> <td>    2.119</td> <td> 0.034</td> <td>    0.089</td> <td>    2.300</td>
 </tr>
 <tr>
-  <th>vote[T.Conservative]</th>                                               <td>   -0.7764</td> <td>    0.571</td> <td>   -1.359</td> <td> 0.174</td> <td>   -1.897</td> <td>    0.344</td>
+  <th>age</th>                      <td>   -0.0145</td> <td>    0.008</td> <td>   -1.823</td> <td> 0.068</td> <td>   -0.030</td> <td>    0.001</td>
 </tr>
 <tr>
-  <th>vote[T.Labour]</th>                                                     <td>    0.8067</td> <td>    0.548</td> <td>    1.473</td> <td> 0.141</td> <td>   -0.267</td> <td>    1.881</td>
+  <th>age:vote[T.Conservative]</th> <td>   -0.0033</td> <td>    0.010</td> <td>   -0.332</td> <td> 0.740</td> <td>   -0.023</td> <td>    0.016</td>
 </tr>
 <tr>
-  <th>bornuk</th>                                                             <td>    1.1082</td> <td>    0.212</td> <td>    5.229</td> <td> 0.000</td> <td>    0.693</td> <td>    1.524</td>
-</tr>
-<tr>
-  <th>age</th>                                                                <td>   -0.0071</td> <td>    0.008</td> <td>   -0.907</td> <td> 0.365</td> <td>   -0.023</td> <td>    0.008</td>
-</tr>
-<tr>
-  <th>age:vote[T.Conservative]</th>                                           <td>    0.0008</td> <td>    0.010</td> <td>    0.081</td> <td> 0.936</td> <td>   -0.018</td> <td>    0.020</td>
-</tr>
-<tr>
-  <th>age:vote[T.Labour]</th>                                                 <td>   -0.0143</td> <td>    0.010</td> <td>   -1.468</td> <td> 0.142</td> <td>   -0.033</td> <td>    0.005</td>
+  <th>age:vote[T.Labour]</th>       <td>   -0.0213</td> <td>    0.010</td> <td>   -2.133</td> <td> 0.033</td> <td>   -0.041</td> <td>   -0.002</td>
 </tr>
 </table>
 <table class="simpletable">
 <tr>
-  <th>Omnibus:</th>       <td>38.489</td> <th>  Durbin-Watson:     </th> <td>   1.982</td>
+  <th>Omnibus:</th>       <td>41.378</td> <th>  Durbin-Watson:     </th> <td>   1.968</td>
 </tr>
 <tr>
-  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  41.113</td>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  43.572</td>
 </tr>
 <tr>
-  <th>Skew:</th>          <td>-0.407</td> <th>  Prob(JB):          </th> <td>1.18e-09</td>
+  <th>Skew:</th>          <td>-0.403</td> <th>  Prob(JB):          </th> <td>3.46e-10</td>
 </tr>
 <tr>
-  <th>Kurtosis:</th>      <td> 2.903</td> <th>  Cond. No.          </th> <td>    949.</td>
+  <th>Kurtosis:</th>      <td> 2.796</td> <th>  Cond. No.          </th> <td>    951.</td>
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>The interaction <code class="docutils literal notranslate"><span class="pre">age:vote</span></code> breaks down the relationship between <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">better</span></code> into three separate relationships for the three categories of <code class="docutils literal notranslate"><span class="pre">vote</span></code></p>
+<p>We can visualize this using <code class="docutils literal notranslate"><span class="pre">sns.lmeplot</span></code> which plots the linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> - if we use the argument <code class="docutils literal notranslate"><span class="pre">hue='vote'</span></code> this will be done separately for each category of <code class="docutils literal notranslate"><span class="pre">vote</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ess</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;better&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;vote&#39;</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Labour&#39;</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;Any other party&#39;</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;Conservative&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/regression2_TutorialExercises_23_0.png" src="_images/regression2_TutorialExercises_23_0.png" />
+</div>
 </div>
 <p>Interpret the results in your own words.</p>
 <p>Check your understanding with your classmates or your tutor.</p>

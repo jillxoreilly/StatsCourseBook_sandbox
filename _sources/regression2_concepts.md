@@ -8,6 +8,8 @@ London last year, data are available on $x$ = number of firefighters
 at the fire and $y$ = cost of damages due to the fire. The correlation
 between $x$ and $y$ is positive.
 
+* Does this mean that having more firefighters at a fire causes the damage to be worse? Can you identify a third variable that could be a common cause of $x$ and $y$?
+
 ```{admonition} Click to reveal answer
 :class: dropdown
 No! Without as many firefighters, the damage could potentially be even
