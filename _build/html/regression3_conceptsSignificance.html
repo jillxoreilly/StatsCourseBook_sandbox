@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Concepts: Statistical Significance in Regression &#8212; Introduction to Statistics and Data Science</title>
+    <title>15.5. Statistical Significance in Regression &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="15.6. Assumptions in Regression" href="regression3_assumptions.html" />
+    <link rel="prev" title="15.4. Conditional Distributions" href="regression3_conceptsConditionals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -684,7 +686,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -717,6 +719,56 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="regression2_TutorialExercises.html">
      14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression - Statistical Tests
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsR2.html">
+     15.3. Model fit:
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsConditionals.html">
+     15.4. Conditional Distributions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     15.5. Statistical Significance in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_assumptions.html">
+     15.6. Assumptions in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_prepwork.html">
+     15.7. Assessing Regression models in Python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_TutorialExercises.html">
+     15.9. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -876,23 +928,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-a-slope-for-significance-example">
+   Testing a slope for significance Example
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Concepts: Statistical Significance in Regression</h1>
+                <h1>Statistical Significance in Regression</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-a-slope-for-significance-example">
+   Testing a slope for significance Example
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -900,20 +989,91 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="concepts-statistical-significance-in-regression">
-<h1>Concepts: Statistical Significance in Regression<a class="headerlink" href="#concepts-statistical-significance-in-regression" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="statistical-significance-in-regression">
+<h1><span class="section-number">15.5. </span>Statistical Significance in Regression<a class="headerlink" href="#statistical-significance-in-regression" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>What is statistical inference?</p></li>
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
-<p>Inference is drawing conclusions about the population from sample data.</p>
+<p>Inference is drawing conclusions about the population from sample data. To be able to draw conclusions about the population from the results of a regression model, we need to test whether the slope is statistically significantly different to zero.</p>
 </div>
 <p>To be able to draw conclusions about the population from the results of a regression model, we need to check two things. First, whether the slope is statistically significantly different to zero, and second, whether the regression assumptions have been met. We’ll start by thinking about testing the slope for significance.</p>
-<p>When we test a regression slope for significance, we are running a hypothesis test. We can set up the hypotheses in the following way, where <span class="math notranslate nohighlight">\(\Beta\)</span> is the slope for <span class="math notranslate nohighlight">\(x\)</span> in the population.</p>
-<p>The null hypothesis can be written as <span class="math notranslate nohighlight">\(\mathcal{H_0}: \Beta = 0 \)</span>
-And the alternative hypothesis as  <span class="math notranslate nohighlight">\(\mathcal{H_a}: \Beta \neq 0 \)</span></p>
+<p>When we test a regression slope for significance, we are running a hypothesis test. We can set up the hypotheses in the following way, where <span class="math notranslate nohighlight">\(\beta\)</span> is the slope for <span class="math notranslate nohighlight">\(x\)</span> in the population.</p>
+<p>The null hypothesis can be written as <span class="math notranslate nohighlight">\(\mathcal{H_0}: \beta = 0 \)</span>
+And the alternative hypothesis as  <span class="math notranslate nohighlight">\(\mathcal{H_a}: \beta \neq 0 \)</span></p>
 <p>Note: In regression we use the two-tailed test, as we are interested in testing whether there is <strong>an association</strong> and not to predict the direction of the association.</p>
+<p>The test for significance of a slope in regression can also be called a test of independence. We consider <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to be independent when the population mean of <span class="math notranslate nohighlight">\(y\)</span> is identical at each <span class="math notranslate nohighlight">\(x\)</span>-value, in other words, the distribution of <span class="math notranslate nohighlight">\(y\)</span> is the same at each <span class="math notranslate nohighlight">\(x\)</span>-value. For the linear regression function <span class="math notranslate nohighlight">\(y = α+ βx\)</span>, this happens when the slope <span class="math notranslate nohighlight">\(β=0\)</span>.</p>
+<p>The null hypothesis for statistical independence is thus: <span class="math notranslate nohighlight">\(\mathcal{H_0}: \beta = 0\)</span>.</p>
+<p>We test the slope for significance with a <span class="math notranslate nohighlight">\(t\)</span>-test.</p>
+<section id="testing-a-slope-for-significance-example">
+<h2>Testing a slope for significance Example<a class="headerlink" href="#testing-a-slope-for-significance-example" title="Permalink to this heading">#</a></h2>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_hat.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_hat.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_hat.png" style="width: 50%;" /></a>
+<p>The General Social Survey sampled 2,428 respondents, asking about <span class="math notranslate nohighlight">\(y\)</span> = number of years of education and <span class="math notranslate nohighlight">\(x\)</span> = number of years of mother’s education. The prediction equation  is <span class="math notranslate nohighlight">\(\hat{y} =10.5 + 0.294𝑥\)</span>. The standard error (se) of the slope is 0.0149.</p>
+<ul class="simple">
+<li><p>How do you go about testing the null hypothesis that these variables are independent? (Without Python).</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>To compute the test statistic, we use the equation:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{b}{se(b)}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(b\)</span> is the slope, and <span class="math notranslate nohighlight">\(se(b)\)</span> is the standard error of the slope.</p>
+<p>To find the critical value of <span class="math notranslate nohighlight">\(t\)</span>, we would refer to a the table of critical values of <span class="math notranslate nohighlight">\(t\)</span> (as found in the back of many statistics textbooks).</p>
+<p>When <span class="math notranslate nohighlight">\(n\)</span> is large, the critical value of <span class="math notranslate nohighlight">\(t\)</span> for <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> is 1.96. A familiar cut-off!</p>
+<p>Here, in the mother’s education example, we compute <span class="math notranslate nohighlight">\(t\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{b}{se(b)} = \frac{0.294}{0.0149} = 19.73 \]</div>
+<p>As the calculated value of <span class="math notranslate nohighlight">\(t\)</span>, 19.73, is mmuch greater than the critical value 1.96, we can reject <span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span>, i.e., there is strong evidence that number of years of mother’s education has a positive effect on number of years of education. The slope is statistically significantly different to zero.</p>
+</div>
+<ul class="simple">
+<li><p>How would you find a 95% confidence interval for the population slope.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>As you saw in back in Michaelmas Term (topic 6), we can use the standard error to find 95% confidence intervals around the slope. We do this with the following equation:</p>
+<div class="math notranslate nohighlight">
+\[CI =  b \pm t(se)\]</div>
+<p>…where <span class="math notranslate nohighlight">\(t\)</span> is the tabulated two-sided 5% level value with degrees of freedom = <span class="math notranslate nohighlight">\(n-2\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(t\)</span> = 1.96 for large samples. When n is small, refer to the table to t to find the cut-off point for testing significance</p></li>
+</ul>
+<p>Here,</p>
+<div class="math notranslate nohighlight">
+\[b \pm t(se) = 0.294 \pm 1.96(0.0149) = 0.294 \pm 0.0292 \]</div>
+<p>or:</p>
+<div class="math notranslate nohighlight">
+\[ (0.265, 0.323) \]</div>
+<p><strong>Conclusion:</strong> We can be 95% confident that <span class="math notranslate nohighlight">\(\beta\)</span> falls between 0.265 and 0.323. In other words, the mean number of years of education increases by between 0.27 and 0.32 for each additional year of the mother’s education. Note that here we can see that the 95% confidence intervals do not cross zero. This is another way to know that the slope is statistically significant.
+<strong>Technical interpretation:</strong> it is also important to understand the more technical interpretation of the 95% Confidence Interval, based on sampling theory: if the same population is sampled on numerous occasions and interval estimates are made on each occasion, the resulting intervals would bracket the true population parameter in approximately 95% of the cases.</p>
+</div>
+<p>In education example, the standard error was rather conveniently provided for us. But where did this come from?</p>
+<p>The equation for calculating the standard error is:</p>
+<div class="math notranslate nohighlight">
+\[SE(b) = \frac{b\sqrt{1-r^2}}{r\sqrt{n-2}}\]</div>
+<p>Note its familiar components! It is computed using the known values for the slope, <span class="math notranslate nohighlight">\(r,\)</span> <span class="math notranslate nohighlight">\(R^2\)</span>, and the sample size.</p>
+<p>In the immigration data from last week’s tute, the correlation between age and immigration attitudes is -0.1572, the regression slope is -0.0217, and <span class="math notranslate nohighlight">\(n\)</span> = 2,155. Test your ability to work with equations by plugging these values into excel or a calculator to find the standard error of the slope.</p>
+<ul class="simple">
+<li><p>you can check the SE calculated by Python in the regression results summary table - does it match what you calculated here?</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<div class="math notranslate nohighlight">
+\[SE(b) = \frac{b\sqrt{1-r^2}}{r\sqrt{n-2}} = \frac{-.0217\times0.975288}{-.1572\times46.40} = \frac{-.02116}{-7.29415} = 0.0029 \]</div>
+</div>
+<ul class="simple">
+<li><p>Just by eyeballing and slope and the standard error, can you tell if it is statistically significant?</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>Yes!</p>
+<p>Remember the test statistic is</p>
+<div class="math notranslate nohighlight">
+\[\frac{b}{SE(b)} = \frac{-0.0217}{0.0029}\]</div>
+<p>…which gives us a number that is higher than 1.96 (in fact <span class="math notranslate nohighlight">\(t\)</span> = -7.38).</p>
+<p>Therefore the slope is statistically significantly different to zero</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -943,6 +1103,20 @@ And the alternative hypothesis as  <span class="math notranslate nohighlight">\(
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="regression3_conceptsConditionals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">15.4. </span>Conditional Distributions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="regression3_assumptions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">15.6. </span>Assumptions in Regression</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

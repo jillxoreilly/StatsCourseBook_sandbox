@@ -21,7 +21,7 @@ print('mean change = ' + str(##### your code here #####)
 print('n = ' + str(##### your code here #####))
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_3138/997001711.py"[0;36m, line [0;32m2[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_29554/997001711.py"[0;36m, line [0;32m2[0m
 [0;31m    print('n = ' + str(##### your code here #####))[0m
 [0m                                                   ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m unexpected EOF while parsing

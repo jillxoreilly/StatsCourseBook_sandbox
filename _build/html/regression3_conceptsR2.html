@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Concepts: \(R^2\) &#8212; Introduction to Statistics and Data Science</title>
+    <title>15.3. Model fit: \(R^2\) &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="15.4. Conditional Distributions" href="regression3_conceptsConditionals.html" />
+    <link rel="prev" title="15.2. Learning Objectives" href="regression3_outcomes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -684,7 +686,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -717,6 +719,56 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="regression2_TutorialExercises.html">
      14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression - Statistical Tests
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     15.3. Model fit:
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsConditionals.html">
+     15.4. Conditional Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsSignificance.html">
+     15.5. Statistical Significance in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_assumptions.html">
+     15.6. Assumptions in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_prepwork.html">
+     15.7. Assessing Regression models in Python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_TutorialExercises.html">
+     15.9. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -888,7 +940,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Concepts: R^2</h1>
+                <h1>Model fit: R^2</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -900,8 +952,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="concepts-r-2">
-<h1>Concepts: <span class="math notranslate nohighlight">\(R^2\)</span><a class="headerlink" href="#concepts-r-2" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-fit-r-2">
+<h1><span class="section-number">15.3. </span>Model fit: <span class="math notranslate nohighlight">\(R^2\)</span><a class="headerlink" href="#model-fit-r-2" title="Permalink to this heading">#</a></h1>
+<br>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_church.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_church.jpg" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_church.jpg" style="width: 50%;" /></a>
+<br>
 <p>We’ll begin with the by-now familiar correlation coefficient, in the
 following <strong>example</strong>: Who marries whom is the subject of intense
 interest in groups ranging from tabloid readers to behaviour
@@ -927,9 +982,13 @@ sample association is strong or weak?</p></li>
 <p><span class="math notranslate nohighlight">\(r^2 = 0.81^2 = 0.656\)</span></p>
 </div>
 <p>The <span class="math notranslate nohighlight">\(R^2\)</span> summarises how well <span class="math notranslate nohighlight">\(x\)</span> can predict <span class="math notranslate nohighlight">\(y\)</span>. The <span class="math notranslate nohighlight">\(R^2\)</span> is a measure of the proportional reduction in prediction error, when <span class="math notranslate nohighlight">\(x\)</span> is used to predict <span class="math notranslate nohighlight">\(y\)</span>, compared to when <span class="math notranslate nohighlight">\(\bar{y}\)</span>̅ is used to predict <span class="math notranslate nohighlight">\(y\)</span>.
-An <span class="math notranslate nohighlight">\(R^2\)</span> of 0.656 means that for predicting <span class="math notranslate nohighlight">\(y\)</span> = whether spouse B attends church, the linear prediction equation which uses <span class="math notranslate nohighlight">\(x\)</span> = whether spouse A attends church, as an explanatory variable, has 65.6% less error, than if <span class="math notranslate nohighlight">\(\bar{y}̅\)</span> is used to predict <span class="math notranslate nohighlight">\(y\)</span> (whether spouse B attends church).</p>
+An <span class="math notranslate nohighlight">\(R^2\)</span> of 0.656 means that for predicting</p>
 <ul class="simple">
-<li><p>R-Squared is also known as the ‘proportional reduction of
+<li><p><span class="math notranslate nohighlight">\(y\)</span> = whether spouse B attends church,
+…the linear prediction equation which uses</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> = whether spouse A attends church,
+…as an explanatory variable, has 65.6% less error, than if <span class="math notranslate nohighlight">\(\bar{y}\)</span> is used to predict <span class="math notranslate nohighlight">\(y\)</span> (whether spouse B attends church).</p></li>
+<li><p><span class="math notranslate nohighlight">\(R^2\)</span> is also known as the ‘proportional reduction of
 error’. Why is this?</p></li>
 </ul>
 <div class="dropdown admonition">
@@ -938,7 +997,7 @@ error’. Why is this?</p></li>
 <div class="math notranslate nohighlight">
 \[R^2 = r^2 = \frac{(TSS -SSE)}{TSS}\]</div>
 <p>Where TSS = Total Sum of Squares (residuals from <span class="math notranslate nohighlight">\(\bar{y}\)</span>)</p>
-<p>And SSE = Sum of Squared Errors (residuals from $\hat{y})</p>
+<p>And SSE = Sum of Squared Errors (residuals from <span class="math notranslate nohighlight">\(\hat{y}\)</span>)</p>
 <p>And yes, this turns out to be the equivalent of squaring the correlation coefficient!</p>
 </div>
 <ul class="simple">
@@ -984,6 +1043,20 @@ effective the least squares line is in predicting <span class="math notranslate 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="regression3_outcomes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">15.2. </span>Learning Objectives</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="regression3_conceptsConditionals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">15.4. </span>Conditional Distributions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

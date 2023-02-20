@@ -682,7 +682,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -715,6 +715,56 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="regression2_TutorialExercises.html">
      14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression - Statistical Tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsR2.html">
+     15.3. Model fit:
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsConditionals.html">
+     15.4. Conditional Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsSignificance.html">
+     15.5. Statistical Significance in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_assumptions.html">
+     15.6. Assumptions in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_prepwork.html">
+     15.7. Assessing Regression models in Python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_TutorialExercises.html">
+     15.9. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -1323,105 +1373,79 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-KeyboardInterrupt                         Traceback (most recent call last)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_3233/4122011182.py in &lt;module&gt;
-----&gt; 1 sns.jointplot(data=heartAttack, x=&#39;AGE&#39;, y=&#39;LOS&#39;, kind=&#39;hist&#39;)
-      2 plt.ylim([0, 40])
-      3 plt.xlim([0, 100])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_29666</span><span class="o">/</span><span class="mf">4122011182.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heartAttack</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LOS&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_decorators.py in inner_f(*args, **kwargs)
-     44             )
-     45         kwargs.update({k: arg for k, arg in zip(sig.parameters, args)})
----&gt; 46         return f(**kwargs)
-     47     return inner_f
-     48 
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_decorators.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="p">)</span>
+<span class="nn">     45         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
 
-~/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py in jointplot(x, y, data, kind, color, height, ratio, space, dropna, xlim, ylim, marginal_ticks, joint_kws, marginal_kws, hue, palette, hue_order, hue_norm, **kwargs)
-   2275                 marg_y_kws.setdefault(key, y_val)
-   2276 
--&gt; 2277         histplot(data=data, x=x, hue=hue, **marg_x_kws, ax=grid.ax_marg_x)
-   2278         histplot(data=data, y=y, hue=hue, **marg_y_kws, ax=grid.ax_marg_y)
-   2279 
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py</span> in <span class="ni">jointplot</span><span class="nt">(x, y, data, kind, color, height, ratio, space, dropna, xlim, ylim, marginal_ticks, joint_kws, marginal_kws, hue, palette, hue_order, hue_norm, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2260</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2261</span>         <span class="n">joint_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2262</span>         <span class="n">grid</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span><span class="n">histplot</span><span class="p">,</span> <span class="o">**</span><span class="n">joint_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2263</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2264</span>         <span class="n">marginal_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py in histplot(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)
-   1460     if p.univariate:
-   1461 
--&gt; 1462         p.plot_univariate_histogram(
-   1463             multiple=multiple,
-   1464             element=element,
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py</span> in <span class="ni">plot_joint</span><span class="nt">(self, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1804</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1805</span>         <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;seaborn&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1806</span>             <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1807</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1808</span>             <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py in plot_univariate_histogram(self, multiple, element, fill, common_norm, common_bins, shrink, kde, kde_kws, color, legend, line_kws, estimate_kws, **plot_kws)
-    563 
-    564                 plot_func = ax.bar if self.data_variable == &quot;x&quot; else ax.barh
---&gt; 565                 artists = plot_func(
-    566                     hist[&quot;edges&quot;],
-    567                     hist[&quot;heights&quot;] - bottom,
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py</span> in <span class="ni">histplot</span><span class="nt">(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1478</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1479</span> 
+<span class="ne">-&gt; </span><span class="mi">1480</span>         <span class="n">p</span><span class="o">.</span><span class="n">plot_bivariate_histogram</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1481</span>             <span class="n">common_bins</span><span class="o">=</span><span class="n">common_bins</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1482</span>             <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py in inner(ax, data, *args, **kwargs)
-   1410     def inner(ax, *args, data=None, **kwargs):
-   1411         if data is None:
--&gt; 1412             return func(ax, *map(sanitize_sequence, args), **kwargs)
-   1413 
-   1414         bound = new_sig.bind(ax, *args, **kwargs)
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py</span> in <span class="ni">plot_bivariate_histogram</span><span class="nt">(self, common_bins, common_norm, thresh, pthresh, pmax, color, legend, cbar, cbar_ax, cbar_kws, estimate_kws, **plot_kws)</span>
+<span class="nn">    847             y_grid = any([l.get_visible() for l</span> in <span class="ni">ax.yaxis.get_gridlines</span><span class="nt">()])</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span> 
+<span class="ne">--&gt; </span><span class="mi">849</span>             <span class="n">mesh</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>                 <span class="n">x_edges</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span>                 <span class="n">y_edges</span><span class="p">,</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py in bar(self, x, height, width, bottom, align, **kwargs)
-   2407             elif orientation == &#39;horizontal&#39;:
-   2408                 r.sticky_edges.x.append(l)
--&gt; 2409             self.add_patch(r)
-   2410             patches.append(r)
-   2411 
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py</span> in <span class="ni">inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1410</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1411</span>         <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1412</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1413</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1414</span>         <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_base.py in add_patch(self, p)
-   2360         self._set_artist_props(p)
-   2361         if p.get_clip_path() is None:
--&gt; 2362             p.set_clip_path(self.patch)
-   2363         self._update_patch_limits(p)
-   2364         self._children.append(p)
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">pcolormesh</span><span class="nt">(self, alpha, norm, cmap, vmin, vmax, shading, antialiased, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6085</span> 
+<span class="g g-Whitespace">   </span><span class="mi">6086</span>         <span class="n">minx</span><span class="p">,</span> <span class="n">miny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">6087</span>         <span class="n">maxx</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6088</span>         <span class="n">collection</span><span class="o">.</span><span class="n">sticky_edges</span><span class="o">.</span><span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">minx</span><span class="p">,</span> <span class="n">maxx</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">6089</span>         <span class="n">collection</span><span class="o">.</span><span class="n">sticky_edges</span><span class="o">.</span><span class="n">y</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">miny</span><span class="p">,</span> <span class="n">maxy</span><span class="p">]</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/artist.py in set_clip_path(self, path, transform)
-    788             if isinstance(path, Rectangle):
-    789                 self.clipbox = TransformedBbox(Bbox.unit(),
---&gt; 790                                                path.get_transform())
-    791                 self._clippath = None
-    792                 success = True
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">amax</span><span class="nt">(*args, **kwargs)</span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/patches.py in get_transform(self)
-    276     def get_transform(self):
-    277         &quot;&quot;&quot;Return the `~.transforms.Transform` applied to the `Patch`.&quot;&quot;&quot;
---&gt; 278         return self.get_patch_transform() + artist.Artist.get_transform(self)
-    279 
-    280     def get_data_transform(self):
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/fromnumeric.py</span> in <span class="ni">amax</span><span class="nt">(a, axis, out, keepdims, initial, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2752</span>     <span class="mi">5</span>
+<span class="g g-Whitespace">   </span><span class="mi">2753</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">2754</span><span class="s2">     return _wrapreduction(a, np.maximum, &#39;max&#39;, axis, None, out,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2755</span><span class="s2">                           keepdims=keepdims, initial=initial, where=where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2756</span><span class="s2"> </span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/patches.py in get_patch_transform(self)
-    758         bbox = self.get_bbox()
-    759         return (transforms.BboxTransformTo(bbox)
---&gt; 760                 + transforms.Affine2D().rotate_deg_around(
-    761                     bbox.x0, bbox.y0, self.angle))
-    762 
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/fromnumeric.py</span> in <span class="ni">_wrapreduction</span><span class="nt">(obj, ufunc, method, axis, dtype, out, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2">                 return reduction(axis=axis, out=out, **passkwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2"> </span>
+<span class="ne">---&gt; </span><span class="mi">86</span><span class="s2">     return ufunc.reduce(obj, axis, dtype, out, **passkwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2"> </span>
 
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py in rotate_deg_around(self, x, y, degrees)
-   2040         # Cast to float to avoid wraparound issues with uint8&#39;s
-   2041         x, y = float(x), float(y)
--&gt; 2042         return self.translate(-x, -y).rotate_deg(degrees).translate(x, y)
-   2043 
-   2044     def translate(self, tx, ty):
-
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py in rotate_deg(self, degrees)
-   2018         and :meth:`scale`.
-   2019         &quot;&quot;&quot;
--&gt; 2020         return self.rotate(math.radians(degrees))
-   2021 
-   2022     def rotate_around(self, x, y, theta):
-
-~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py in rotate(self, theta)
-   2004         a = math.cos(theta)
-   2005         b = math.sin(theta)
--&gt; 2006         rotate_mtx = np.array([[a, -b, 0.0], [b, a, 0.0], [0.0, 0.0, 1.0]],
-   2007                               float)
-   2008         self._mtx = np.dot(rotate_mtx, self._mtx)
-
-KeyboardInterrupt: 
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

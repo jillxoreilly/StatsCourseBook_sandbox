@@ -118,7 +118,15 @@ chapters:
   - file: regression2_typesOfRelationship.md
   - file: regression2_QandA.md
   - file: regression2_TutorialExercises.ipynb
-  
+- file: regression3_intro.md
+  sections:
+  - file: regression3_outcomes.md
+  - file: regression3_conceptsR2.md
+  - file: regression3_conceptsConditionals.md
+  - file: regression3_conceptsSignificance.md
+  - file: regression3_assumptions.md
+  - file: regression3_prepwork.ipynb
+  - file: regression3_TutorialExercises.ipynb
 
   
   

@@ -686,7 +686,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -719,6 +719,56 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="regression2_TutorialExercises.html">
      14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression - Statistical Tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsR2.html">
+     15.3. Model fit:
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsConditionals.html">
+     15.4. Conditional Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsSignificance.html">
+     15.5. Statistical Significance in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_assumptions.html">
+     15.6. Assumptions in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_prepwork.html">
+     15.7. Assessing Regression models in Python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_TutorialExercises.html">
+     15.9. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -1105,16 +1155,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample 0 = [1 3 2 2]
-sample 1 = [2 3 2 1]
-sample 2 = [3 1 2 2]
-sample 3 = [1 3 2 2]
-sample 4 = [2 2 1 3]
-sample 5 = [2 1 3 2]
-sample 6 = [2 2 3 1]
-sample 7 = [3 2 2 1]
-sample 8 = [1 2 2 3]
-sample 9 = [1 3 2 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample 0 = [3 2 2 1]
+sample 1 = [3 1 2 2]
+sample 2 = [2 3 1 2]
+sample 3 = [2 3 1 2]
+sample 4 = [1 3 2 2]
+sample 5 = [3 2 1 2]
+sample 6 = [2 3 1 2]
+sample 7 = [2 3 1 2]
+sample 8 = [2 3 1 2]
+sample 9 = [3 1 2 2]
 </pre></div>
 </div>
 </div>
@@ -1269,19 +1319,19 @@ sample 9 = [1 2 2 3]
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>Betty</td>
-      <td>cat</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Egbert</td>
-      <td>cat</td>
+      <th>6</th>
+      <td>Georgia</td>
+      <td>dog</td>
     </tr>
     <tr>
       <th>5</th>
       <td>Freddie</td>
       <td>rabbit</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>David</td>
+      <td>dog</td>
     </tr>
   </tbody>
 </table>
@@ -1319,19 +1369,14 @@ sample 9 = [1 2 2 3]
   </thead>
   <tbody>
     <tr>
-      <th>5</th>
-      <td>Freddie</td>
-      <td>rabbit</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Freddie</td>
-      <td>rabbit</td>
-    </tr>
-    <tr>
       <th>3</th>
       <td>David</td>
       <td>dog</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Egbert</td>
+      <td>cat</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1339,23 +1384,28 @@ sample 9 = [1 2 2 3]
       <td>dog</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>Charley</td>
+      <th>7</th>
+      <td>Henrietta</td>
       <td>cat</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Charley</td>
-      <td>cat</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>David</td>
-      <td>dog</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Betty</td>
+      <td>cat</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Freddie</td>
+      <td>rabbit</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Georgia</td>
+      <td>dog</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Anna</td>
       <td>cat</td>
     </tr>
   </tbody>
@@ -1370,14 +1420,14 @@ sample 9 = [1 2 2 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3       dog
-2       cat
-2       cat
-6       dog
-4       cat
-2       cat
-5    rabbit
-5    rabbit
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    dog
+0    cat
+3    dog
+1    cat
+4    cat
+0    cat
+2    cat
+7    cat
 Name: Pet, dtype: object
 </pre></div>
 </div>
@@ -1391,7 +1441,7 @@ Name: Pet, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>

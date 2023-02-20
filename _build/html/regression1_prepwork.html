@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13.7. Regression models in Python" href="regression1_TutorialExercises.html" />
+    <link rel="next" title="13.7. Tutorial Exercises" href="regression1_TutorialExercises.html" />
     <link rel="prev" title="13.4. Regression, Covariance and Correlation Q&amp;A" href="regression1_QandA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -686,7 +686,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -719,6 +719,56 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="regression2_TutorialExercises.html">
      14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression - Statistical Tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsR2.html">
+     15.3. Model fit:
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsConditionals.html">
+     15.4. Conditional Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsSignificance.html">
+     15.5. Statistical Significance in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_assumptions.html">
+     15.6. Assumptions in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_prepwork.html">
+     15.7. Assessing Regression models in Python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_TutorialExercises.html">
+     15.9. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -1130,15 +1180,13 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (0.13.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.17 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.21.5)
-Requirement already satisfied: scipy&gt;=1.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
-Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (21.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (21.3)
 Requirement already satisfied: patsy&gt;=0.5.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (0.5.2)
 Requirement already satisfied: pandas&gt;=0.25 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.4.4)
+Requirement already satisfied: scipy&gt;=1.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
+Requirement already satisfied: numpy&gt;=1.17 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.21.5)
 Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
 Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
 </pre></div>
@@ -1290,10 +1338,10 @@ Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.738</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
+  <th>Date:</th>             <td>Mon, 20 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:11:28</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
+  <th>Time:</th>                 <td>12:23:35</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    10</td>      <th>  AIC:               </th> <td>   22.22</td>
@@ -1696,10 +1744,10 @@ dtype: float64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.266</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
+  <th>Date:</th>             <td>Mon, 20 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:11:28</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
+  <th>Time:</th>                 <td>12:23:35</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     8</td>      <th>  AIC:               </th> <td>   11.99</td>
@@ -1927,10 +1975,10 @@ dtype: float64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   2200.</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
+  <th>Date:</th>             <td>Mon, 20 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>21:11:29</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
+  <th>Time:</th>                 <td>12:23:35</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  3000</td>      <th>  AIC:               </th> <td>  -2323.</td>
@@ -2033,7 +2081,7 @@ dtype: float64
     <a class='right-next' id="next-link" href="regression1_TutorialExercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13.7. </span>Regression models in Python</p>
+        <p class="prev-next-title"><span class="section-number">13.7. </span>Tutorial Exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

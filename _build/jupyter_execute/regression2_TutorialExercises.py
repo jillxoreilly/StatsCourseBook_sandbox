@@ -235,6 +235,8 @@ reg_results.summary()
  
 
 
+# #### Interpretation
+# 
 # The interaction `age:vote` breaks down the relationship between `age` and `better` into three separate relationships for the three categories of `vote`
 # 
 # We can visualize this using `sns.lmeplot` which plots the linear relationship between $x$ and $y$ - if we use the argument `hue='vote'` this will be done separately for each category of `vote`
@@ -250,7 +252,7 @@ plt.show()
 # 
 # Check your understanding with your classmates or your tutor. 
 # 
-# (Hint: where is the gap between the political parties is smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?) 
+# (Hint: where is the gap between between Labour and Conservative supporters smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?) 
 
 # ## Further Exercises
 # 

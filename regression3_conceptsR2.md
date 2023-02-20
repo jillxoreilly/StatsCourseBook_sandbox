@@ -1,4 +1,13 @@
-#  Concepts: $R^2$
+#  Model fit: $R^2$
+
+<br>
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_church.jpg
+:width: 50%
+:align: center
+```
+
+<br>
 
 We’ll begin with the by-now familiar correlation coefficient, in the
 following **example**: Who marries whom is the subject of intense
@@ -27,9 +36,13 @@ $r^2 = 0.81^2 = 0.656$
 ```
 
 The $R^2$ summarises how well $x$ can predict $y$. The $R^2$ is a measure of the proportional reduction in prediction error, when $x$ is used to predict $y$, compared to when $\bar{y}$̅ is used to predict $y$. 
-An $R^2$ of 0.656 means that for predicting $y$ = whether spouse B attends church, the linear prediction equation which uses $x$ = whether spouse A attends church, as an explanatory variable, has 65.6% less error, than if $\bar{y}̅$ is used to predict $y$ (whether spouse B attends church).
+An $R^2$ of 0.656 means that for predicting
+* $y$ = whether spouse B attends church,
+...the linear prediction equation which uses
+* $x$ = whether spouse A attends church,
+...as an explanatory variable, has 65.6% less error, than if $\bar{y}$ is used to predict $y$ (whether spouse B attends church).
 
-* R-Squared is also known as the ‘proportional reduction of
+* $R^2$ is also known as the ‘proportional reduction of
 error’. Why is this?
 
 ```{admonition} Click to reveal answer
@@ -41,7 +54,7 @@ $$R^2 = r^2 = \frac{(TSS -SSE)}{TSS}$$
 
 Where TSS = Total Sum of Squares (residuals from $\bar{y}$)
 
-And SSE = Sum of Squared Errors (residuals from $\hat{y})
+And SSE = Sum of Squared Errors (residuals from $\hat{y}$)
 
 And yes, this turns out to be the equivalent of squaring the correlation coefficient!
 ```

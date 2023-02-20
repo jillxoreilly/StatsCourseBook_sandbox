@@ -2,10 +2,10 @@
 
 Conceptual
 
-This week we have introduced multivariate analysis. After this week, you should be able to:
+After this week, you should be able to:
 
-* Understand the equation and interpretation of R-squared.
-* Understand the equation and how to interpret the significance test on the slope.
+* Understand the equation and interpretation of R-squared and the Root-Mean-Square-Error
+* Understand the equation for finding the standard error and how to interpret the significance test on the slope
 * Understand the standard error, t-statistic, and significance level in the regression table.
 * Assess whether regression assumptions have been met.
 
@@ -15,7 +15,6 @@ Python Skills
 
 We will be working with `statsmodels` in Python again. This week, you will learn to:
 
-*	Explore model assumptions including outliers and heteroskedasticity.
-*	Use p-value and significance levels on intercept and slope. 
-*	Plot a regression line with 95% confidence intervals.
-*	Plot a ‘coefplot’ with error bars
+*	Explore model assumptions using graphs in Python
+*	Find p-value and significance levels on intercept and slope
+*	Find R-squared and RMSE and interpret
