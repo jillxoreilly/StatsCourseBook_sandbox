@@ -36,7 +36,7 @@ plt.ylabel('frequency')
 plt.show()
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_3747/1606035672.py"[0;36m, line [0;32m6[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_30315/1606035672.py"[0;36m, line [0;32m6[0m
 [0;31m    d3 = .....[0m
 [0m             ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
