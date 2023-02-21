@@ -115,11 +115,21 @@ import statsmodels.formula.api as smf
 # Your code here
 
 
-# Let's also trying checking the assumption of constant variance: can you plot a scatter plot of residuals ($y$-axis) and $\hat{y}$ ($x$-axis). 
+# Let's also trying checking the assumption of constant variance: can you plot a scatter plot of residuals ($y$-axis) and $\hat{y}$ ($x$-axis)?
 # 
 # Residuals are found in `reg_results.resid` and $\hat{y}$ is obtained using `reg_results.predict()`
 # 
 # Do you think the variance in the residuals looks roughly constant for all values of $\hat{y}$?
+
+# In[8]:
+
+
+# Your code here
+
+
+# The variance of the residuals looks roughly similar at all values of yhat. It looks like the constant variance assumption has been met
+# 
+# We'll come back to the other assumptions next term!
 
 # In[ ]:
 
