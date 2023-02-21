@@ -126,55 +126,15 @@ reg_results.mse_resid**0.5
 # * whether there is heteroskedasticity in the residuals
 # * whether the residuals are normally distributed
 # 
-# We can get a good sense of these from plotting
-# 
-# LINDSAY - MOST OF THESE PLOTS LOOK FUNNY IN THIS CASE AS Y IS DISCRETE. 
-# 
-# I have tried a couple of plots as recommended in <a href='https://towardsdatascience.com/verifying-the-assumptions-of-linear-regression-in-python-and-r-f4cd2907d4c0'>THIS BLOG</a> but they were more convincing for the dataset on the blog! I gues sthe lack of obvious violation of assumptions here, and the discrete data, make it less visually striking
-# 
-# I also tried my own versions (the shaded ones), adding a referene line in red - the reference lines are x=y for y vs yhat and y=0 for yhat vs resid - this could be good as students could think about why these are the relevant reference lines - I have talked quite a bit about what the line x=y tells us on a scatterplot so this should be a bit familiar. That said, for the current case I don't think the conclusions are super clear as there is no obvious violation of the regression assumptions
-# 
-# The bottom one (histogram of resids) is straightforward and the light touch option would be to include only that one
-# 
-# Should add that the code to get the y values will probably bambboozle students - they can't just use the relevant columns from the original dataframe as yhat is smaller (due to excluded cases)
+# For now, let's just take a look at the last of these three assumptions and plot a histogram of the residuals:
 
 # In[6]:
 
 
-# Is the relationship between predicted values (yhat) and observed values (y) linear?
-sns.regplot(x=reg_results.predict(), y=reg_formula.endog, lowess=True, line_kws={'color': 'red'}) # note that the y values to which the regression was fitted are stored in `reg_formula` not `reg_results` and are called `endog`
-plt.xlabel('predicted values')
-plt.ylabel('observed values')
-
-
-# In[7]:
-
-
-sns.kdeplot(x=reg_results.predict(), y=reg_formula.endog, shade=True)
-plt.plot([4,8],[4,8],'r')
-
-
-# In[8]:
-
-
-# Is the relationship between predicted values (yhat) and residuals (y-yhat) linear and homoskedastic?
-sns.regplot(x=reg_results.predict(), y=reg_results.resid, lowess=True, line_kws={'color': 'red'}) # note that the y values to which the regression was fitted are stored in `reg_formula` not `reg_results` and are called `endog`
-plt.xlabel('predicted values')
-plt.ylabel('residuals')
-
-
-# In[9]:
-
-
-sns.kdeplot(x=reg_results.predict(), y=reg_results.resid, shade=True)
-plt.plot([4,8],[0,0],'r')
-
-
-# In[10]:
-
-
 sns.histplot(reg_results.resid)
 
+
+# The residuals look roughly normally distributed. It looks like the normality assumption has been met
 
 # In[ ]:
 

@@ -107,7 +107,7 @@ import statsmodels.formula.api as smf
 
 # ### Check the regression assumptions. 
 # 
-# Refer back to section 15.7 for the code for three plots.
+# First, check whether the residuals are normally distributed by plotting a histogram of the residuals (refer bback to the preparatory notebook for an example). Do you think this assumption has been met?
 
 # In[7]:
 
@@ -115,12 +115,11 @@ import statsmodels.formula.api as smf
 # Your code here
 
 
-# What conclusions can you draw about the following assumptions?
+# Let's also trying checking the assumption of constant variance: can you plot a scatter plot of residuals ($y$-axis) and $\hat{y}$ ($x$-axis). 
 # 
-# 1.	Linearity
-# 2.	Constant variance (homoscedasticity)
-# 3.	Normally distributed residuals
+# Residuals are found in `reg_results.resid` and $\hat{y}$ is obtained using `reg_results.predict()`
 # 
+# Do you think the variance in the residuals looks roughly constant for all values of $\hat{y}$?
 
 # In[ ]:
 

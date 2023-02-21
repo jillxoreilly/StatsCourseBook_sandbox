@@ -1206,7 +1206,7 @@ title="Print to PDF"
 </section>
 <section id="check-the-regression-assumptions">
 <h2>Check the regression assumptions.<a class="headerlink" href="#check-the-regression-assumptions" title="Permalink to this heading">#</a></h2>
-<p>Refer back to section 15.7 for the code for three plots.</p>
+<p>First, check whether the residuals are normally distributed by plotting a histogram of the residuals (refer bback to the preparatory notebook for an example). Do you think this assumption has been met?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
@@ -1214,12 +1214,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>What conclusions can you draw about the following assumptions?</p>
-<ol class="simple">
-<li><p>Linearity</p></li>
-<li><p>Constant variance (homoscedasticity)</p></li>
-<li><p>Normally distributed residuals</p></li>
-</ol>
+<p>Let’s also trying checking the assumption of constant variance: can you plot a scatter plot of residuals (<span class="math notranslate nohighlight">\(y\)</span>-axis) and <span class="math notranslate nohighlight">\(\hat{y}\)</span> (<span class="math notranslate nohighlight">\(x\)</span>-axis).</p>
+<p>Residuals are found in <code class="docutils literal notranslate"><span class="pre">reg_results.resid</span></code> and <span class="math notranslate nohighlight">\(\hat{y}\)</span> is obtained using <code class="docutils literal notranslate"><span class="pre">reg_results.predict()</span></code></p>
+<p>Do you think the variance in the residuals looks roughly constant for all values of <span class="math notranslate nohighlight">\(\hat{y}\)</span>?</p>
 </section>
 </section>
 
