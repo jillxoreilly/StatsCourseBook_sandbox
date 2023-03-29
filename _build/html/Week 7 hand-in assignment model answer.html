@@ -1,0 +1,1659 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week 7 Assignment model answer &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   2. Describing data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     2.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_MeanAndMedian.html">
+     2.4. Mean and Median
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_SDandIQR.html">
+     2.5. Standard deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_DataCleaning.html">
+     2.6. Data cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_groupby.html">
+     2.7. Grouping data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_PythonCheck.html">
+     2.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="plotting_intro.html">
+   3. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_histogram.html">
+     3.3. Histogram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_KDE.html">
+     3.4. KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_boxplot.html">
+     3.5. Boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_scatterplot.html">
+     3.6. Scatterplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_pandas.html">
+     3.7. Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_tweaks.html">
+     3.8. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_additionalMaterials.html">
+     3.9. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_TutorialExercises.html">
+     3.10. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CorrCov_intro.html">
+   4. Correlation and Covariance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_outcomes.html">
+     4.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_conceptCheck.html">
+     4.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_introCorrCov.html">
+     4.4. Covariance and Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_ClimateExample.html">
+     4.6. Climate example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_Spearman.html">
+     4.7. Spearman’s Rank Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_PythonCheck.html">
+     4.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_TutorialExercises.html">
+     4.9. Tutorial Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_HandInAssignment.html">
+     4.10. Hand-in Assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="binomial_overallIntro.html">
+   5. Data generating distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_intro.html">
+     5.1. The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_objectives.html">
+     5.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_singlecoin.html">
+     5.3. Simulated coin toss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_10000reps.html">
+     5.4. Repeat the simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_nandp.html">
+     5.5. Changing
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(p\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PMFandCDF.html">
+     5.6. Binomial PMF and CDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_normal.html">
+     5.7. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PythonCheck.html">
+     5.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises1.html">
+     5.9. Tutorial Exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises2.html">
+     5.10. Tutorial Exercises II
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
+   6. The Central Limit Theorem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_outcomes.html">
+     6.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_sampling.html">
+     6.3. Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_CI.html">
+     6.5. Estimating the sampling distribution
+     <i>
+      from a sample
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_TutorialExercises.html">
+     6.7. Tutorial exercises I: The Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_Tutorial2tdist.html">
+     6.10. Tutorial Exercises II: the
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Assignment_intro.html">
+   8. Christmas vacation assignment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IMDb_exercise.html">
+     8.1. Movie data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Cheatsheet_intro.html">
+   9. Python Cheatsheet
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coding_cheatsheet.html">
+     9.1. Coding support sheet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="permutation_intro.html">
+   10. Permutation Testing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     10.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_paired.html">
+     10.4. Permutation test for paired data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_independentSamples.html">
+     10.5. Permutation test for unpaired or independent samples data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_correlation.html">
+     10.6. Permutation test for correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_more.html">
+     10.7. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="power_intro.html">
+   12. Power analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_outcomes.html">
+     12.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_conceptCheck.html">
+     12.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_analysis.html">
+     12.4. Sensitivity, power, reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_placeholder.html">
+     12.9. Tutorial work and Hand in assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CSVreading_instructions.html">
+     12.10. Loading data from a .csv file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression1_intro.html">
+   13. Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_outcomes.html">
+     13.1. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_concepts.html">
+     13.2. Regression Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_interpretingSlope.html">
+     13.3. Interpreting the slope and intercept, prediction and residuals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_QandA.html">
+     13.4. Regression, Covariance and Correlation Q&amp;A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_prepwork.html">
+     13.5. Regression models in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_TutorialExercises.html">
+     13.7. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression2_intro.html">
+   14. Multivariate Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_concepts.html">
+     14.2. Multivariate Analysis Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_typesOfRelationship.html">
+     14.3. Different types of multivariate relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_QandA.html">
+     14.4. Multiple Regression Q &amp; A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_TutorialExercises.html">
+     14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression - Statistical Tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsR2.html">
+     15.3. Model fit:
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsConditionals.html">
+     15.4. Conditional Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_conceptsSignificance.html">
+     15.5. Statistical Significance in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_assumptions.html">
+     15.6. Assumptions in Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_prepwork.html">
+     15.7. Assessing Regression models in Python.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_TutorialExercises.html">
+     15.9. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression4_intro.html">
+   16. ANOVA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_outcomes.html">
+     16.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_concepts.html">
+     16.3. ANOVA Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_longhandExample.html">
+     16.4. Longhand calculation example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_equations.html">
+     16.5. ANOVA Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_KWtest.html">
+     16.6. Kruskall-Wallis test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_ANOVAregression.html">
+     16.7. ANOVA versus Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_prepwork.html">
+     16.8. ANOVA and Kruskal-Wallis in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_TutorialExercises.html">
+     16.9. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression5_intro.html">
+   17. Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_outcomes.html">
+     17.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_concepts.html">
+     17.3. Odds, logs and log odds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_LogisticEquation.html">
+     17.4. Logistic Regression Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_workedExample.html">
+     17.5. Predicted probabilities (worked example)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_prepwork.html">
+     17.6. Logistic Regression in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_TutorialExercises.html">
+     17.7. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression6_intro.html">
+   18. Research Design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_outcomes.html">
+     18.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_concepts.html">
+     18.3. Research Design Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_causality.html">
+     18.4. Causality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_TutorialExercises.html">
+     18.5. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Week 7 hand-in assignment model answer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Week 7 hand-in assignment model answer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FWeek 7 hand-in assignment model answer.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Week 7 hand-in assignment model answer.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Week 7 Assignment model answer</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="week-7-assignment-model-answer">
+<h1>Week 7 Assignment model answer<a class="headerlink" href="#week-7-assignment-model-answer" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Part 1: loading data and introduction</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/happy.csv&#39;</span><span class="p">)</span>
+<span class="n">happy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>happy</th>
+      <th>ladder</th>
+      <th>sex</th>
+      <th>marital</th>
+      <th>educ</th>
+      <th>work</th>
+      <th>income</th>
+      <th>region</th>
+      <th>age</th>
+      <th>leftout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Male</td>
+      <td>Married/living with a partner</td>
+      <td>Lower secondary or below</td>
+      <td>Employed</td>
+      <td>Low-medium</td>
+      <td>South East</td>
+      <td>36</td>
+      <td>Agree</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7</td>
+      <td>7</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Lower secondary or below</td>
+      <td>Employed</td>
+      <td>Low</td>
+      <td>South East</td>
+      <td>53</td>
+      <td>Disagree</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>10</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Tertiary education</td>
+      <td>Employed</td>
+      <td>Medium-high</td>
+      <td>North West</td>
+      <td>60</td>
+      <td>Disagree</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>7</td>
+      <td>Female</td>
+      <td>Married/living with a partner</td>
+      <td>Upper secondary education</td>
+      <td>Employed</td>
+      <td>Medium-high</td>
+      <td>East of England</td>
+      <td>41</td>
+      <td>Disagree</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>8</td>
+      <td>Male</td>
+      <td>Married/living with a partner</td>
+      <td>Tertiary education</td>
+      <td>Other</td>
+      <td>NaN</td>
+      <td>London</td>
+      <td>70</td>
+      <td>Neither agree nor disagree</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>9</td>
+      <td>8</td>
+      <td>Female</td>
+      <td>Married/living with a partner</td>
+      <td>Tertiary education</td>
+      <td>Employed</td>
+      <td>High</td>
+      <td>London</td>
+      <td>34</td>
+      <td>Strongly disagree</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>8</td>
+      <td>6</td>
+      <td>Male</td>
+      <td>Single</td>
+      <td>Lower secondary or below</td>
+      <td>Employed</td>
+      <td>Low-medium</td>
+      <td>South East</td>
+      <td>66</td>
+      <td>Neither agree nor disagree</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>6</td>
+      <td>5</td>
+      <td>Male</td>
+      <td>Married/living with a partner</td>
+      <td>Lower secondary or below</td>
+      <td>Employed</td>
+      <td>Low-medium</td>
+      <td>Yorkshire and the Humber</td>
+      <td>55</td>
+      <td>Disagree</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>10</td>
+      <td>6</td>
+      <td>Male</td>
+      <td>Married/living with a partner</td>
+      <td>Tertiary education</td>
+      <td>Employed</td>
+      <td>Medium-high</td>
+      <td>London</td>
+      <td>30</td>
+      <td>Agree</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>8</td>
+      <td>7</td>
+      <td>Male</td>
+      <td>Married/living with a partner</td>
+      <td>Upper secondary education</td>
+      <td>Employed</td>
+      <td>High</td>
+      <td>South West</td>
+      <td>38</td>
+      <td>Disagree</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 10 columns</p>
+</div></div></div>
+</div>
+<ol class="simple">
+<li><p>INTRODUCTION: In this research report I will investigate whether people’s perception of their position in society is associated with their happiness. My hypothesis is that people who perceive themselves as higher in society are happier. To investigate this, I will use survey data and regression analysis.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Part 2: Checking for sample size and missing values</span>
+<span class="c1"># Change 99s to NaN.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span><span class="p">[</span><span class="n">happy</span><span class="o">==</span><span class="mi">99</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">happy</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 10 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   happy    1000 non-null   int64  
+ 1   ladder   950 non-null    float64
+ 2   sex      1000 non-null   object 
+ 3   marital  998 non-null    object 
+ 4   educ     1000 non-null   object 
+ 5   work     1000 non-null   object 
+ 6   income   747 non-null    object 
+ 7   region   1000 non-null   object 
+ 8   age      1000 non-null   int64  
+ 9   leftout  992 non-null    object 
+dtypes: float64(1), int64(2), object(7)
+memory usage: 78.2+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>DATA AND METHODS: The data were collected with an online survey conducted by YouGov in 2019. The data are intended to be representative of the UK population. The survey included questions about the respondents’ happiness, their perception of social standing, and demographic and socioeconomic details about the respondent. The outcome variable in this analysis is ‘happy’ which is measured on a scale of 0-10. The explanatory variable is ‘ladder’ which is measured on a scale of 1-11. As marital status, age, income, and working status have known associations with happiness, I will treat these as potential confounders and include them as control variables in the regression analysis. The aim is to understand the relationship between perceived social standing and happiness, after controlling for these potential confounders. There were 1000 partipants in the study, but I changed values of 99 to “not a number” for ladder (n = 50). In addition, there are two missing values for marital status and 253 missing values for income.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Part 3 results</span>
+<span class="c1"># First give mean and standard deviation of happy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean happiness = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">happy</span><span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sd of happiness = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">happy</span><span class="p">[</span><span class="s1">&#39;happy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+<span class="c1"># And the mean and standard deviation of ladder</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean of &quot;ladder&quot; = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">happy</span><span class="p">[</span><span class="s1">&#39;ladder&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sd of &quot;ladder&quot; = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">happy</span><span class="p">[</span><span class="s1">&#39;ladder&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean happiness = 6.173
+sd of happiness = 2.3691103147982875
+mean of &quot;ladder&quot; = 6.29578947368421
+sd of &quot;ladder&quot; = 1.6340306039488501
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First regression model</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happy</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;happy ~ ladder&#39;</span><span class="p">)</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Get RMSE</span>
+<span class="n">RMSE</span> <span class="o">=</span> <span class="n">reg_results</span><span class="o">.</span><span class="n">mse_resid</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE for first model = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">RMSE</span><span class="p">))</span>
+
+<span class="c1"># View regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE for first model = 2.2204928526822476
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>          <td>happy</td>      <th>  R-squared:         </th> <td>   0.121</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.120</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   130.3</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 29 Mar 2023</td> <th>  Prob (F-statistic):</th> <td>2.30e-28</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>20:46:00</td>     <th>  Log-Likelihood:    </th> <td> -2104.8</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   950</td>      <th>  AIC:               </th> <td>   4214.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   948</td>      <th>  BIC:               </th> <td>   4223.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    2.9733</td> <td>    0.287</td> <td>   10.363</td> <td> 0.000</td> <td>    2.410</td> <td>    3.536</td>
+</tr>
+<tr>
+  <th>ladder</th>    <td>    0.5035</td> <td>    0.044</td> <td>   11.414</td> <td> 0.000</td> <td>    0.417</td> <td>    0.590</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>46.213</td> <th>  Durbin-Watson:     </th> <td>   1.954</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  51.723</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.559</td> <th>  Prob(JB):          </th> <td>5.87e-12</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.238</td> <th>  Cond. No.          </th> <td>    26.5</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Second regression model</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happy</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;happy ~ ladder + marital + age + income + work&#39;</span><span class="p">)</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1">#Get RMSE</span>
+<span class="n">RMSE</span> <span class="o">=</span> <span class="n">reg_results</span><span class="o">.</span><span class="n">mse_resid</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">RMSE</span><span class="p">))</span>
+
+<span class="c1"># View regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE = 2.1340217201143625
+</pre></div>
+</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>          <td>happy</td>      <th>  R-squared:         </th> <td>   0.177</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.166</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   15.30</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 29 Mar 2023</td> <th>  Prob (F-statistic):</th> <td>5.87e-25</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>20:46:00</td>     <th>  Log-Likelihood:    </th> <td> -1561.9</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   720</td>      <th>  AIC:               </th> <td>   3146.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   709</td>      <th>  BIC:               </th> <td>   3196.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>    10</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+                      <td></td>                        <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>                                <td>    3.4984</td> <td>    0.734</td> <td>    4.764</td> <td> 0.000</td> <td>    2.057</td> <td>    4.940</td>
+</tr>
+<tr>
+  <th>marital[T.Married/living with a partner]</th> <td>    0.2266</td> <td>    0.547</td> <td>    0.414</td> <td> 0.679</td> <td>   -0.848</td> <td>    1.301</td>
+</tr>
+<tr>
+  <th>marital[T.Single]</th>                        <td>   -0.0567</td> <td>    0.563</td> <td>   -0.101</td> <td> 0.920</td> <td>   -1.163</td> <td>    1.050</td>
+</tr>
+<tr>
+  <th>income[T.Low]</th>                            <td>   -0.2897</td> <td>    0.281</td> <td>   -1.030</td> <td> 0.304</td> <td>   -0.842</td> <td>    0.263</td>
+</tr>
+<tr>
+  <th>income[T.Low-medium]</th>                     <td>   -0.1946</td> <td>    0.235</td> <td>   -0.829</td> <td> 0.408</td> <td>   -0.656</td> <td>    0.266</td>
+</tr>
+<tr>
+  <th>income[T.Medium-high]</th>                    <td>    0.2107</td> <td>    0.236</td> <td>    0.894</td> <td> 0.371</td> <td>   -0.252</td> <td>    0.673</td>
+</tr>
+<tr>
+  <th>work[T.Full time student]</th>                <td>   -0.5439</td> <td>    0.603</td> <td>   -0.901</td> <td> 0.368</td> <td>   -1.729</td> <td>    0.641</td>
+</tr>
+<tr>
+  <th>work[T.Other]</th>                            <td>    0.9374</td> <td>    0.256</td> <td>    3.668</td> <td> 0.000</td> <td>    0.436</td> <td>    1.439</td>
+</tr>
+<tr>
+  <th>work[T.Unemployed/not working]</th>           <td>   -0.6511</td> <td>    0.274</td> <td>   -2.380</td> <td> 0.018</td> <td>   -1.188</td> <td>   -0.114</td>
+</tr>
+<tr>
+  <th>ladder</th>                                   <td>    0.4200</td> <td>    0.052</td> <td>    8.032</td> <td> 0.000</td> <td>    0.317</td> <td>    0.523</td>
+</tr>
+<tr>
+  <th>age</th>                                      <td>   -0.0050</td> <td>    0.007</td> <td>   -0.687</td> <td> 0.492</td> <td>   -0.019</td> <td>    0.009</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>50.134</td> <th>  Durbin-Watson:     </th> <td>   1.984</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  60.058</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.642</td> <th>  Prob(JB):          </th> <td>9.09e-14</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.594</td> <th>  Cond. No.          </th> <td>    681.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<ol class="simple">
+<li><p>RESULTS: The mean level of happiness in the sample is 6.173 with a standard deviation of 2.369. The mean level of perceived social standing is 6.296 and the standard deviation is 1.634. The first regression model shows an intercept of 2.9733 which can be interpreted as the average level of happiness when social ladder is at zero. The slope for ladder is 0.5035 suggesting that for every unit increase in social standing, happiness increases by a little over half a point. The standard error for the slope is 0.044 and the slope is thus statistically significantly different to zero. The R-squared for this regression model is 0.121 suggesting that ladder can explain 12.1% of the variation in happiness. The RMSE of 2.220 suggests that there is a considerable spread of values around the regression line.</p></li>
+</ol>
+<p>Model two includes the control variables which show that are no statistically significant differences in happiness by martial status, or by income group, or by age, as the p-values are all above 0.05 for these variables. There are, on the other hand, statistically significant effects by working status. People with the working status “other” have happiness 0.9374 points higher than people who are employed (the reference category which is omitted from the regression table), and people who are unemployed have happiness 0.6511 points lower than the employed. Once controlling for these variables, the effect of perceived social standing continues to have a statistically significant effect on happiness. The slope coefficient for ladder is 0.4200 in model 2, so somewhat reduced compared to model 1. Model 2 has an R-squared of 0.177 suggesting that we are now explaining 17.7% of the variation in happiness. The RMSE has correspondingly decreased to 2.134. Although this second model is better fitting than the first, there is still considerable variation around the regression line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 4 Plot</span>
+<span class="c1"># Fitted scatter</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happy</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;happy ~ ladder + marital + age + income + work&#39;</span><span class="p">)</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># View regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;ladder&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;happy&#39;</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;ladder&#39;, ylabel=&#39;happy&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Week 7 hand-in assignment model answer_12_1.png" src="_images/Week 7 hand-in assignment model answer_12_1.png" />
+</div>
+</div>
+<ol class="simple">
+<li><p>PLOT: The regression plot shows the fitted values of ladder on happy. There is a strong positive relationship between ladder and happy. [Other options would be to show an interaction plot here].</p></li>
+</ol>
+<p>5: LIMITATIONS: There are several limitations to this study. First, as the R-squares are on the low side, there is still a lot of unexplained variation in happy. There is a lot of spread of values around the regression line. A major limitation relates to causality. We have no way of knowing from the data if high perceived social standing causes happiness or if happiness changes perceptions of social standing. Another study could collect overtime data, or run an experiment for understanding causality.</p>
+<ol class="simple">
+<li><p>CONCLUSIONS: This research has shown, using regression analysis, that there is an association between perceptions of social standing with happiness. People who feel higher up in the social hierarchy also feel happier. This association holds even after controlling for age, marital status, working status and income.</p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -771,6 +771,132 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression4_intro.html">
+   16. ANOVA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_outcomes.html">
+     16.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_concepts.html">
+     16.3. ANOVA Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_longhandExample.html">
+     16.4. Longhand calculation example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_equations.html">
+     16.5. ANOVA Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_KWtest.html">
+     16.6. Kruskall-Wallis test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_ANOVAregression.html">
+     16.7. ANOVA versus Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_prepwork.html">
+     16.8. ANOVA and Kruskal-Wallis in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_TutorialExercises.html">
+     16.9. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression5_intro.html">
+   17. Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_outcomes.html">
+     17.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_concepts.html">
+     17.3. Odds, logs and log odds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_LogisticEquation.html">
+     17.4. Logistic Regression Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_workedExample.html">
+     17.5. Predicted probabilities (worked example)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_prepwork.html">
+     17.6. Logistic Regression in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_TutorialExercises.html">
+     17.7. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression6_intro.html">
+   18. Research Design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_outcomes.html">
+     18.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_concepts.html">
+     18.3. Research Design Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_causality.html">
+     18.4. Causality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_TutorialExercises.html">
+     18.5. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -2218,7 +2344,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11, 13, 15,  4, 16,  4, 13,  7,  1,  6, 19, 19])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 8, 16,  1,  6,  4,  1, 15,  7,  9,  6, 18, 19])
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2253,7 +2379,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>11</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2261,7 +2387,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>13</td>
+      <td>16</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2269,7 +2395,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>15</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2277,7 +2403,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>4</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2285,7 +2411,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>16</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
@@ -2344,20 +2470,20 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>7</th>
-      <td>carrot</td>
+      <th>1</th>
+      <td>cucumber</td>
       <td>veg</td>
-      <td>orange</td>
-      <td>0</td>
-      <td>7</td>
+      <td>green</td>
+      <td>4</td>
+      <td>16</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>lychee</td>
+      <th>11</th>
+      <td>apple</td>
       <td>fruit</td>
-      <td>white</td>
-      <td>4</td>
-      <td>6</td>
+      <td>green</td>
+      <td>2</td>
+      <td>19</td>
     </tr>
     <tr>
       <th>5</th>
@@ -2365,15 +2491,15 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>red</td>
       <td>4</td>
-      <td>4</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>banana</td>
+      <th>2</th>
+      <td>orange</td>
       <td>fruit</td>
-      <td>yellow</td>
-      <td>6</td>
-      <td>4</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -2413,20 +2539,20 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>6</th>
-      <td>onion</td>
-      <td>veg</td>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
       <td>brown</td>
-      <td>3</td>
-      <td>13</td>
+      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>carrot</td>
+      <th>1</th>
+      <td>cucumber</td>
       <td>veg</td>
-      <td>orange</td>
-      <td>0</td>
-      <td>7</td>
+      <td>green</td>
+      <td>4</td>
+      <td>16</td>
     </tr>
     <tr>
       <th>0</th>
@@ -2434,15 +2560,15 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>11</td>
+      <td>8</td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>apple</td>
+      <th>9</th>
+      <td>lychee</td>
       <td>fruit</td>
-      <td>green</td>
-      <td>2</td>
-      <td>19</td>
+      <td>white</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
@@ -2476,7 +2602,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f8821820eb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f9b6701c730&gt;
 </pre></div>
 </div>
 </div>
@@ -2523,7 +2649,7 @@ dtype: int64
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_29586</span><span class="o">/</span><span class="mf">2378309076.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_70736</span><span class="o">/</span><span class="mf">2378309076.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>

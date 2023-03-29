@@ -773,6 +773,132 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression4_intro.html">
+   16. ANOVA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_outcomes.html">
+     16.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_concepts.html">
+     16.3. ANOVA Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_longhandExample.html">
+     16.4. Longhand calculation example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_equations.html">
+     16.5. ANOVA Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_KWtest.html">
+     16.6. Kruskall-Wallis test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_ANOVAregression.html">
+     16.7. ANOVA versus Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_prepwork.html">
+     16.8. ANOVA and Kruskal-Wallis in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_TutorialExercises.html">
+     16.9. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression5_intro.html">
+   17. Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_outcomes.html">
+     17.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_concepts.html">
+     17.3. Odds, logs and log odds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_LogisticEquation.html">
+     17.4. Logistic Regression Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_workedExample.html">
+     17.5. Predicted probabilities (worked example)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_prepwork.html">
+     17.6. Logistic Regression in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_TutorialExercises.html">
+     17.7. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression6_intro.html">
+   18. Research Design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_outcomes.html">
+     18.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_concepts.html">
+     18.3. Research Design Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_causality.html">
+     18.4. Causality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_TutorialExercises.html">
+     18.5. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -1161,10 +1287,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 2
-roll 2. Outcome = 3
-roll 3. Outcome = 6
-Total rolls needed to get a six: 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 5
+roll 2. Outcome = 2
+roll 3. Outcome = 4
+roll 4. Outcome = 2
+roll 5. Outcome = 5
+roll 6. Outcome = 5
+roll 7. Outcome = 2
+roll 8. Outcome = 6
+Total rolls needed to get a six: 8
 </pre></div>
 </div>
 </div>
@@ -1218,7 +1349,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1., 13.,  5.,  3.,  3.,  3.,  9.,  7.,  4.,  5.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6.,  1.,  2., 25.,  2.,  7., 19.,  1., 11.,  6.])
 </pre></div>
 </div>
 </div>
@@ -1236,8 +1367,8 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unique values = [ 1.  3.  4.  5.  7.  9. 13.]
-counts =        [1 3 1 2 1 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unique values = [ 1.  2.  6.  7. 11. 19. 25.]
+counts =        [2 2 2 1 1 1 1]
 </pre></div>
 </div>
 </div>
@@ -1304,7 +1435,7 @@ we needed 5 or more trials in our simulation</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4889
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4870
 </pre></div>
 </div>
 </div>
@@ -1316,7 +1447,7 @@ we needed 5 or more trials in our simulation</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.89
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.7
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1504,7 @@ we needed 5 or more trials in our simulation</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.35
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.3
 </pre></div>
 </div>
 </div>

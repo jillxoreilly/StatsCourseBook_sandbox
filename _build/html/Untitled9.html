@@ -771,6 +771,132 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression4_intro.html">
+   16. ANOVA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_outcomes.html">
+     16.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_concepts.html">
+     16.3. ANOVA Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_longhandExample.html">
+     16.4. Longhand calculation example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_equations.html">
+     16.5. ANOVA Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_KWtest.html">
+     16.6. Kruskall-Wallis test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_ANOVAregression.html">
+     16.7. ANOVA versus Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_prepwork.html">
+     16.8. ANOVA and Kruskal-Wallis in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_TutorialExercises.html">
+     16.9. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression5_intro.html">
+   17. Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_outcomes.html">
+     17.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_concepts.html">
+     17.3. Odds, logs and log odds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_LogisticEquation.html">
+     17.4. Logistic Regression Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_workedExample.html">
+     17.5. Predicted probabilities (worked example)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_prepwork.html">
+     17.6. Logistic Regression in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_TutorialExercises.html">
+     17.7. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression6_intro.html">
+   18. Research Design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_outcomes.html">
+     18.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_concepts.html">
+     18.3. Research Design Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_causality.html">
+     18.4. Causality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_TutorialExercises.html">
+     18.5. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -1326,11 +1452,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>anxiety</th>
       <td>1.000000</td>
-      <td>0.000635</td>
+      <td>-0.001257</td>
     </tr>
     <tr>
       <th>risk aversion</th>
-      <td>0.000635</td>
+      <td>-0.001257</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1359,7 +1485,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.1079388192384898, pvalue=0.4555936863576234)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.036360865419691954, pvalue=0.8020538327133019)
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1499,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4555936863576234
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8020538327133019
 </pre></div>
 </div>
 </div>
@@ -1399,7 +1525,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0535
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0545
 </pre></div>
 </div>
 </div>
@@ -1483,11 +1609,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>anxiety</th>
       <td>1.000000</td>
-      <td>0.250234</td>
+      <td>0.237724</td>
     </tr>
     <tr>
       <th>risk aversion</th>
-      <td>0.250234</td>
+      <td>0.237724</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1513,7 +1639,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.438
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.362
 </pre></div>
 </div>
 </div>
@@ -1551,7 +1677,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 39.6%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 38.2%
 </pre></div>
 </div>
 </div>
@@ -1618,26 +1744,26 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_29292</span><span class="o">/</span><span class="mf">2083475829.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_70609</span><span class="o">/</span><span class="mf">2083475829.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> 
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py</span> in <span class="ni">pearsonr</span><span class="nt">(x, y, alternative)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4422</span> 
-<span class="g g-Whitespace">   </span><span class="mi">4423</span>     <span class="c1"># If an input is constant, the correlation coefficient is not defined.</span>
-<span class="ne">-&gt; </span><span class="mi">4424</span>     <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">4425</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;An input array is constant; the correlation coefficient &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4426</span>                <span class="s2">&quot;is not defined.&quot;</span><span class="p">)</span>
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">sample</span><span class="nt">(self, n, frac, replace, weights, random_state, axis, ignore_index)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5444</span>             <span class="n">weights</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">preprocess_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5445</span> 
+<span class="ne">-&gt; </span><span class="mi">5446</span>         <span class="n">sampled_indices</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">rs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5447</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sampled_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5448</span> 
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/_methods.py</span> in <span class="ni">_all</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="c1"># Parsing keyword arguments is currently fairly slow, so avoid it for now</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">if</span> <span class="n">where</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">63</span>         <span class="k">return</span> <span class="n">umr_all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="k">return</span> <span class="n">umr_all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> 
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/sample.py</span> in <span class="ni">sample</span><span class="nt">(obj_len, size, replace, weights, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid weights: weights sum to zero&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> 
+<span class="ne">--&gt; </span><span class="mi">150</span>     <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">replace</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>         <span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

@@ -40,7 +40,7 @@ plt.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_28893/419081113.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70278/419081113.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     12[0m [0;34m[0m[0m
 [1;32m     13[0m [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mnReps[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 14[0;31m     [0msample[0m[0;34m=[0m [0mnp[0m[0;34m.[0m[0mrandom[0m[0;34m.[0m[0mGenerator[0m[0;34m.[0m[0mchoice[0m[0;34m([0m[0mwb[0m[0;34m[[0m[0mwb[0m[0;34m[[0m[0;34m'College'[0m[0;34m][0m[0;34m==[0m[0;34m'Lonsdale'[0m[0;34m][0m[0;34m[[0m[0;34m[[0m[0;34m'Score_preVac'[0m[0;34m,[0m[0;34m'Score_postVac'[0m[0;34m][0m[0;34m][0m[0;34m,[0m[0mn[0m[0;34m,[0m[0mreplace[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

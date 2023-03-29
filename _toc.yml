@@ -127,6 +127,27 @@ chapters:
   - file: regression3_assumptions.md
   - file: regression3_prepwork.ipynb
   - file: regression3_TutorialExercises.ipynb
-
-  
-  
+- file: regression4_intro.md
+  sections:
+  - file: regression4_outcomes.md
+  - file: regression4_concepts.md
+  - file: regression4_longhandExample.md
+  - file: regression4_equations.md
+  - file: regression4_KWtest.md
+  - file: regression4_ANOVAregression.md
+  - file: regression4_prepwork.ipynb
+  - file: regression4_TutorialExercises.ipynb
+- file: regression5_intro.md
+  sections:
+  - file: regression5_outcomes.md
+  - file: regression5_concepts.md
+  - file: regression5_LogisticEquation.md
+  - file: regression5_workedExample.md
+  - file: regression5_prepwork.ipynb
+  - file: regression5_TutorialExercises.ipynb
+- file: regression6_intro.md
+  sections:
+  - file: regression6_outcomes.md
+  - file: regression6_concepts.md  
+  - file: regression6_causality.md
+  - file: regression6_TutorialExercises.md  

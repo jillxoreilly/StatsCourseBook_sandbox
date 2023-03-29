@@ -17,15 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# 1. Draw a random sample from a binomial distriubtion with n=27 and p=0.4
-k = # your code here
-print('k = ' + str(k))
+< your interpretation here >
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58087/1608705857.py"[0;36m, line [0;32m2[0m
-[0;31m    k = # your code here[0m
-[0m        ^[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70411/1539203824.py"[0;36m, line [0;32m1[0m
+[0;31m    < your interpretation here >[0m
+[0m    ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (1608705857.py, line 2)
+SyntaxError: invalid syntax (1539203824.py, line 1)
 

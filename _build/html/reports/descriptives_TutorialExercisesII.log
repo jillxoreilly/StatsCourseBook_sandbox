@@ -31,7 +31,7 @@ print('sd (with n-1 on the bottom) = ' + str(s2))
 
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_29641/845226441.py"[0;36m, line [0;32m5[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70769/845226441.py"[0;36m, line [0;32m5[0m
 [0;31m    m = # your code here for the mean[0m
 [0m        ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax

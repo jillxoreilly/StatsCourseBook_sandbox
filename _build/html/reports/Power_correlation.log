@@ -36,7 +36,7 @@ np.mean(p<0.05)
 The above exception was the direct cause of the following exception:
 
 [0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_28962/3587976242.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70315/3587976242.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      5[0m [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mnReps[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      6[0m     [0msample[0m [0;34m=[0m [0mpop_rNonZero[0m[0;34m.[0m[0msample[0m[0;34m([0m[0mn[0m[0;34m=[0m[0msampleSize[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 7[0;31m     [0mp[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;34m=[0m [0mstats[0m[0;34m.[0m[0mpearsonr[0m[0;34m([0m[0msample[0m[0;34m[[0m[0;34m'Maths'[0m[0;34m][0m[0;34m,[0m [0msample[0m[0;34m[[0m[0;34m'French'[0m[0;34m][0m[0;34m,[0m [0malternative[0m[0;34m=[0m[0;34m'greater'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

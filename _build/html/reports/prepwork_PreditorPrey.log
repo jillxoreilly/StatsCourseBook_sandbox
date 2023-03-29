@@ -22,7 +22,7 @@ len(np.arange(1, days+1, tStep))
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_30302/1552411431.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_71231/1552411431.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mlen[0m[0;34m([0m[0mnp[0m[0;34m.[0m[0marange[0m[0;34m([0m[0;36m1[0m[0;34m,[0m [0mdays[0m[0;34m+[0m[0;36m1[0m[0;34m,[0m [0mtStep[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'days' is not defined

@@ -29,7 +29,7 @@ plt.ylim([5,8])
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_28936/3786884835.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70296/3786884835.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0msns[0m[0;34m.[0m[0mscatterplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mhappiness[0m[0;34m,[0m [0mx[0m[0;34m=[0m[0;34m'GDPpc (in $ 000)'[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;34m'LifeSat'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;34m[0m[0m
 [1;32m      3[0m [0;31m# Loop through the data points[0m[0;34m[0m[0;34m[0m[0m

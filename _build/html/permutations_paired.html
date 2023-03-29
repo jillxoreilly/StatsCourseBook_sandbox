@@ -771,6 +771,132 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression4_intro.html">
+   16. ANOVA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_outcomes.html">
+     16.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_concepts.html">
+     16.3. ANOVA Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_longhandExample.html">
+     16.4. Longhand calculation example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_equations.html">
+     16.5. ANOVA Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_KWtest.html">
+     16.6. Kruskall-Wallis test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_ANOVAregression.html">
+     16.7. ANOVA versus Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_prepwork.html">
+     16.8. ANOVA and Kruskal-Wallis in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression4_TutorialExercises.html">
+     16.9. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression5_intro.html">
+   17. Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_outcomes.html">
+     17.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_concepts.html">
+     17.3. Odds, logs and log odds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_LogisticEquation.html">
+     17.4. Logistic Regression Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_workedExample.html">
+     17.5. Predicted probabilities (worked example)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_prepwork.html">
+     17.6. Logistic Regression in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression5_TutorialExercises.html">
+     17.7. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression6_intro.html">
+   18. Research Design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_outcomes.html">
+     18.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_concepts.html">
+     18.3. Research Design Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_causality.html">
+     18.4. Causality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression6_TutorialExercises.html">
+     18.5. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -1237,7 +1363,9 @@ title="Print to PDF"
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: scipy
   Attempting uninstall: scipy
-    Found existing installation: scipy 1.9.3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found existing installation: scipy 1.9.3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling scipy-1.9.3:
@@ -1456,8 +1584,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
   <tbody>
     <tr>
       <th>0</th>
-      <td>10</td>
       <td>12</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1471,8 +1599,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>3</th>
-      <td>28</td>
       <td>25</td>
+      <td>28</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1481,13 +1609,13 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>5</th>
-      <td>14</td>
       <td>16</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>18</td>
       <td>13</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1553,8 +1681,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
       <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1620,7 +1748,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 4.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 2.2
 </pre></div>
 </div>
 </div>
@@ -1653,7 +1781,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/permutations_paired_21_0.png" src="_images/permutations_paired_21_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.05%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.11%
 </pre></div>
 </div>
 </div>

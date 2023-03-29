@@ -20,7 +20,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 data['brother'],['sister']]
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_29781/1834895316.py"[0;36m, line [0;32m1[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70860/1834895316.py"[0;36m, line [0;32m1[0m
 [0;31m    data['brother'],['sister']][0m
 [0m                              ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m unmatched ']'
