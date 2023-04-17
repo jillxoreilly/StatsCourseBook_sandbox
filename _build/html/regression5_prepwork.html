@@ -1228,7 +1228,7 @@ title="Print to PDF"
 <li><p>political ideology (measured from 1 = extremely conservative to 7 = extremely liberal, which we treat as continuous here), and</p></li>
 <li><p>whether the participant studied science at college (yes, no).</p></li>
 </ul>
-<p>Before we start, have a think about these <em>x</em> variables: which direction do you expect the relationship to go? E.g., will older or younger people be more likely to answer “true”?</p>
+<p>Before we start, have a think about these <span class="math notranslate nohighlight">\(x\)</span> variables: which direction do you expect the relationship to go? E.g., will older or younger people be more likely to answer “true”?</p>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -1397,10 +1397,10 @@ title="Print to PDF"
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>  <td>     3</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Wed, 29 Mar 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
+  <th>Date:</th>            <td>Mon, 17 Apr 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
 </tr>
 <tr>
-  <th>Time:</th>                <td>21:04:31</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
+  <th>Time:</th>                <td>12:55:46</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -344.95</td> 
@@ -1460,13 +1460,13 @@ dtype: float64
 <p>Remember the practice session with logs above? The same principles apply here.</p>
 <p>Odds of 1 relate to a 50/50 probability, which we can interpret in a logistic regression model as no effect (i.e., the <span class="math notranslate nohighlight">\(x\)</span> variable is not associated with a higher or lower probability of the outcome occurring).</p>
 <p>Positive log odds become odds ratios with a value greater than 1, and negative log odds become odds ratios with a value below 1.</p>
-<p>Here, we can interpret the model out as follows:</p>
+<p>Here, we can interpret the model output as follows:</p>
 <ul class="simple">
 <li><p>The odds ratio of 1.47 for political views suggests that for each additional point along the scale from conservative to liberal is associated with a 1.47 times greater likelihood of agreeing that humans evolved from earlier species.</p></li>
 </ul>
 <p>The output from python provides confidence intervals too. The 95% confidence intervals for the odds ratio are 1.29 – 1.68.</p>
 <ul class="simple">
-<li><p>For age, the odds ratio tells us that for each additional year the odds of answering ‘true’ are 0.02 (or 2%) lower (using 1-0.98 for the effect size). (Here I will not interpret ‘colsci’ as it is not statistically significant.</p></li>
+<li><p>For age, the odds ratio tells us that for each additional year the odds of answering ‘true’ are 0.02 (or 2%) lower (using 1-0.98 for the effect size). Here I will not interpret ‘colsci’ as it is not statistically significant.</p></li>
 </ul>
 <p>We know this from the p-value but also because the confidence intervals include 1. Note the contrast with the original model with log odds in this regard).</p>
 </section>
@@ -1476,23 +1476,10 @@ dtype: float64
 <p>Let’s find out the predicted probability of believing in evolution for a 50-year-old with a score of 5 on the conservative scale, who did not study science at college.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="mi">50</span><span class="p">],[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">0</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 <span class="n">df</span>
 <span class="c1"># Code for calculating predicted probability</span>
-<span class="c1">#logistic_model.predict([[50,5,0]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_71478</span><span class="o">/</span><span class="mf">163586980.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="mi">50</span><span class="p">],[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Code for calculating predicted probability</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#logistic_model.predict([[50,5,0]])</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">exog</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1510,22 +1497,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      0.374196
-1      0.544744
-2      0.502294
-3      0.412362
-4      0.388606
-         ...   
-498    0.752007
-499    0.743402
-500    0.799603
-501    0.331893
-502    0.323507
-Length: 503, dtype: float64
-</pre></div>
-</div>
-</div>
 </div>
 <p>We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)&gt;0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false.</p>
 <div class="cell docutils container">
@@ -1535,11 +1506,6 @@ Length: 503, dtype: float64
 
 <span class="c1"># work out proportion correctly classified</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yhat</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6322067594433399
 </pre></div>
 </div>
 </div>

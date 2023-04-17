@@ -91,11 +91,7 @@
 
 # Interpret the results. Which of the $x$-variables are statistically significant? 
 
-# In[5]:
-
-
-< your interpretation here >
-
+# < your interpretation here >
 
 # ## ANOVA vs Linear Regression
 # 
@@ -104,14 +100,14 @@
 # Run two regression models; one with just treatment as the explanatory variable, and a second model that includes income as a control. 
 # 
 
-# In[ ]:
+# In[5]:
 
 
 # your code here to run regression model 1
 # you may need to refer back to last term's notes!
 
 
-# In[ ]:
+# In[6]:
 
 
 # your code here to run regression model 2
@@ -126,7 +122,7 @@
 # 
 # A member of the research team raised a concern that the outcome variable, ladder, does not seem to be normally distributed. Can you run a histogram, by experimental condition, to check this? 
 
-# In[ ]:
+# In[7]:
 
 
 # your code here for the histogram
@@ -141,7 +137,7 @@
 # Either way, run a Krusal-Wallis test with the same variables (ladder, treatment) to check if you get the same result as with ANOVA.
 # 
 
-# In[ ]:
+# In[8]:
 
 
 # your code here
@@ -149,11 +145,7 @@
 
 # What is the result, and does it agree with the ANOVA?
 
-# In[ ]:
-
-
-< your comment here >
-
+# < your comment here >
 
 # ## Including age as a control variable
 # 
@@ -168,7 +160,7 @@
 # 
 # Here is some code to get you started:
 
-# In[22]:
+# In[9]:
 
 
 # create a new column and fill it with NaN for now

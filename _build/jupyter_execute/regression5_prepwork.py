@@ -17,7 +17,7 @@
 # * political ideology (measured from 1 = extremely conservative to 7 = extremely liberal, which we treat as continuous here), and 
 # * whether the participant studied science at college (yes, no). 
 # 
-# Before we start, have a think about these *x* variables: which direction do you expect the relationship to go? E.g., will older or younger people be more likely to answer “true”?
+# Before we start, have a think about these $x$ variables: which direction do you expect the relationship to go? E.g., will older or younger people be more likely to answer “true”?
 # 
 # ### Set up Python libraries
 # 
@@ -91,13 +91,13 @@ np.exp(logistic_model.params)
 # 
 # Positive log odds become odds ratios with a value greater than 1, and negative log odds become odds ratios with a value below 1. 
 # 
-# Here, we can interpret the model out as follows: 
+# Here, we can interpret the model output as follows: 
 # 
 # * The odds ratio of 1.47 for political views suggests that for each additional point along the scale from conservative to liberal is associated with a 1.47 times greater likelihood of agreeing that humans evolved from earlier species. 
 # 
 # The output from python provides confidence intervals too. The 95% confidence intervals for the odds ratio are 1.29 – 1.68. 
 # 
-# * For age, the odds ratio tells us that for each additional year the odds of answering ‘true’ are 0.02 (or 2%) lower (using 1-0.98 for the effect size). (Here I will not interpret ‘colsci’ as it is not statistically significant. 
+# * For age, the odds ratio tells us that for each additional year the odds of answering ‘true’ are 0.02 (or 2%) lower (using 1-0.98 for the effect size). Here I will not interpret ‘colsci’ as it is not statistically significant. 
 # 
 # We know this from the p-value but also because the confidence intervals include 1. Note the contrast with the original model with log odds in this regard).
 # 
@@ -111,10 +111,10 @@ np.exp(logistic_model.params)
 # In[5]:
 
 
-df = df[[50],[5],[0]]
+df = pandas.DataFrame([[50,5,0]])
 df
 # Code for calculating predicted probability
-#logistic_model.predict([[50,5,0]])
+logistic_model.predict(exog=[50,5,0])
 
 
 # ## Assessing the model
@@ -124,7 +124,7 @@ df
 # The predicted values can help us to understand how well our model did. They take a value between 0 and 1 and can be treated as a predicted probability of each individual answering ‘true’ to the survey question, given the $x$ variables that we have modelled
 # 
 
-# In[17]:
+# In[ ]:
 
 
 # Get predicted values for each row of the dataframe
@@ -134,7 +134,7 @@ logistic_model.predict(evolution[['age','polviews','colsci']])
 # We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)>0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false. 
 # 
 
-# In[19]:
+# In[ ]:
 
 
 # Get predicted values for each row of the dataframe

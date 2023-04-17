@@ -26,7 +26,7 @@ One of the assumptions of linear regression is that the observed data should con
 In logistic regression, we use the **log of the odds** of observing the outcome, which is called the *logistic transformation*, or *logit* for short.
 ```
 
-The logistic equation uses the log of the odd, $\log{ \left[ \frac{p(y=1)}{1-p(y=1)} \right]} $ as the outcome
+The logistic equation uses the log of the odds, $\log{ \left[ \frac{p(y=1)}{1-p(y=1)} \right]} $ as the outcome
 
 We model the logit (the log of the odds) as follows:
 

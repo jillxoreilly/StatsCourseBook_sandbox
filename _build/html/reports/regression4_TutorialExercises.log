@@ -17,13 +17,22 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-< your interpretation here >
+# create a new column and fill it with NaN for now
+data['age4'] = np.nan
+
+# start filling in the values
+data.loc[(data['age'] < 30),['age4']]='under 30'
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_71467/1539203824.py"[0;36m, line [0;32m1[0m
-[0;31m    < your interpretation here >[0m
-[0m    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_5655/1193428705.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# create a new column and fill it with NaN for now[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mdata[0m[0;34m[[0m[0;34m'age4'[0m[0;34m][0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mnan[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;31m# start filling in the values[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mdata[0m[0;34m.[0m[0mloc[0m[0;34m[[0m[0;34m([0m[0mdata[0m[0;34m[[0m[0;34m'age'[0m[0;34m][0m [0;34m<[0m [0;36m30[0m[0;34m)[0m[0;34m,[0m[0;34m[[0m[0;34m'age4'[0m[0;34m][0m[0;34m][0m[0;34m=[0m[0;34m'under 30'[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (1539203824.py, line 1)
+[0;31mNameError[0m: name 'np' is not defined
+NameError: name 'np' is not defined
 

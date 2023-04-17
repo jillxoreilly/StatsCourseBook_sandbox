@@ -6,9 +6,8 @@ After this week, you should be able to:
 
 *	Understand the difference between observational data and an experiment.
 *	Understand the idea of a ‘natural experiment’ and how these are similar and different to other experiments.
-*	Understand exactly how an experiment help to establish causality.
-*	Understand the limits of observational data for establishing
-*	causality.
+*	Understand exactly how an experiment helps to establish causality.
+*	Understand the limits of observational data for establishing causality.
 
 These points will be covered in the lecture.
 

@@ -16,7 +16,7 @@ So here:
 
 $$ \frac{0.92}{0.08} = 11.5 $$
 
-We can interpret the odds to mean that being vaccinated is 11.5 times more likely than not bbeing vaccinated. **Note that probability and odd are two ways of expressing the same idea**
+We can interpret the odds to mean that being vaccinated is 11.5 times more likely than not being vaccinated. **Note that probability and odds are two ways of expressing the same idea**
 
 Say we also have a sample of children aged 5-11. Among these, only 11 of 100 have been vaccinated. In this case the odds are;
 
@@ -28,6 +28,9 @@ $$\frac{0.11}{0.89} = 0.124$$
 
 ```{admonition} Click to reveal answer
 :class: dropdown
+
+Exactly 1
+
 So, we have seen that a probability >50% produces odds with a value > 1 and a probability <50% produces odds with a value < 1. And when a probability is exactly 50-50 the odds will be exactly 1. We’ll come back to this later when we interpret the output of our logistic regression models.
 ```
 
@@ -56,7 +59,7 @@ More generally, when $a^b = c$ then $\log_a{c} = b$
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-$\log_10{1000} = 3 $
+$\log_{10}{1000} = 3 $
 ```
 
 * Let’s try this one, $\log_2{16} = x$. What is $x$?

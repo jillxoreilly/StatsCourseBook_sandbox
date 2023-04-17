@@ -1327,21 +1327,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Interpret the results. Which of the <span class="math notranslate nohighlight">\(x\)</span>-variables are statistically significant?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">your</span> <span class="n">interpretation</span> <span class="n">here</span> <span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_71467/1539203824.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="o">&lt;</span> <span class="n">your</span> <span class="n">interpretation</span> <span class="n">here</span> <span class="o">&gt;</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+<p>&lt; your interpretation here &gt;</p>
 </section>
 <section id="anova-vs-linear-regression">
 <h2>ANOVA vs Linear Regression<a class="headerlink" href="#anova-vs-linear-regression" title="Permalink to this heading">#</a></h2>
@@ -1390,13 +1376,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>What is the result, and does it agree with the ANOVA?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">your</span> <span class="n">comment</span> <span class="n">here</span> <span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>&lt; your comment here &gt;</p>
 </section>
 <section id="including-age-as-a-control-variable">
 <h2>Including age as a control variable<a class="headerlink" href="#including-age-as-a-control-variable" title="Permalink to this heading">#</a></h2>
@@ -1420,124 +1400,19 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_5655</span><span class="o">/</span><span class="mf">1193428705.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># create a new column and fill it with NaN for now</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;age4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># start filling in the values</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">),[</span><span class="s1">&#39;age4&#39;</span><span class="p">]]</span><span class="o">=</span><span class="s1">&#39;under 30&#39;</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>treatment</th>
-      <th>income</th>
-      <th>age</th>
-      <th>ladder</th>
-      <th>age4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Control group</td>
-      <td>Medium-high</td>
-      <td>18</td>
-      <td>3.0</td>
-      <td>under 30</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Control group</td>
-      <td>Low</td>
-      <td>18</td>
-      <td>7.0</td>
-      <td>under 30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Control group</td>
-      <td>Low</td>
-      <td>19</td>
-      <td>7.0</td>
-      <td>under 30</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Control group</td>
-      <td>High</td>
-      <td>19</td>
-      <td>9.0</td>
-      <td>under 30</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Control group</td>
-      <td>High</td>
-      <td>19</td>
-      <td>10.0</td>
-      <td>under 30</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1985</th>
-      <td>General inequality</td>
-      <td>Low-medium</td>
-      <td>80</td>
-      <td>5.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1986</th>
-      <td>General inequality</td>
-      <td>Low</td>
-      <td>81</td>
-      <td>5.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1987</th>
-      <td>General inequality</td>
-      <td>Low-medium</td>
-      <td>82</td>
-      <td>7.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1988</th>
-      <td>General inequality</td>
-      <td>Low</td>
-      <td>83</td>
-      <td>6.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1989</th>
-      <td>General inequality</td>
-      <td>High</td>
-      <td>86</td>
-      <td>9.0</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>1990 rows × 5 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now run an ANOVA including <code class="docutils literal notranslate"><span class="pre">age4</span></code> as a control variable</p>
 <div class="cell docutils container">

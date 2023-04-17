@@ -47,9 +47,12 @@ The steps to compute Within-group sum of squares are as follows:
 4.	Sum the squared differences.
 
 Within-group sum of squares =
-$$[(1-2)^2  + (3-2)^2  + (2-2)^2 ]$$  +
-$$[(2-4)^2  + (4-4)^2 + (6-4)^2 ]$$ +
-$$[(11-12)^2 + (15-12)^2 + (10-12)^2]$$
+
+$ [(1-2)^2  + (3-2)^2  + (2-2)^2 ]  + $
+
+$ [(2-4)^2  + (4-4)^2 + (6-4)^2 ]  + $
+
+$ [(11-12)^2 + (15-12)^2 + (10-12)^2] $
 
 =24
 ```
@@ -66,9 +69,12 @@ The steps to compute the Between-group sum of squares:
 3)	Sum the squared differences.
 
 Between-group sum of squares =
-$$[(1-)^2  + (3-6)^2  + (2-6)^2 ]$$  +
-$$[(2-6)^2  + (4-6)^2 + (6-6)^2 ]$$ +
-$$[(11-6)^2 + (15-6)^2 + (10-6)^2]$$
+
+$[(1-)^2  + (3-6)^2  + (2-6)^2 ]$  +
+
+$[(2-6)^2  + (4-6)^2 + (6-6)^2 ]$+
+
+$[(11-6)^2 + (15-6)^2 + (10-6)^2]$
 
 =168
 ```
@@ -83,8 +89,8 @@ The within-groups df = $n – g$ (where $g$ = the number of groups) = 9 – 3 = 
 
 The between-groups df = $g – 1$ = 3 - 1 = 2
 
-The mean square within = $\frac{24}{6} = 4
-The mean square between = \frac{168}{2} = 84
+The mean square within = $\frac{24}{6} = 4 $
+The mean square between = $ \frac{168}{2} = 84 $
 ```
 
 * Calculate the $F$-statistic and interpret.
@@ -98,5 +104,11 @@ The critical cut-off value for $F$ here (df 6,2), for a significance level of 95
 
 As 21 > 5.14 we can reject the null hypothesis.
 
-We conclude that there is a significant difference between the three bumper types. (You can take the cut-off value for F as given in this example. But one place you could look up cut-off of F for significance level 95% is <a href=https://www.socscistatistics.com/tests/criticalvalues/default.aspx>here<\a>)
+We conclude that there is a significant difference between the three
+bumper types. (You can take the cut-off value for F as given in this
+example. But one place you could look up cut-off of F for significance
+level 95% is <a
+href=https://www.socscistatistics.com/tests/criticalvalues/default.aspx>here
+</a>
+)
 ```

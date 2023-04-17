@@ -40,7 +40,7 @@ The probability of voting for Candidate X when income = 10,000 (i.e., x = 10) is
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-When $p(y=1) = 0.5$, the odds $\frac{p(y=1)}{1-p(y=1)} = 0.
+When $p(y=1) = 0.5$, the odds $\frac{p(y=1)}{1-p(y=1)} = 0.$
 
 So, we take $0 = \alpha + \beta x$ and solve for $x$
 
