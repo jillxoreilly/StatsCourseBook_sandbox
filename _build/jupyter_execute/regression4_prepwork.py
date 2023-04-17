@@ -27,7 +27,7 @@ import statsmodels.formula.api as smf
 # In[2]:
 
 
-chimps=pandas.read_csv('data/chimps.csv')
+chimps=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/chimps.csv')
 chimps
 
 

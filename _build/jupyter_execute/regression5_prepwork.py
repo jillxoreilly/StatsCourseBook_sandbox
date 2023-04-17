@@ -41,7 +41,7 @@ import statsmodels.formula.api as smf
 # In[2]:
 
 
-evolution = pandas.read_csv('data/evolution.csv')
+evolution = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/evolution.csv')
 evolution
 
 
@@ -114,7 +114,7 @@ np.exp(logistic_model.params)
 df = pandas.DataFrame([[50,5,0]])
 df
 # Code for calculating predicted probability
-logistic_model.predict(exog=[50,5,0])
+# logistic_model.predict(exog=[50,5,0])
 
 
 # ## Assessing the model
@@ -124,7 +124,7 @@ logistic_model.predict(exog=[50,5,0])
 # The predicted values can help us to understand how well our model did. They take a value between 0 and 1 and can be treated as a predicted probability of each individual answering ‘true’ to the survey question, given the $x$ variables that we have modelled
 # 
 
-# In[ ]:
+# In[6]:
 
 
 # Get predicted values for each row of the dataframe
@@ -134,7 +134,7 @@ logistic_model.predict(evolution[['age','polviews','colsci']])
 # We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)>0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false. 
 # 
 
-# In[ ]:
+# In[7]:
 
 
 # Get predicted values for each row of the dataframe

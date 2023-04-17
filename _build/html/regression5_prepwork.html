@@ -1251,7 +1251,7 @@ title="Print to PDF"
 <h2>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/evolution.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/evolution.csv&#39;</span><span class="p">)</span>
 <span class="n">evolution</span>
 </pre></div>
 </div>
@@ -1400,7 +1400,7 @@ title="Print to PDF"
   <th>Date:</th>            <td>Mon, 17 Apr 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
 </tr>
 <tr>
-  <th>Time:</th>                <td>12:55:46</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
+  <th>Time:</th>                <td>13:05:09</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -344.95</td> 
@@ -1479,10 +1479,44 @@ dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 <span class="n">df</span>
 <span class="c1"># Code for calculating predicted probability</span>
-<span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">exog</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># logistic_model.predict(exog=[50,5,0])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>50</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1497,6 +1531,22 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      0.374196
+1      0.544744
+2      0.502294
+3      0.412362
+4      0.388606
+         ...   
+498    0.752007
+499    0.743402
+500    0.799603
+501    0.331893
+502    0.323507
+Length: 503, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)&gt;0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false.</p>
 <div class="cell docutils container">
@@ -1506,6 +1556,11 @@ dtype: float64
 
 <span class="c1"># work out proportion correctly classified</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yhat</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6322067594433399
 </pre></div>
 </div>
 </div>
