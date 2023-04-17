@@ -111,10 +111,11 @@ np.exp(logistic_model.params)
 # In[5]:
 
 
-df = pandas.DataFrame([[50,5,0]])
+df = pandas.DataFrame(columns = ['age','colsci','evolved','polviews'])
+df.loc[0,:]=[50, 'no', np.NaN, 5]
 df
 # Code for calculating predicted probability
-# logistic_model.predict(exog=[50,5,0])
+logistic_model.predict(df)
 
 
 # ## Assessing the model
@@ -124,7 +125,7 @@ df
 # The predicted values can help us to understand how well our model did. They take a value between 0 and 1 and can be treated as a predicted probability of each individual answering ‘true’ to the survey question, given the $x$ variables that we have modelled
 # 
 
-# In[6]:
+# In[ ]:
 
 
 # Get predicted values for each row of the dataframe
@@ -134,7 +135,7 @@ logistic_model.predict(evolution[['age','polviews','colsci']])
 # We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)>0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false. 
 # 
 
-# In[7]:
+# In[ ]:
 
 
 # Get predicted values for each row of the dataframe
