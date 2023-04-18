@@ -107,25 +107,30 @@ np.exp(logistic_model.params)
 # 
 # Let’s find out the predicted probability of believing in evolution for a 50-year-old with a score of 5 on the conservative scale, who did not study science at college.
 # 
+# The syntax for this is a bit faffy, as we need to use a dictionary (dictionaries in Python are actually really useful, but we haven't used them on this course so don't worry too much about it)
+# 
 
 # In[5]:
 
 
-df = pandas.DataFrame(columns = ['age','colsci','evolved','polviews'])
-df.loc[0,:]=[50, 'no', np.NaN, 5]
-df
-# Code for calculating predicted probability
-logistic_model.predict(df)
+vals = dict(age=50, polviews=5, colsci='no')
 
+# Code for calculating predicted probability
+logistic_model.predict(vals)
+
+
+# The probability this person believes in evolution is 0.62 or 62%
+# 
+# * Try plugging in some different values - what about yourself or your family members?
 
 # ## Assessing the model
 # 
-# Just as we did in linear regression, we can obtain predicted values for the model. 
+# Just as we did in linear regression, we can obtain predicted values for the model for the people in the original dataset - that is for each person in the original dataframe, we get the model's predicted probability they believe in evolution (we also know the ground truth, whether they replied that they do believe in evolution, or not)
 # 
 # The predicted values can help us to understand how well our model did. They take a value between 0 and 1 and can be treated as a predicted probability of each individual answering ‘true’ to the survey question, given the $x$ variables that we have modelled
 # 
 
-# In[ ]:
+# In[6]:
 
 
 # Get predicted values for each row of the dataframe
@@ -135,7 +140,7 @@ logistic_model.predict(evolution[['age','polviews','colsci']])
 # We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)>0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false. 
 # 
 
-# In[ ]:
+# In[7]:
 
 
 # Get predicted values for each row of the dataframe

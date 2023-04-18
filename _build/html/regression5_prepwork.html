@@ -1397,10 +1397,10 @@ title="Print to PDF"
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>  <td>     3</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Mon, 17 Apr 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
+  <th>Date:</th>            <td>Tue, 18 Apr 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
 </tr>
 <tr>
-  <th>Time:</th>                <td>15:43:27</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
+  <th>Time:</th>                <td>11:28:08</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -344.95</td> 
@@ -1474,85 +1474,53 @@ dtype: float64
 <h3>Making a prediction<a class="headerlink" href="#making-a-prediction" title="Permalink to this heading">#</a></h3>
 <p>Python will compute a predicted probability for us.</p>
 <p>Let’s find out the predicted probability of believing in evolution for a 50-year-old with a score of 5 on the conservative scale, who did not study science at college.</p>
+<p>The syntax for this is a bit faffy, as we need to use a dictionary (dictionaries in Python are actually really useful, but we haven’t used them on this course so don’t worry too much about it)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span><span class="s1">&#39;colsci&#39;</span><span class="p">,</span><span class="s1">&#39;evolved&#39;</span><span class="p">,</span><span class="s1">&#39;polviews&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">polviews</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">colsci</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span>
+
 <span class="c1"># Code for calculating predicted probability</span>
-<span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/statsmodels/base/model.py</span> in <span class="ni">predict</span><span class="nt">(self, exog, transform, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1136</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1137</span>                 <span class="n">exog</span> <span class="o">=</span> <span class="n">dmatrix</span><span class="p">(</span><span class="n">design_info</span><span class="p">,</span> <span class="n">exog</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1138</span>             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py</span> in <span class="ni">dmatrix</span><span class="nt">(formula_like, data, eval_env, NA_action, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="n">eval_env</span> <span class="o">=</span> <span class="n">EvalEnvironment</span><span class="o">.</span><span class="n">capture</span><span class="p">(</span><span class="n">eval_env</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">290</span>     <span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="o">=</span> <span class="n">_do_highlevel_design</span><span class="p">(</span><span class="n">formula_like</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">eval_env</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span>                                       <span class="n">NA_action</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py</span> in <span class="ni">_do_highlevel_design</span><span class="nt">(formula_like, data, eval_env, NA_action, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span>     <span class="k">if</span> <span class="n">design_infos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">167</span>         <span class="k">return</span> <span class="n">build_design_matrices</span><span class="p">(</span><span class="n">design_infos</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>                                      <span class="n">NA_action</span><span class="o">=</span><span class="n">NA_action</span><span class="p">,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/build.py</span> in <span class="ni">build_design_matrices</span><span class="nt">(design_infos, data, NA_action, return_type, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">887</span>             <span class="k">if</span> <span class="n">factor_info</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factor_info_to_values</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">888</span>                 <span class="n">value</span><span class="p">,</span> <span class="n">is_NA</span> <span class="o">=</span> <span class="n">_eval_factor</span><span class="p">(</span><span class="n">factor_info</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">NA_action</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">889</span>                 <span class="n">factor_info_to_isNAs</span><span class="p">[</span><span class="n">factor_info</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_NA</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/build.py</span> in <span class="ni">_eval_factor</span><span class="nt">(factor_info, data, NA_action)</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>                              <span class="s2">&quot;I got non-numeric data of type &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">78</span>                              <span class="o">%</span> <span class="p">(</span><span class="n">factor</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="n">result</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>                              <span class="n">factor</span><span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5574</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">5575</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5576</span> 
-
-<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;dtype&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6792</span><span class="o">/</span><span class="mf">270826893.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Code for calculating predicted probability</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/statsmodels/base/model.py</span> in <span class="ni">predict</span><span class="nt">(self, exog, transform, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1142</span>                        <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">The original error message returned by patsy is:</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1143</span>                        <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">))))</span>
-<span class="ne">-&gt; </span><span class="mi">1144</span>                 <span class="k">raise</span> <span class="n">exc</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1145</span>             <span class="k">if</span> <span class="n">orig_exog_len</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">exog</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_dict</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1146</span>                 <span class="k">if</span> <span class="n">exog_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span>: predict requires that you use a DataFrame when predicting from a model
-<span class="n">that</span> <span class="n">was</span> <span class="n">created</span> <span class="n">using</span> <span class="n">the</span> <span class="n">formula</span> <span class="n">api</span><span class="o">.</span>
-
-<span class="n">The</span> <span class="n">original</span> <span class="n">error</span> <span class="n">message</span> <span class="n">returned</span> <span class="n">by</span> <span class="n">patsy</span> <span class="ow">is</span><span class="p">:</span>
-<span class="s1">&#39;DataFrame&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;dtype&#39;</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.62534
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
+<p>The probability this person believes in evolution is 0.62 or 62%</p>
+<ul class="simple">
+<li><p>Try plugging in some different values - what about yourself or your family members?</p></li>
+</ul>
 </section>
 </section>
 <section id="assessing-the-model">
 <h2>Assessing the model<a class="headerlink" href="#assessing-the-model" title="Permalink to this heading">#</a></h2>
-<p>Just as we did in linear regression, we can obtain predicted values for the model.</p>
+<p>Just as we did in linear regression, we can obtain predicted values for the model for the people in the original dataset - that is for each person in the original dataframe, we get the model’s predicted probability they believe in evolution (we also know the ground truth, whether they replied that they do believe in evolution, or not)</p>
 <p>The predicted values can help us to understand how well our model did. They take a value between 0 and 1 and can be treated as a predicted probability of each individual answering ‘true’ to the survey question, given the <span class="math notranslate nohighlight">\(x\)</span> variables that we have modelled</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get predicted values for each row of the dataframe</span>
 <span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">evolution</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span><span class="s1">&#39;polviews&#39;</span><span class="p">,</span><span class="s1">&#39;colsci&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      0.374196
+1      0.544744
+2      0.502294
+3      0.412362
+4      0.388606
+         ...   
+498    0.752007
+499    0.743402
+500    0.799603
+501    0.331893
+502    0.323507
+Length: 503, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1565,6 +1533,11 @@ dtype: float64
 
 <span class="c1"># work out proportion correctly classified</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yhat</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6322067594433399
 </pre></div>
 </div>
 </div>
