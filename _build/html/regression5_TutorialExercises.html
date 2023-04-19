@@ -1163,11 +1163,6 @@ title="Print to PDF"
    Control for income
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extra-exercise-effective-sample-size">
-   Extra exercise: effective sample size
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -1225,11 +1220,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#control-for-income">
    Control for income
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extra-exercise-effective-sample-size">
-   Extra exercise: effective sample size
   </a>
  </li>
 </ul>
@@ -1336,9 +1326,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>Make a few notes on the findings using the odds ratios. How would you report the size of the effect using the odds ratios?</p>
-<p>Make a few notes on the findings using the odds ratios. How would you report the size of the effect using the odds ratios</p>
 <p>&lt; your comments here &gt;</p>
-<p>How good is this second model? Check the classification table based on predicted probabilities.</p>
+<p>How good is this second model? Check the proportion of cases correctly classified.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here for the classification table</span>
@@ -1359,30 +1348,6 @@ title="Print to PDF"
 </div>
 <p>Interpret the results carefully. Do any of your conclusions change now that we are controlling for income? (Compare the coefficients in model 2 and model 3). Why do you think this might be?</p>
 <p>&lt; your comments here &gt;</p>
-</section>
-<section id="extra-exercise-effective-sample-size">
-<h2>Extra exercise: effective sample size<a class="headerlink" href="#extra-exercise-effective-sample-size" title="Permalink to this heading">#</a></h2>
-<p>Look back at the sample size in each of the three logistic regression models.</p>
-<p>Why do you think the sample size is changing each time?</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> omits rows of the dataframe which have NaN for any predictor variable. Each time we change the set of predictor variables used, the number of rows excluded changes</p></li>
-</ul>
-<p>If you want to keep the same sample throughout all of the analysis, we can save the “effective sample” from model 3 with the following code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code to save effective sample size</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now re-run model 1 and check the sample size. Are there any changes in coefficient estimates once you have restricted the analysis to the effective sample?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to run model 1 on the effective sample</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 

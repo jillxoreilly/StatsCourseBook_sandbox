@@ -1397,10 +1397,10 @@ title="Print to PDF"
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>  <td>     3</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Tue, 18 Apr 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
+  <th>Date:</th>            <td>Wed, 19 Apr 2023</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
 </tr>
 <tr>
-  <th>Time:</th>                <td>11:28:08</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
+  <th>Time:</th>                <td>12:51:10</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -344.95</td> 
@@ -1525,24 +1525,31 @@ Length: 503, dtype: float64
 </div>
 </div>
 </div>
-<p>We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)&gt;0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false.</p>
+<p>We can compare how well the model prediction matches the observed data byb classifying (using Pr(y=1)&gt;0.5 as cut-off) which cases would be predicted as true or false, and comparing to whether the observed value was true or false.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get predicted values for each row of the dataframe</span>
 <span class="n">yhat</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">evolution</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span><span class="s1">&#39;polviews&#39;</span><span class="p">,</span><span class="s1">&#39;colsci&#39;</span><span class="p">]])</span>
 
+<span class="c1"># add column to the dataframe with the probability, and another with the binary prediction</span>
+<span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;yhat&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">yhat</span>
+<span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">yhat</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">)</span>
+
 <span class="c1"># work out proportion correctly classified</span>
-<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yhat</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+<span class="c1"># a participant (row) is correctly classified if columns &#39;evolved&#39; and &#39;prediction&#39; match</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="n">evolution</span><span class="p">[(</span><span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;evolved&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">])]</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">evolution</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6322067594433399
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6500994035785288
 </pre></div>
 </div>
 </div>
 </div>
-<p>The classification table shows that for the y=1 cases (n=282), the model predicted 212 correctly, and 70 incorrectly. For the cases reporting ‘false’ (y=0, n = 221), 115 were correctly classified and 106 incorrectly. Overall, 65% of the cases were correctly classified by this model</p>
+<p>Overall, 65% of the cases were correctly classified by this model</p>
 <p>While a linear regression uses the method of Ordinary Least Squares (OLS) to fit the model, logistic regression uses the <em>Maximum Likelihood Estimation</em> method. This method uses the values of the model parameters that are most consistent with the observed data, so that with the intercept and slope values estimated in the model, the observed data have a greater chance of occurring than with any other estimated values (See Agresti, Chapter 5).</p>
 <p>The log-likelihood is based on summing the probabilities of the observed and actual outcomes and tells us how much unexplained information there is after the model has been fitted (thus analogous to residual sum of squares in linear regression). The model log likelihood can be found in the model summary table.</p>
 <p>Like in linear regression <span class="math notranslate nohighlight">\(R^2\)</span>, we use a ‘baseline’ model with no <span class="math notranslate nohighlight">\(x\)</span> variables (predicting the outcome that occurs most often), and compare the log-likelihood after adding the <span class="math notranslate nohighlight">\(x\)</span> variables. The likelihood-ratio test, (in python the LLR <span class="math notranslate nohighlight">\(p\)</span>-value) produces a <span class="math notranslate nohighlight">\(p\)</span>-value so that we can tell if our model is statistically significant. Low p-values (below 0.05) tell us that the model with the <span class="math notranslate nohighlight">\(x\)</span>s is significantly better at predicting the outcome than the baseline model.</p>

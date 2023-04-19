@@ -137,7 +137,7 @@ logistic_model.predict(vals)
 logistic_model.predict(evolution[['age','polviews','colsci']])
 
 
-# We can compare how well the model prediction matches the observed data in a classification table which classifies (using Pr(y=1)>0.5 as cut-off) which cases would be predicted as true or false, in a table by whether the observed value was true or false. 
+# We can compare how well the model prediction matches the observed data byb classifying (using Pr(y=1)>0.5 as cut-off) which cases would be predicted as true or false, and comparing to whether the observed value was true or false. 
 # 
 
 # In[7]:
@@ -146,8 +146,15 @@ logistic_model.predict(evolution[['age','polviews','colsci']])
 # Get predicted values for each row of the dataframe
 yhat = logistic_model.predict(evolution[['age','polviews','colsci']])
 
+# add column to the dataframe with the probability, and another with the binary prediction
+evolution['yhat']=yhat
+evolution['prediction']=(yhat>0.5)
+
 # work out proportion correctly classified
-np.sum(yhat>0.5)/len(yhat)
+# a participant (row) is correctly classified if columns 'evolved' and 'prediction' match
+correct = evolution[(evolution['evolved']==evolution['prediction'])]
+
+len(correct)/len(evolution)
 
 
 # In[ ]:
@@ -156,8 +163,7 @@ np.sum(yhat>0.5)/len(yhat)
 
 
 
-# 
-# The classification table shows that for the y=1 cases (n=282), the model predicted 212 correctly, and 70 incorrectly. For the cases reporting ‘false’ (y=0, n = 221), 115 were correctly classified and 106 incorrectly. Overall, 65% of the cases were correctly classified by this model
+# Overall, 65% of the cases were correctly classified by this model
 # 
 # While a linear regression uses the method of Ordinary Least Squares (OLS) to fit the model, logistic regression uses the *Maximum Likelihood Estimation* method. This method uses the values of the model parameters that are most consistent with the observed data, so that with the intercept and slope values estimated in the model, the observed data have a greater chance of occurring than with any other estimated values (See Agresti, Chapter 5). 
 # 

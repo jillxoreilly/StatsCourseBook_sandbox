@@ -97,11 +97,9 @@
 
 # Make a few notes on the findings using the odds ratios. How would you report the size of the effect using the odds ratios?
 
-# Make a few notes on the findings using the odds ratios. How would you report the size of the effect using the odds ratios
-
 # < your comments here >
 
-# How good is this second model? Check the classification table based on predicted probabilities. 
+# How good is this second model? Check the proportion of cases correctly classified.
 
 # In[7]:
 
@@ -122,34 +120,3 @@
 # Interpret the results carefully. Do any of your conclusions change now that we are controlling for income? (Compare the coefficients in model 2 and model 3). Why do you think this might be?
 
 # < your comments here >
-
-# ### Extra exercise: effective sample size
-#     
-# Look back at the sample size in each of the three logistic regression models. 
-# 
-# Why do you think the sample size is changing each time? 
-# 
-# * `statsmodels` omits rows of the dataframe which have NaN for any predictor variable. Each time we change the set of predictor variables used, the number of rows excluded changes
-# 
-# If you want to keep the same sample throughout all of the analysis, we can save the “effective sample” from model 3 with the following code:
-# 
-
-# In[9]:
-
-
-# code to save effective sample size
-
-
-# Now re-run model 1 and check the sample size. Are there any changes in coefficient estimates once you have restricted the analysis to the effective sample?
-
-# In[10]:
-
-
-# your code here to run model 1 on the effective sample
-
-
-# In[ ]:
-
-
-
-
