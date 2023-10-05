@@ -114,7 +114,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -156,9 +161,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploring Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="descriptives_intro.html">
-   2. Describing data
+  <a class="reference internal" href="Chapter1_descriptives/descriptives_intro.html">
+   1. Describing data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -167,55 +179,50 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_outcomes.html">
-     2.2. Learning Objectives
+    <a class="reference internal" href="Chapter1_descriptives/descriptives_outcomes.html">
+     1.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_conceptCheck.html">
-     2.3. Concepts Review
+    <a class="reference internal" href="Chapter1_descriptives/MT_wk1_MeanMedianMode.html">
+     1.3. Mean, median and mode
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     2.4. Mean and Median
+    <a class="reference internal" href="Chapter1_descriptives/MT_wk1_StDevIQR.html">
+     1.4. Standard Deviation and IQR
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_SDandIQR.html">
-     2.5. Standard deviation and IQR
+    <a class="reference internal" href="Chapter1_descriptives/MT_wk1_Skew.html">
+     1.5. Skew
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_DataCleaning.html">
-     2.6. Data cleaning
+    <a class="reference internal" href="Chapter1_descriptives/MT_wk1_Correlation.html">
+     1.6. Correlation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_groupby.html">
-     2.7. Grouping data
+    <a class="reference internal" href="Chapter1_descriptives/descriptives_conceptCheck.html">
+     1.7. Concepts Review
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_PythonCheck.html">
-     2.8. Python skills check
+    <a class="reference internal" href="Chapter1_descriptives/MT_wk1_PythonIndexing.html">
+     1.8. Key Python syntax: indexing
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercises.html">
-     2.9. Tutorial exercises I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
-     2.11. Tutorial Exercises II - optional
+    <a class="reference internal" href="Chapter1_descriptives/descriptives_TutorialExercises.html">
+     1.9. Tutorial exercises I
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="plotting_intro.html">
-   3. Plotting Data
+  <a class="reference internal" href="Chapter2_visualization/plotting_intro.html">
+   2. Plotting Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -224,55 +231,61 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_outcomes.html">
-     3.2. Learning Objectives
+    <a class="reference internal" href="Chapter2_visualization/plotting_outcomes.html">
+     2.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_histogram.html">
-     3.3. Histogram
+    <a class="reference internal" href="Chapter2_visualization/MT_wk2_snsplt.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Seaborn
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_KDE.html">
-     3.4. KDE plot
+    <a class="reference internal" href="Chapter2_visualization/MT_wk2_histogram.html">
+     2.4. Histogram and KDE plot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_boxplot.html">
-     3.5. Boxplot
+    <a class="reference internal" href="Chapter2_visualization/MT_wk2_boxplot.html">
+     2.5. Boxplot and Violinplot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_scatterplot.html">
-     3.6. Scatterplot
+    <a class="reference internal" href="Chapter2_visualization/MT_wk2_scatterplot.html">
+     2.6. Scatterplot and 2D Histogram or KDE plot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_pandas.html">
-     3.7. Plotting with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_tweaks.html">
-     3.8. Tweaking plots
+    <a class="reference internal" href="Chapter2_visualization/MT_wk2_tweaks.html">
+     2.7. Tweaking plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="plotting_additionalMaterials.html">
-     3.9. More resources
+     2.8. More resources
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="plotting_TutorialExercises.html">
-     3.10. Tutorial Exercises
+     2.9. Tutorial Exercises
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="CorrCov_intro.html">
-   4. Correlation and Covariance
+  <a class="reference internal" href="Chapter3_wrangling/MT_wk3_intro.html">
+   3. Data Wrangling
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -281,618 +294,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_outcomes.html">
-     4.2. Learning Objectives
+    <a class="reference internal" href="Chapter3_wrangling/MT_wk3_outcomes.html">
+     3.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_conceptCheck.html">
-     4.3. Concepts Review
+    <a class="reference internal" href="Chapter3_wrangling/MT_wk3_FindOutliers.html">
+     3.3. Locating bad datapoints
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_introCorrCov.html">
-     4.4. Covariance and Correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_ClimateExample.html">
-     4.6. Climate example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_Spearman.html">
-     4.7. Spearman’s Rank Correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_PythonCheck.html">
-     4.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_TutorialExercises.html">
-     4.9. Tutorial Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_HandInAssignment.html">
-     4.10. Hand-in Assignment
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="binomial_overallIntro.html">
-   5. Data generating distributions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_intro.html">
-     5.1. The Binomial Distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_objectives.html">
-     5.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_singlecoin.html">
-     5.3. Simulated coin toss
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_10000reps.html">
-     5.4. Repeat the simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_nandp.html">
-     5.5. Changing
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(p\)
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_PMFandCDF.html">
-     5.6. Binomial PMF and CDF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_normal.html">
-     5.7. Normal distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_PythonCheck.html">
-     5.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_TutorialExercises1.html">
-     5.9. Tutorial Exercises I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_TutorialExercises2.html">
-     5.10. Tutorial Exercises II
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="CLT_intro.html">
-   6. The Central Limit Theorem
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_outcomes.html">
-     6.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_sampling.html">
-     6.3. Central Limit Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_CI.html">
-     6.5. Estimating the sampling distribution
-     <i>
-      from a sample
-     </i>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_TutorialExercises.html">
-     6.7. Tutorial exercises I: The Central Limit Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_Tutorial2tdist.html">
-     6.10. Tutorial Exercises II: the
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     distribution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="bootstrapping_intro.html">
-   7. The Bootstrap
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_outcomes.html">
-     7.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_samplingIntro.html">
-     7.3. Sampling with and without replacement
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_TheBootstrap.html">
-     7.4. The bootstrap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
-     7.6. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Assignment_intro.html">
-   8. Christmas vacation assignment
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="IMDb_exercise.html">
-     8.1. Movie data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Cheatsheet_intro.html">
-   9. Python Cheatsheet
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="coding_cheatsheet.html">
-     9.1. Coding support sheet
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="permutation_intro.html">
-   10. Permutation Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_outcomes.html">
-     10.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_technicalnote.html">
-     10.3. Sort out
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       scipy.stats
-      </span>
-     </code>
-     version
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_paired.html">
-     10.4. Permutation test for paired data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_independentSamples.html">
-     10.5. Permutation test for unpaired or independent samples data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_correlation.html">
-     10.6. Permutation test for correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_more.html">
-     10.7. Permutation testing - more practice
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.8. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="classictests_intro.html">
-   11. Classic tests
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_intro.html">
-     11.3. The t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     11.4. Independent samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     11.5. Paired Samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_oneSample.html">
-     11.6. One sample t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_intro.html">
-     11.7. Non-parametric equivalents of the t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_MannWhitneyU.html">
-     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
-     11.9. The Wilcoxon Sign-Rank Test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     11.11. Tutorial Exercises:
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     -test and non-parametric equivalents
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="power_intro.html">
-   12. Power analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_outcomes.html">
-     12.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_conceptCheck.html">
-     12.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_analysis.html">
-     12.4. Sensitivity, power, reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_placeholder.html">
-     12.9. Tutorial work and Hand in assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CSVreading_instructions.html">
-     12.10. Loading data from a .csv file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression1_intro.html">
-   13. Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_outcomes.html">
-     13.1. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_concepts.html">
-     13.2. Regression Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_interpretingSlope.html">
-     13.3. Interpreting the slope and intercept, prediction and residuals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_QandA.html">
-     13.4. Regression, Covariance and Correlation Q&amp;A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_prepwork.html">
-     13.5. Regression models in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression2_intro.html">
-   14. Multivariate Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_concepts.html">
-     14.2. Multivariate Analysis Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_typesOfRelationship.html">
-     14.3. Different types of multivariate relationship
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_QandA.html">
-     14.4. Multiple Regression Q &amp; A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_TutorialExercises.html">
-     14.5. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression3_intro.html">
-   15. Regression - Statistical Tests
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_outcomes.html">
-     15.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsR2.html">
-     15.3. Model fit:
-     <span class="math notranslate nohighlight">
-      \(R^2\)
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsConditionals.html">
-     15.4. Conditional Distributions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsSignificance.html">
-     15.5. Statistical Significance in Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_assumptions.html">
-     15.6. Assumptions in Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_prepwork.html">
-     15.7. Assessing Regression models in Python.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_TutorialExercises.html">
-     15.9. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression4_intro.html">
-   16. ANOVA
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_outcomes.html">
-     16.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_concepts.html">
-     16.3. ANOVA Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_longhandExample.html">
-     16.4. Longhand calculation example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_equations.html">
-     16.5. ANOVA Equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_KWtest.html">
-     16.6. Kruskall-Wallis test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_ANOVAregression.html">
-     16.7. ANOVA versus Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_prepwork.html">
-     16.8. ANOVA and Kruskal-Wallis in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_TutorialExercises.html">
-     16.9. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression5_intro.html">
-   17. Logistic Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_outcomes.html">
-     17.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_concepts.html">
-     17.3. Odds, logs and log odds
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_LogisticEquation.html">
-     17.4. Logistic Regression Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_workedExample.html">
-     17.5. Predicted probabilities (worked example)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_prepwork.html">
-     17.6. Logistic Regression in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_TutorialExercises.html">
-     17.7. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression6_intro.html">
-   18. Research Design
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_outcomes.html">
-     18.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_concepts.html">
-     18.3. Research Design Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_causality.html">
-     18.4. Causality
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_TutorialExercises.html">
-     18.5. Tutorial exercises
+    <a class="reference internal" href="Chapter3_wrangling/MT_wk3_NaNing.html">
+     3.4. Neutralizing bad datapoints
     </a>
    </li>
   </ul>

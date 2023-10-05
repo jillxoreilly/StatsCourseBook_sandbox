@@ -29,7 +29,7 @@ import statsmodels.formula.api as smf
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70395/1491599804.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_16030/1491599804.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      5[0m [0;32mimport[0m [0mpandas[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      6[0m [0;32mimport[0m [0mseaborn[0m [0;32mas[0m [0msns[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 7[0;31m [0;32mimport[0m [0mstatsomdel[0m[0;34m.[0m[0mapi[0m [0;32mas[0m [0msm[0m[0;34m[0m[0;34m[0m[0m

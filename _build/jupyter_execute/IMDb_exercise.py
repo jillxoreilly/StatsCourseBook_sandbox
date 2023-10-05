@@ -247,6 +247,7 @@ movies['classification'] = np.where(np.isin(movies.Certificate, ['PG', 'TV-PG'])
 
 
 
+
 # In[12]:
 
 

@@ -1,0 +1,1928 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Key Python syntax: indexing &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploring Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   1. Describing data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     1.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_MeanMedianMode.html">
+     1.3. Mean, median and mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_StDevIQR.html">
+     1.4. Standard Deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Skew.html">
+     1.5. Skew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Correlation.html">
+     1.6. Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     1.7. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_PythonIndexing.html">
+     1.8. Key Python syntax: indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     1.9. Tutorial exercises I
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2_visualization/plotting_intro.html">
+   2. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/plotting_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_snsplt.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Seaborn
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_histogram.html">
+     2.4. Histogram and KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_boxplot.html">
+     2.5. Boxplot and Violinplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_scatterplot.html">
+     2.6. Scatterplot and 2D Histogram or KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_tweaks.html">
+     2.7. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_additionalMaterials.html">
+     2.8. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_TutorialExercises.html">
+     2.9. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_intro.html">
+   3. Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_FindOutliers.html">
+     3.3. Locating bad datapoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_NaNing.html">
+     3.4. Neutralizing bad datapoints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Chapter1_descriptives/MT_wk1_taables.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Chapter1_descriptives/MT_wk1_taables.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FChapter1_descriptives/MT_wk1_taables.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Chapter1_descriptives/MT_wk1_taables.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-a-dataset-to-work-with">
+   Import a dataset to work with
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-descriptive-statistics">
+   Get descriptive statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decriptives-for-a-single-column">
+   Decriptives for a single column
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-does-it-work">
+     Why does it work?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-descriptives-for-a-subset-of-rows">
+   Get descriptives for a subset of rows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-find-the-relevant-rows">
+     Step 1: find the relevant rows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-find-the-relevant-column">
+     Step 2: find the relevant column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-add-in-the-actual-function">
+     Step 4: add in the actual function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-descriptives-for-one-category">
+   Get descriptives for one category
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#match-multiple-conditions">
+   Match multiple conditions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables-of-descriptive-statistics">
+   Tables of descriptive statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-look">
+     Quick look
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-table">
+     Custom table
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Key Python syntax: indexing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-a-dataset-to-work-with">
+   Import a dataset to work with
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-descriptive-statistics">
+   Get descriptive statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decriptives-for-a-single-column">
+   Decriptives for a single column
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-does-it-work">
+     Why does it work?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-descriptives-for-a-subset-of-rows">
+   Get descriptives for a subset of rows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-find-the-relevant-rows">
+     Step 1: find the relevant rows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-find-the-relevant-column">
+     Step 2: find the relevant column
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-add-in-the-actual-function">
+     Step 4: add in the actual function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-descriptives-for-one-category">
+   Get descriptives for one category
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#match-multiple-conditions">
+   Match multiple conditions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables-of-descriptive-statistics">
+   Tables of descriptive statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-look">
+     Quick look
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-table">
+     Custom table
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="key-python-syntax-indexing">
+<h1>Key Python syntax: indexing<a class="headerlink" href="#key-python-syntax-indexing" title="Permalink to this heading">#</a></h1>
+<p>In this notebook we cover some key <tt>Pandas</tt> syntax and functions:</p>
+<ul class="simple">
+<li><p>Syntax for <strong>indexing</strong> a dataframe - finding the rows and columns that you need</p></li>
+</ul>
+<p><strong>Indexing</strong> is something you will do every single time you write code for data analysis. Incorrect syntax in indexing is the number one biggest source of bugs for student on this course, so it is well worth spending the time to get to grips with it.</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual you will need to run this code block to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-a-dataset-to-work-with">
+<h2>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
+<p>You will need to download the file OxfordWeather.csv from Canvas to your computer, then import it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8.3</td>
+      <td>5.6</td>
+      <td>7.0</td>
+      <td>2.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2.2</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>2.2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>3</td>
+      <td>-2.2</td>
+      <td>-8.3</td>
+      <td>-5.3</td>
+      <td>6.1</td>
+      <td>9.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>4</td>
+      <td>-1.7</td>
+      <td>-7.8</td>
+      <td>-4.8</td>
+      <td>6.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>-10.6</td>
+      <td>-5.3</td>
+      <td>10.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>71338</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>26</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71339</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>27</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71340</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>28</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71341</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>29</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71342</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>30</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>71343 rows × 8 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="get-descriptive-statistics">
+<h2>Get descriptive statistics<a class="headerlink" href="#get-descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<p>We will look at indexing in the context of getting descriptive statistics for the different variables in a dataframe, and/or for a selection of rows.</p>
+<p>We have seen a number of functions to get descriptive statistics:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.mean()</span></code>   -  gets the mean</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.median()</span></code> - gets the median</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.var()</span></code> - gets the variance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.std()</span></code> - gets the standard deviation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.min()</span></code> - gets the minimum value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.max()</span></code> - gets the maximum value</p></li>
+</ul>
+<p>in the function names above, <code class="docutils literal notranslate"><span class="pre">df</span></code> is just a placeholder for “dataframe”</p>
+<p>You can replace <code class="docutils literal notranslate"><span class="pre">df</span></code> with the name of your dataframe (in which case you will get a table with the descriptive statistic you asked for, for every column containing numerical data)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>YYYY           1924.165174
+MM                6.516210
+DD               15.729154
+Tmax             13.890153
+Tmin              6.156018
+Tmean            10.046208
+Trange            7.734244
+Rainfall_mm       1.786964
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which columns from the dataframe are missing from the table of means?</p>
+<ul class="simple">
+<li><p>Month is missing because the values are strings (words); we only get the mean for numerical columns</p></li>
+</ul>
+</section>
+<section id="decriptives-for-a-single-column">
+<h2>Decriptives for a single column<a class="headerlink" href="#decriptives-for-a-single-column" title="Permalink to this heading">#</a></h2>
+<p>Format:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.column.mean()</span></code></p></li>
+</ul>
+<p>You might just want the mean for one column, in which case you can include the column name as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.890153065515065
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of a whole table of means, many of which were irrelevant, we now just have the single number we wanted - the mean of <tt>Tmax</tt></p>
+<ul class="simple">
+<li><p><em>Think</em> check that the value obtained this way matches the one in the table above.</p></li>
+</ul>
+<section id="why-does-it-work">
+<h3>Why does it work?<a class="headerlink" href="#why-does-it-work" title="Permalink to this heading">#</a></h3>
+<p>The commmand <code class="docutils literal notranslate"><span class="pre">weather.Tmax.mean()</span></code> has two steps.</p>
+<p><strong>Step 1:</strong></p>
+<p>The syntax <code class="docutils literal notranslate"><span class="pre">weather.Tmax</span></code> (or more generally, <code class="docutils literal notranslate"><span class="pre">df.column</span></code>) returns just the one column of the dataframe as a <tt>series</tt> (essentially a one-column table).</p>
+<p>Look:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">Tmax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         8.3
+1         2.2
+2        -2.2
+3        -1.7
+4         0.0
+         ... 
+71338    15.2
+71339    10.7
+71340    12.7
+71341    11.7
+71342    17.6
+Name: Tmax, Length: 71343, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we liked, we could give this single-column series a name a ‘save’ it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DailyMaxima</span>  <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">Tmax</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DailyMaxima</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         8.3
+1         2.2
+2        -2.2
+3        -1.7
+4         0.0
+         ... 
+71338    15.2
+71339    10.7
+71340    12.7
+71341    11.7
+71342    17.6
+Name: Tmax, Length: 71343, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, we don’t need to do that as we can just tack the <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> function onto it directly as follows:</p>
+<p><strong>Step 2:</strong></p>
+<p>The syntax <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> gets the mean of the thing before the dot (i.e. the series you created with the command <code class="docutils literal notranslate"><span class="pre">weather.Tmax</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.890153065515065
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
+<p>Complete the following quick practice questions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the mean daily rainfall</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the median daily rainfall</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the standard deviation of the maximum daily temperature</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the minimum value of &quot;year&quot; (you will need two separate commands)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="get-descriptives-for-a-subset-of-rows">
+<h2>Get descriptives for a subset of rows<a class="headerlink" href="#get-descriptives-for-a-subset-of-rows" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.query('columnname</span> <span class="pre">==</span> <span class="pre">number')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.query('columnname</span> <span class="pre">==</span> <span class="pre">&quot;string&quot;')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.query('columnname1</span> <span class="pre">==</span> <span class="pre">value1</span> <span class="pre">and</span> <span class="pre">columnname2</span> <span class="pre">==</span> <span class="pre">value2')</span></code></p></li>
+</ul>
+<p>Say I want to know the mean daily maximum temperatures for the year 1921.</p>
+<section id="step-1-find-the-relevant-rows">
+<h3>Step 1: find the relevant rows<a class="headerlink" href="#step-1-find-the-relevant-rows" title="Permalink to this heading">#</a></h3>
+<p>I first need to somehow pull out the rows of the table where the value for <tt>YYYY</tt> is <tt>1921</tt></p>
+<p>I can do this using the function <code class="docutils literal notranslate"><span class="pre">df.query</span></code>, for example <tt>weather.query(‘YYYY == 1921’)</tt></p>
+<ul class="simple">
+<li><p><strong>note</strong> the quote marks surrounding the whole query</p></li>
+<li><p><strong>note</strong> the double equals sign <code class="docutils literal notranslate"><span class="pre">==</span></code>, which is used for <em>checking</em> if two bvalues are equal (as opposed to setting a value)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all the rows where year is 1921</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">weather</span><span class="o">.</span><span class="n">YYYY</span> <span class="o">==</span> <span class="mi">1921</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>34333</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>1</td>
+      <td>12.2</td>
+      <td>7.1</td>
+      <td>9.7</td>
+      <td>5.1</td>
+      <td>9.7</td>
+    </tr>
+    <tr>
+      <th>34334</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>2</td>
+      <td>11.9</td>
+      <td>8.7</td>
+      <td>10.3</td>
+      <td>3.2</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>34335</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>3</td>
+      <td>9.9</td>
+      <td>5.9</td>
+      <td>7.9</td>
+      <td>4.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>34336</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>4</td>
+      <td>12.3</td>
+      <td>9.8</td>
+      <td>11.1</td>
+      <td>2.5</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>34337</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>5</td>
+      <td>11.4</td>
+      <td>6.5</td>
+      <td>9.0</td>
+      <td>4.9</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>34693</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>27</td>
+      <td>11.2</td>
+      <td>5.4</td>
+      <td>8.3</td>
+      <td>5.8</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>34694</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>28</td>
+      <td>13.9</td>
+      <td>3.9</td>
+      <td>8.9</td>
+      <td>10.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>34695</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>29</td>
+      <td>7.6</td>
+      <td>1.7</td>
+      <td>4.7</td>
+      <td>5.9</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>34696</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>30</td>
+      <td>11.7</td>
+      <td>1.9</td>
+      <td>6.8</td>
+      <td>9.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>34697</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>31</td>
+      <td>9.1</td>
+      <td>3.3</td>
+      <td>6.2</td>
+      <td>5.8</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>365 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Note the size of this table - there are 365 rows. Why?</p>
+<ul class="simple">
+<li><p>In the original table <code class="docutils literal notranslate"><span class="pre">weather</span></code>, there is one row per day</p></li>
+<li><p>365 of those rows (days) match the criterion ‘YYYY = 1921’ because there are 365 days in a year.</p></li>
+</ul>
+<p>If I wanted to, I could give this table a name and ‘save’ it for later use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather1921</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;YYYY == 1921&#39;</span><span class="p">)</span> <span class="c1"># create a new daataframe for just 1921</span>
+<span class="n">weather1921</span> <span class="c1"># look at my new dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>34333</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>1</td>
+      <td>12.2</td>
+      <td>7.1</td>
+      <td>9.7</td>
+      <td>5.1</td>
+      <td>9.7</td>
+    </tr>
+    <tr>
+      <th>34334</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>2</td>
+      <td>11.9</td>
+      <td>8.7</td>
+      <td>10.3</td>
+      <td>3.2</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>34335</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>3</td>
+      <td>9.9</td>
+      <td>5.9</td>
+      <td>7.9</td>
+      <td>4.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>34336</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>4</td>
+      <td>12.3</td>
+      <td>9.8</td>
+      <td>11.1</td>
+      <td>2.5</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>34337</th>
+      <td>1921</td>
+      <td>1</td>
+      <td>5</td>
+      <td>11.4</td>
+      <td>6.5</td>
+      <td>9.0</td>
+      <td>4.9</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>34693</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>27</td>
+      <td>11.2</td>
+      <td>5.4</td>
+      <td>8.3</td>
+      <td>5.8</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>34694</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>28</td>
+      <td>13.9</td>
+      <td>3.9</td>
+      <td>8.9</td>
+      <td>10.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>34695</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>29</td>
+      <td>7.6</td>
+      <td>1.7</td>
+      <td>4.7</td>
+      <td>5.9</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>34696</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>30</td>
+      <td>11.7</td>
+      <td>1.9</td>
+      <td>6.8</td>
+      <td>9.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>34697</th>
+      <td>1921</td>
+      <td>12</td>
+      <td>31</td>
+      <td>9.1</td>
+      <td>3.3</td>
+      <td>6.2</td>
+      <td>5.8</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>365 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>… but I don’t need to do this as I can tack on more commands to complete my goal in a single line of code.</p>
+</section>
+<section id="step-2-find-the-relevant-column">
+<h3>Step 2: find the relevant column<a class="headerlink" href="#step-2-find-the-relevant-column" title="Permalink to this heading">#</a></h3>
+<p>Now that I have grabbed the relevant rows, I narrow it down to column <tt>Tmax</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;YYYY == 1920&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Tmax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33967     3.2
+33968     4.5
+33969     3.7
+33970     3.7
+33971     4.5
+         ... 
+34328    11.9
+34329    12.3
+34330    12.4
+34331    12.1
+34332    13.2
+Name: Tmax, Length: 366, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-add-in-the-actual-function">
+<h3>Step 4: add in the actual function<a class="headerlink" href="#step-4-add-in-the-actual-function" title="Permalink to this heading">#</a></h3>
+<p>FInally, I can tack on teh function I want to run on my selected rows and column: <code class="docutils literal notranslate"><span class="pre">mean()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;YYYY == 1920&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.701092896174865
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Exercises<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Complete the following quick practice questions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the mean daily maximum temperature in 2006</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the mean daily minimum temperature in 1947</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="get-descriptives-for-one-category">
+<h2>Get descriptives for one category<a class="headerlink" href="#get-descriptives-for-one-category" title="Permalink to this heading">#</a></h2>
+<p>What about getting the mean daily maximum temperatures for, say, October? So I need to pull out all the rows in which <tt>’MM’</tt> matches <tt>’October’</tt></p>
+<p>The syntax is very similar, but now I am matching a string <code class="docutils literal notranslate"><span class="pre">&quot;October&quot;</span></code>, so it needs to be in quotes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;MM == &quot;October&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>note</strong> you can actually use single and double quotes interchangeably in Python, but in cases like this where you have quotes within quotes, it is better to use both types to avoid the computer getting confused about which opening and closing quotes to pair up.</p></li>
+</ul>
+<p>so you could do either of these</p>
+<ul class="simple">
+<li><p>weather.query(‘MM == “October”’).Tmax.mean()</p></li>
+<li><p>weather.query(“MM == ‘October’”).Tmax.mean()</p></li>
+</ul>
+<p>but not these</p>
+<ul class="simple">
+<li><p>weather.query(‘MM == ‘October’’).Tmax.mean()</p></li>
+<li><p>weather.query(“MM == ‘October’”).Tmax.mean()</p></li>
+</ul>
+<section id="id2">
+<h3>Exercises<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Complete the following quick practice questions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the mean daily rainfall in January</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the mean daily rainfall in June</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="match-multiple-conditions">
+<h2>Match multiple conditions<a class="headerlink" href="#match-multiple-conditions" title="Permalink to this heading">#</a></h2>
+<p>What if I want to know the mean daily maximum temperature in 1920 for June only?</p>
+<p>We can simply use <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> to pass <code class="docutils literal notranslate"><span class="pre">df.query()</span></code> multiple conditions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mean daily maximumm temperature in 1920</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;YYYY == 1920&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.701092896174865
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mean daily maximumm temperature in 1920</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;YYYY == 1920 &amp; MM == 6&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.553333333333335
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Think</strong> hopefully the value for June is higher than the avergae for the whole year? If not something has gone wrong!</p></li>
+</ul>
+<section id="id3">
+<h3>Exercises<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Complete the following quick practice questions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the mean daily rainfall in June 2007</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the minimum temperature in January 1947</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tables-of-descriptive-statistics">
+<h2>Tables of descriptive statistics<a class="headerlink" href="#tables-of-descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<p>When you are writing a report on a dataset you might like to generate a nice table with the descriptive statistics that you need all together in one place|</p>
+<p>There are a couple of ways to do this</p>
+<section id="quick-look">
+<h3>Quick look<a class="headerlink" href="#quick-look" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></li>
+</ul>
+<p>We can output a standard set of descriptives for all the numerical columns in the dataframe by just using <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>71343.000000</td>
+      <td>71343.000000</td>
+      <td>71343.000000</td>
+      <td>71342.000000</td>
+      <td>71341.000000</td>
+      <td>71341.000000</td>
+      <td>71338.000000</td>
+      <td>71343.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1924.165174</td>
+      <td>6.516210</td>
+      <td>15.729154</td>
+      <td>13.890153</td>
+      <td>6.156018</td>
+      <td>10.046208</td>
+      <td>7.734244</td>
+      <td>1.786964</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>56.387642</td>
+      <td>3.450063</td>
+      <td>8.799927</td>
+      <td>6.490258</td>
+      <td>5.235341</td>
+      <td>5.632085</td>
+      <td>3.513996</td>
+      <td>3.976377</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1827.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>-9.600000</td>
+      <td>-17.800000</td>
+      <td>-12.100000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1875.000000</td>
+      <td>4.000000</td>
+      <td>8.000000</td>
+      <td>9.200000</td>
+      <td>2.200000</td>
+      <td>5.900000</td>
+      <td>5.200000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1924.000000</td>
+      <td>7.000000</td>
+      <td>16.000000</td>
+      <td>13.700000</td>
+      <td>6.400000</td>
+      <td>10.100000</td>
+      <td>7.400000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1973.000000</td>
+      <td>10.000000</td>
+      <td>23.000000</td>
+      <td>18.900000</td>
+      <td>10.200000</td>
+      <td>14.500000</td>
+      <td>10.000000</td>
+      <td>1.700000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2022.000000</td>
+      <td>12.000000</td>
+      <td>31.000000</td>
+      <td>36.500000</td>
+      <td>21.200000</td>
+      <td>27.400000</td>
+      <td>23.100000</td>
+      <td>87.900000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>note</strong> MM is missing from the table because the values are not numerical</p></li>
+</ul>
+<p>This can be good for a quick look but most likely you will not need all these stats on aall the variables - if you were producing a report for an assignment (or a client) you would want to customize the table</p>
+</section>
+<section id="custom-table">
+<h3>Custom table<a class="headerlink" href="#custom-table" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">df.agg({'columname':['mean',</span> <span class="pre">'std',</span> <span class="pre">'count']})</span></code></p>
+<p>You can create a table with the just the stats you need using the function <code class="docutils literal notranslate"><span class="pre">df.agg()</span></code></p>
+<p>This is not essential (although it does look nice in a report) - the syntax is a bit fiddly but you can copy from this example which gives the mean and standard deviation for <tt>Tmin</tt> and <tt>Tmax</tt>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get mean and sd for Tmin and Tmax</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Tmin&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tmin</th>
+      <th>Tmax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>6.156018</td>
+      <td>13.890153</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.235341</td>
+      <td>6.490258</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, instead of doing that for the whole dataframe <code class="docutils literal notranslate"><span class="pre">weather</span></code>, you can select rows using <code class="docutils literal notranslate"><span class="pre">df.query()</span></code> as before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get mean and sd for Tmin and Tmax in June</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;MM == 6&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Tmin&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="s1">&#39;Tmax&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tmin</th>
+      <th>Tmax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>10.328291</td>
+      <td>20.011487</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.664211</td>
+      <td>3.585932</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter1_descriptives"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

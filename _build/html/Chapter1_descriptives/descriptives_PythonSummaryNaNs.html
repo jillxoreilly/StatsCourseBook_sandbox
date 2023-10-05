@@ -1,0 +1,1542 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Key Python functions: Missing data and NaNs &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploring Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   1. Describing data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     1.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_MeanMedianMode.html">
+     1.3. Mean, median and mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_StDevIQR.html">
+     1.4. Standard Deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Skew.html">
+     1.5. Skew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Correlation.html">
+     1.6. Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     1.7. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_PythonIndexing.html">
+     1.8. Key Python syntax: indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     1.9. Tutorial exercises I
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2_visualization/plotting_intro.html">
+   2. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/plotting_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_snsplt.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Seaborn
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_histogram.html">
+     2.4. Histogram and KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_boxplot.html">
+     2.5. Boxplot and Violinplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_scatterplot.html">
+     2.6. Scatterplot and 2D Histogram or KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_tweaks.html">
+     2.7. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_additionalMaterials.html">
+     2.8. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_TutorialExercises.html">
+     2.9. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_intro.html">
+   3. Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_FindOutliers.html">
+     3.3. Locating bad datapoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_NaNing.html">
+     3.4. Neutralizing bad datapoints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Chapter1_descriptives/descriptives_PythonSummaryNaNs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Chapter1_descriptives/descriptives_PythonSummaryNaNs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FChapter1_descriptives/descriptives_PythonSummaryNaNs.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Chapter1_descriptives/descriptives_PythonSummaryNaNs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-a-dataset-to-work-with">
+   Import a dataset to work with
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-outliers">
+   Finding outliers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-df-describe-to-check-min-and-max-values-are-plausible">
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       df.describe()
+      </span>
+     </code>
+     to check min and max values are plausible
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-df-sort-values-by-column-or-df-sort-values-by-column-tail-to-find-the-offending-rows-in-the-dataframe">
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       df.sort_values(by
+      </span>
+      <span class="pre">
+       =
+      </span>
+      <span class="pre">
+       'column')
+      </span>
+     </code>
+     or
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       df.sort_values(by
+      </span>
+      <span class="pre">
+       =
+      </span>
+      <span class="pre">
+       'column').tail()
+      </span>
+     </code>
+     to find the offending rows in the dataframe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-sort-by-the-column-of-interest">
+       Step 1: Sort by the column of interest
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dealing-with-outliers">
+   Dealing with outliers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replace-only-the-bad-values">
+     Replace only the bad values
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-find-the-rows-with-long-cars">
+       Step 1: find the rows with long cars
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-select-only-the-relevant-column">
+       Step 2: Select only the relevant column
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercises">
+       Exercises
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replace-the-entire-row-by-nan">
+     Replace the entire row by
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NaN
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-the-record-entirely">
+     Drop the record entirely
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Key Python functions: Missing data and NaNs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-a-dataset-to-work-with">
+   Import a dataset to work with
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-outliers">
+   Finding outliers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-df-describe-to-check-min-and-max-values-are-plausible">
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       df.describe()
+      </span>
+     </code>
+     to check min and max values are plausible
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-df-sort-values-by-column-or-df-sort-values-by-column-tail-to-find-the-offending-rows-in-the-dataframe">
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       df.sort_values(by
+      </span>
+      <span class="pre">
+       =
+      </span>
+      <span class="pre">
+       'column')
+      </span>
+     </code>
+     or
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       df.sort_values(by
+      </span>
+      <span class="pre">
+       =
+      </span>
+      <span class="pre">
+       'column').tail()
+      </span>
+     </code>
+     to find the offending rows in the dataframe
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-sort-by-the-column-of-interest">
+       Step 1: Sort by the column of interest
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dealing-with-outliers">
+   Dealing with outliers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replace-only-the-bad-values">
+     Replace only the bad values
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-find-the-rows-with-long-cars">
+       Step 1: find the rows with long cars
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-select-only-the-relevant-column">
+       Step 2: Select only the relevant column
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercises">
+       Exercises
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replace-the-entire-row-by-nan">
+     Replace the entire row by
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NaN
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-the-record-entirely">
+     Drop the record entirely
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="key-python-functions-missing-data-and-nans">
+<h1>Key Python functions: Missing data and NaNs<a class="headerlink" href="#key-python-functions-missing-data-and-nans" title="Permalink to this heading">#</a></h1>
+<p>In this notebook we gather together and recap the <tt>Pandas</tt> functions we have learned this week:</p>
+<ul class="simple">
+<li><p>Functions for <strong>locating outliers</strong></p></li>
+<li><p>Syntax for replacing missing data with <strong>NaN</strong></p></li>
+</ul>
+<p>As we have seen, outliers can distort the values of statistics such as the mean and standard deviation</p>
+<p>In real datasets, outliers are common, arising from one of the following:</p>
+<ul>
+    <li> Real but unusual values (eg many basketball players are outliers in terms of height)
+    <li> Noise in a data recording system (eg in brain imaging data, noise signals from head movement are much larger than the real brain activity we are trying to record)
+    <li> Data entry error (human types the wrong number)
+</ul>
+<p>Identifying and removing outliers and bad data points is a crucial step in the process of preparing our data for analysis, sometimes called <i>data wrangling</i></p>
+<section id="set-up-python-libraries">
+<h2>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual you will need to run this code block to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-a-dataset-to-work-with">
+<h2>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
+<p>You will need to download the file OxfordWeather.csv from Canvas to your computer, then import it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier1.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.9187</td>
+      <td>1.5320</td>
+      <td>1.8030</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.6486</td>
+      <td>1.5936</td>
+      <td>1.6463</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.5785</td>
+      <td>1.5447</td>
+      <td>1.7140</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5563</td>
+      <td>1.5549</td>
+      <td>1.7331</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.0321</td>
+      <td>1.5069</td>
+      <td>1.7320</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>978</th>
+      <td>5.0897</td>
+      <td>1.8396</td>
+      <td>1.8356</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>979</th>
+      <td>4.0224</td>
+      <td>1.5860</td>
+      <td>1.7862</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>980</th>
+      <td>3.4771</td>
+      <td>1.5340</td>
+      <td>1.7418</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>981</th>
+      <td>5.2096</td>
+      <td>1.6396</td>
+      <td>1.8229</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>982</th>
+      <td>3.7549</td>
+      <td>1.5096</td>
+      <td>1.8274</td>
+      <td>car</td>
+    </tr>
+  </tbody>
+</table>
+<p>983 rows × 4 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="finding-outliers">
+<h2>Finding outliers<a class="headerlink" href="#finding-outliers" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.sort_values(by</span> <span class="pre">=</span> <span class="pre">'columname').head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.sortvalues(by</span> <span class="pre">=</span> <span class="pre">'columname').head()</span></code></p></li>
+</ul>
+<p>When working with a new dataset it is always necessary to check for missing data and outliers.</p>
+<p>Often the best way to check for outliers is by plotting (which will be covered next week) but some of the describing data functions are also useful for this.</p>
+<section id="use-df-describe-to-check-min-and-max-values-are-plausible">
+<h3>Use <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> to check min and max values are plausible<a class="headerlink" href="#use-df-describe-to-check-min-and-max-values-are-plausible" title="Permalink to this heading">#</a></h3>
+<p>Often if there is an outlier or misrecorded data point, the outlier will be the minimum or maxiumum value in a dataset:</p>
+<ul class="simple">
+<li><p>If the decimal point is misplaced we get a very large (or small value) - eg a person’s height could easily be misrecorded as 1765 cm (over 17 metres!) instead of 176.5 cm</p></li>
+<li><p>If the wrong units are used we could get a very larg or small value - eg a person’s height is recorded as 1.756 (m) when it should have been recorded as 176.5 (cm)</p></li>
+<li><p>sometimes ‘dummy’ values are used as placeholders for missing data - often the duymmy value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> but sometimes an obviously-wrong numerical value (such as 999) is used.</p></li>
+</ul>
+<p>Therefore, running <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> and checking the min and max values for each datapoint is a good first step</p>
+<p>Let’s try it with our cars dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>983.000000</td>
+      <td>983.000000</td>
+      <td>983.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.219838</td>
+      <td>1.586132</td>
+      <td>1.793355</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.708656</td>
+      <td>0.131954</td>
+      <td>0.056570</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.110900</td>
+      <td>1.430400</td>
+      <td>1.624100</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.816750</td>
+      <td>1.540050</td>
+      <td>1.760250</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.121600</td>
+      <td>1.574600</td>
+      <td>1.790400</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.520250</td>
+      <td>1.612350</td>
+      <td>1.821000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>15.361000</td>
+      <td>4.201700</td>
+      <td>2.499800</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can see that the max values for <tt>length</tt> (15 meters) and height (4 meters) are implausible (if you are thinking ‘but how would I know how long or high a car is’ - just think for a second - two metres is the height of a very tall person, do you see many cars twice that height?!).</p>
+<p>On the other hand, the minimum values look OK.</p>
+</section>
+<section id="use-df-sort-values-by-column-or-df-sort-values-by-column-tail-to-find-the-offending-rows-in-the-dataframe">
+<h3>Use <code class="docutils literal notranslate"><span class="pre">df.sort_values(by</span> <span class="pre">=</span> <span class="pre">'column')</span></code> or <code class="docutils literal notranslate"><span class="pre">df.sort_values(by</span> <span class="pre">=</span> <span class="pre">'column').tail()</span></code> to find the offending rows in the dataframe<a class="headerlink" href="#use-df-sort-values-by-column-or-df-sort-values-by-column-tail-to-find-the-offending-rows-in-the-dataframe" title="Permalink to this heading">#</a></h3>
+<p>We now want to have a look at the records (dataframe rows) containing the outlier vehicle lengths (or heights), to try and figure out what went wrong.</p>
+<p>If our data were in a spreadsheet like Excel, we might sort the data by the column of interest (height) and scroll to the bottom to find the largest values.</p>
+<p>When working with a code-based data analysis we can achieve much the same thing by sorting and then displaying the top or bottom of the sorted dataframe using <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code>:</p>
+<section id="step-1-sort-by-the-column-of-interest">
+<h4>Step 1: Sort by the column of interest<a class="headerlink" href="#step-1-sort-by-the-column-of-interest" title="Permalink to this heading">#</a></h4>
+<p>We sort by length:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;length&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>655</th>
+      <td>3.1109</td>
+      <td>1.5512</td>
+      <td>1.7912</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>514</th>
+      <td>3.1197</td>
+      <td>1.4932</td>
+      <td>1.7817</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>813</th>
+      <td>3.1682</td>
+      <td>1.5888</td>
+      <td>1.7338</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>471</th>
+      <td>3.1957</td>
+      <td>1.5372</td>
+      <td>1.7438</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3.2169</td>
+      <td>1.5708</td>
+      <td>1.7401</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>846</th>
+      <td>5.8810</td>
+      <td>1.6763</td>
+      <td>1.9525</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>468</th>
+      <td>5.9601</td>
+      <td>1.6343</td>
+      <td>1.8413</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>6.1024</td>
+      <td>1.8231</td>
+      <td>1.8678</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>14.5080</td>
+      <td>4.2017</td>
+      <td>2.4890</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>15.3610</td>
+      <td>4.1914</td>
+      <td>2.4998</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+<p>983 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>We can already see that there are two outliers with much higher lengths - and that they are actually trucks not cars - so that explains the problem</p>
+<p>In some cases, we might have a lot of outliers - the default display for a dataframe shows us the first and last five entries only. So we might want to expand out view a little bit.</p>
+<p>To show the last 10 entries use <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code> (here chained together with <code class="docutils literal notranslate"><span class="pre">df.sort_values()</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;length&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>874</th>
+      <td>5.6928</td>
+      <td>1.7700</td>
+      <td>1.7595</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>5.7599</td>
+      <td>1.7601</td>
+      <td>1.8932</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>729</th>
+      <td>5.7672</td>
+      <td>1.7477</td>
+      <td>1.9293</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>442</th>
+      <td>5.8379</td>
+      <td>1.5743</td>
+      <td>1.8027</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>741</th>
+      <td>5.8421</td>
+      <td>1.7371</td>
+      <td>1.9322</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>846</th>
+      <td>5.8810</td>
+      <td>1.6763</td>
+      <td>1.9525</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>468</th>
+      <td>5.9601</td>
+      <td>1.6343</td>
+      <td>1.8413</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>6.1024</td>
+      <td>1.8231</td>
+      <td>1.8678</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>14.5080</td>
+      <td>4.2017</td>
+      <td>2.4890</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>15.3610</td>
+      <td>4.1914</td>
+      <td>2.4998</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>similarly you can use <code class="docutils literal notranslate"><span class="pre">df.head(n=20)</span></code> to show the first 20 entries (for example).</p>
+</section>
+</section>
+</section>
+<section id="dealing-with-outliers">
+<h2>Dealing with outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this heading">#</a></h2>
+<p>Once you have found outliers, you will want to remove them from your dataset.</p>
+<section id="replace-only-the-bad-values">
+<h3>Replace only the bad values<a class="headerlink" href="#replace-only-the-bad-values" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[row_index,</span> <span class="pre">column_index]</span> <span class="pre">=</span> <span class="pre">np.nan()</span></code></p></li>
+</ul>
+<p>In most cases the best option is to replace only the bad values, retaining the rest of the record.</p>
+<p>We will replace the values with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> - ‘not a number’ which is a dummy value that will be ignored by most Python functions (for example, if we calculate the mean of a column containing NaNs, Pandas just calculates the mean of all the non-NaN values)</p>
+<p>To do this we unfortunately have to use different syntax from our regular indexing, as we are <em>setting</em> values in the dataframe. We use the function <code class="docutils literal notranslate"><span class="pre">df.loc</span></code>.</p>
+<section id="step-1-find-the-rows-with-long-cars">
+<h4>Step 1: find the rows with long cars<a class="headerlink" href="#step-1-find-the-rows-with-long-cars" title="Permalink to this heading">#</a></h4>
+<p>First let’s use <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code> to find the rows where length is greater than for a normal car (looking at the dataframe above, I chose a cut-off of 8 meters).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pull out the rows where length exceeds 8 meters</span>
+<span class="n">cars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cars</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>15.361</td>
+      <td>4.1914</td>
+      <td>2.4998</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>14.508</td>
+      <td>4.2017</td>
+      <td>2.4890</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="step-2-select-only-the-relevant-column">
+<h4>Step 2: Select only the relevant column<a class="headerlink" href="#step-2-select-only-the-relevant-column" title="Permalink to this heading">#</a></h4>
+<p>Now we want to pull out only the column <tt>length</tt>, as we only want to overwrite the length values with <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, retaining the heights and widths</p>
+<p>We add a column index to <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pull out the rows where length exceeds 8 meters</span>
+<span class="n">cars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cars</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100    15.361
+101    14.508
+Name: length, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Step 3: Replace the values with `NaN`</span>
+
+<span class="n">Finally</span> <span class="n">we</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">offending</span> <span class="n">values</span> <span class="k">with</span> <span class="n">NaN</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_4885/4084713886.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+    <span class="n">Finally</span> <span class="n">we</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">offending</span> <span class="n">values</span> <span class="k">with</span> <span class="n">NaN</span><span class="p">:</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cars</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>note</strong> that we need to use a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> to create the NaN values</p></li>
+</ul>
+<p>Let’s check that the bad values have been replaced, by viewing the end of our dataframe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;length&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>note</strong> If you don’t see any <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values, try using <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code> - depending on your Python installation, the defaults could be set such that NaNs appear at the top of the dataframe rather than the bottom.</p></li>
+</ul>
+</section>
+<section id="exercises">
+<h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h4>
+<p>Try the following quick exercises:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find out what car height constitutes an outlier by sorting the dataframe by height</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace values of &#39;height&#39; greater than 3 meters by NaN </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="replace-the-entire-row-by-nan">
+<h3>Replace the entire row by <code class="docutils literal notranslate"><span class="pre">NaN</span></code><a class="headerlink" href="#replace-the-entire-row-by-nan" title="Permalink to this heading">#</a></h3>
+<p>First, let’s reload the dataset with outliers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier1.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, you might want to remove the whole record - for example, in the cars dataset, the vehicles with outlier lengths were evidently not cars at all (they were trucks)</p>
+<p>You can replace the entire row with NaNs by simply not specifying a column index for <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pull out the rows where length exceeds 8 meters</span>
+<span class="n">cars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cars</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we replace those entire rows with <code class="docutils literal notranslate"><span class="pre">NaN</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cars</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally let’s check it worked:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;length&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>note</strong> all the values in the offending rows are now NaN, instead of just the value for <tt>length</tt> as previously</p></li>
+</ul>
+</section>
+<section id="drop-the-record-entirely">
+<h3>Drop the record entirely<a class="headerlink" href="#drop-the-record-entirely" title="Permalink to this heading">#</a></h3>
+<p>In some cases you may wish to actually remove the rows from a dataframe. This should be treated with caution (see below).</p>
+<p>In the caase of the cars dataset, since the outlier vehicles were not actually cars, they probably could just be cut right out.</p>
+<p>The easiest way to do this is actually to create a new dataframe with only the values you want to keep:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reload the data with outliers back in!</span>
+<span class="n">cars</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier1.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new dataframe with only cars less than 8m long</span>
+<span class="n">cars_clean</span> <span class="o">=</span> <span class="n">cars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cars</span><span class="o">.</span><span class="n">length</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">]</span> <span class="c1"># note the sign is now &lt; rather than &gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check that the trucks are gone</span>
+<span class="n">cars_clean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;length&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>note</strong> - this dataframe has 981 rows, whilst the original dataframe had 983 - this proves taht the two offending rows were removed completely</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter1_descriptives"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

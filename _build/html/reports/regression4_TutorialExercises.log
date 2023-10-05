@@ -26,7 +26,7 @@ data.loc[(data['age'] < 30),['age4']]='under 30'
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_5655/1193428705.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_17027/1193428705.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m# create a new column and fill it with NaN for now[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mdata[0m[0;34m[[0m[0;34m'age4'[0m[0;34m][0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mnan[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0;34m[0m[0m

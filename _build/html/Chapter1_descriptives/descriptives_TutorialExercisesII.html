@@ -1,0 +1,1069 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial Exercises II - optional &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploring Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   1. Describing data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     1.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_MeanMedianMode.html">
+     1.3. Mean, median and mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_StDevIQR.html">
+     1.4. Standard Deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Skew.html">
+     1.5. Skew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Correlation.html">
+     1.6. Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     1.7. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_PythonIndexing.html">
+     1.8. Key Python syntax: indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     1.9. Tutorial exercises I
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2_visualization/plotting_intro.html">
+   2. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/plotting_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_snsplt.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Seaborn
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_histogram.html">
+     2.4. Histogram and KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_boxplot.html">
+     2.5. Boxplot and Violinplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_scatterplot.html">
+     2.6. Scatterplot and 2D Histogram or KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_tweaks.html">
+     2.7. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_additionalMaterials.html">
+     2.8. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_TutorialExercises.html">
+     2.9. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_intro.html">
+   3. Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_FindOutliers.html">
+     3.3. Locating bad datapoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_NaNing.html">
+     3.4. Neutralizing bad datapoints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Chapter1_descriptives/descriptives_TutorialExercisesII.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Chapter1_descriptives/descriptives_TutorialExercisesII.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FChapter1_descriptives/descriptives_TutorialExercisesII.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Chapter1_descriptives/descriptives_TutorialExercisesII.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-n-1">
+   Why
+   <span class="math notranslate nohighlight">
+    \((n-1)\)
+   </span>
+   ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-i-estimators-i">
+   Introducing
+   <i>
+    estimators
+   </i>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demonstration-by-simulation">
+   Demonstration by Simulation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-data">
+     Population data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-data">
+     Sample data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulate-many-samples">
+     Simulate many samples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-your-understanding-of-the-code">
+       Check your understanding of the code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#justifying-n-1">
+     Justifying
+     <span class="math notranslate nohighlight">
+      \(n-1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vary-sample-size">
+     Vary sample size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hints">
+     Hints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial Exercises II - optional</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-n-1">
+   Why
+   <span class="math notranslate nohighlight">
+    \((n-1)\)
+   </span>
+   ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-i-estimators-i">
+   Introducing
+   <i>
+    estimators
+   </i>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demonstration-by-simulation">
+   Demonstration by Simulation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-data">
+     Population data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-data">
+     Sample data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulate-many-samples">
+     Simulate many samples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-your-understanding-of-the-code">
+       Check your understanding of the code
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#justifying-n-1">
+     Justifying
+     <span class="math notranslate nohighlight">
+      \(n-1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vary-sample-size">
+     Vary sample size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hints">
+     Hints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-ii-optional">
+<h1>Tutorial Exercises II - optional<a class="headerlink" href="#tutorial-exercises-ii-optional" title="Permalink to this heading">#</a></h1>
+<p>In this section we use our skills in creating <tt>for</tt> loops to investigate the properties of the mean and standard deviation</p>
+<p>This material will not be assessed but is presented for your interest and understanding (and to practice some coding!)</p>
+<p>You should only tackle it if you have plenty of time left in the tutorial after completing Tutorial Exercises I.</p>
+<p>This exercise involves more coding than the rest of the exercises this week - in particular it involves <tt>for</tt> loops. You may want to review the material in chapter 1, ‘preparatory work’ to help you with this. If you didn’t get to do the ‘preparatory work’ yet, maybe just do that instead.</p>
+<section id="why-n-1">
+<h2>Why <span class="math notranslate nohighlight">\((n-1)\)</span>?<a class="headerlink" href="#why-n-1" title="Permalink to this heading">#</a></h2>
+<p>In the exercises and lecture this week, we calculated the mean and standard deviation of data.</p>
+<p>A casual description of the variance (<span class="math notranslate nohighlight">\(s^2\)</span>, standard deviation squared) is that it is approximately the average squared deviation between datapoints and the mean - therefore to calculate it we:</p>
+<ul>
+    <li> calculate the difference between each data point and the mean
+    <li> square those differences
+    <li> add them all up
+    <li> divide by the number of datapoints
+</ul>
+<p>That would suggest the following formula:</p>
+<p>(1)</p>
+<div class="math notranslate nohighlight">
+\[ s^2 = \sum{\frac{{(x_i - \bar{x})}^2}{n}} \]</div>
+<p>But in fact the formula has <span class="math notranslate nohighlight">\((n-1)\)</span> on the bottom:</p>
+<p>(2)</p>
+<div class="math notranslate nohighlight">
+\[ s^2 = \sum{\frac{{(x_i - \bar{x})}^2}{n-1}} \]</div>
+<p>Why? To understand this we first need to introduce the concept of <i>estimators</i></p>
+</section>
+<section id="introducing-i-estimators-i">
+<h2>Introducing <i>estimators</i><a class="headerlink" href="#introducing-i-estimators-i" title="Permalink to this heading">#</a></h2>
+<p>Typically, our dataset is a <i>sample</i> from a larger population and we want to use the mean and sd not so much to describe our sample, as to describe the (likely) properties of the population from which they are drawn.</p>
+<p>The mean and sd as we have been calculating them are actually estimators of the population mean and sd (based on the sample) - <i>not</i> a straight description of the sample.</p>
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_what.jpg" width=10% alt="What?!" >
+<p>To illustrate the difference between the sd of the sample itself, and the sd of the population as estimated from the sample:</p>
+<p>Say we measure the height of 10 men (this is a sample from a larger population with 20 million members). We are really interested in the characteristics of the population (the group of 20 million) - not just the 10 we happened to pick for our sample.</p>
+<ol>
+<li>To describe the <i>sample</i>, we calculate the mean of the sample and the spread (sd) of the sample members about the sample mean
+<li>To describe the underlying <i>population</i>, we <i>estimate</i> the population mean, and estimate the spread (sd) of population members about the population mean
+</ol>
+<p>In case (2), we will use the sample mean and sample sd to help us estimate the population mean and population sd.</p>
+<p>Let’s use simulation to find out what happens if we try to estimate the population standard deviation using the two different possible equations above, with either <span class="math notranslate nohighlight">\(n\)</span> or <span class="math notranslate nohighlight">\(n-1\)</span> on the bottom.</p>
+</section>
+<section id="demonstration-by-simulation">
+<h2>Demonstration by Simulation<a class="headerlink" href="#demonstration-by-simulation" title="Permalink to this heading">#</a></h2>
+<section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="population-data">
+<h3>Population data<a class="headerlink" href="#population-data" title="Permalink to this heading">#</a></h3>
+<p>Let’s imagine that our population is all the men on the island of Shetland - about 10,000 people</p>
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Shetland.png" width="60%">
+<p>I’m going to create a <tt>numpy</tt> array of 10,000 heights (these are simulated data but you could do this with real data from a survey if you had them)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">popHeights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s plot them</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">popHeights</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Height (cm)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Height (cm)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/descriptives_TutorialExercisesII_5_1.png" src="../_images/descriptives_TutorialExercisesII_5_1.png" />
+</div>
+</div>
+<p>Since we have the whole population dataset here, we can work out the population mean and standard deviation directly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mPop</span> <span class="o">=</span> <span class="n">popHeights</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sdPop</span> <span class="o">=</span> <span class="n">popHeights</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population mean = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mPop</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population sd = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sdPop</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population mean = 174.95399372508476
+population sd = 7.060165506183146
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sample-data">
+<h3>Sample data<a class="headerlink" href="#sample-data" title="Permalink to this heading">#</a></h3>
+<p>Now let’s imagine that we <i>don’t</i> have access to the heights of every single man in the population of Shetland, but instead we measure a random sample of 10 men.</p>
+<p>We can <i>simulate</i> this by picking 10 values at random from our array of population heights (which is a virtual version of picking 10 random men off the street in Shetland) using the function <tt>np.random</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s call our sample &#39;x&#39;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">popHeights</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[196.63448767 194.55710753 176.08944574 179.82384722 176.2929868
+ 179.08760557 172.73040924 173.85279295 184.72470661 160.18123403]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s calculate the mean and standard deviation of the sample - because we are going to try out different equations, we will not use the built in functions <tt>mean</tt> and <tt>std</tt> but instead enter the equations ourselves.</p>
+<p>Remember that the symbol ** means ‘power’ - so 3**2 means <span class="math notranslate nohighlight">\(3^2\)</span></p>
+<p>Remember also that <span class="math notranslate nohighlight">\(n^\frac{1}{2} = \sqrt{n}\)</span> so for example 4**0.5 = <span class="math notranslate nohighlight">\(\sqrt{4}\)</span> = 2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">popHeights</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># if you are stuck you can find the answer at the bottom of the page</span>
+<span class="n">m</span> <span class="o">=</span> <span class="c1"># your code here for the mean</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="c1"># your code here for the s.d. with n on the bottom</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="c1"># your code here for the s.d. with n-1 on the bottom</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sd (with n on the bottom) = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sd (with n-1 on the bottom) = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_4902/845226441.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="c1"># your code here for the mean</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you run the cell above a few times you will notice a couple of things:
+<ul>
+<li> The value for sd with n on the bottom is always lower
+<li> The estimates of the mean and sd are pretty variable across samples!
+</ul></p>
+</section>
+<section id="simulate-many-samples">
+<h3>Simulate many samples<a class="headerlink" href="#simulate-many-samples" title="Permalink to this heading">#</a></h3>
+<p>To establish which equation for the sd gives a better match for the population sd (calculated from the whole population of 10,000 men), we are going to need to draw a lot of samples and get the average value for the standard deviation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nSamples</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="c1"># create empty arrays to store the result of the simulation</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">....</span><span class="p">):</span>
+    <span class="c1"># build the loop yourself!</span>
+    <span class="c1"># if you are stuck you can find the answer at the bottom of the page</span>
+    
+    
+<span class="c1"># print the results of the simulation    </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value of the mean is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value of sd with n on the bottom is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean value of sd with n-1 on the bottom is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="c1"># blank line</span>
+
+<span class="c1"># and a reminder:</span>
+<span class="n">mPop</span> <span class="o">=</span> <span class="n">popHeights</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sdPop</span> <span class="o">=</span> <span class="n">popHeights</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population mean = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mPop</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;population sd = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sdPop</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean value of the mean is 174.87163049278854
+mean value of sd with n on the bottom is 6.474290353743315
+mean value of sd with n-1 on the bottom is 6.82450125036204
+ 
+population mean = 174.88960457679235
+population sd = 7.005912927563505
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like the version with <span class="math notranslate nohighlight">\(n-1\)</span> gets us closer to the the true standard deviation (although it is still not perfect).</p>
+<section id="check-your-understanding-of-the-code">
+<h4>Check your understanding of the code<a class="headerlink" href="#check-your-understanding-of-the-code" title="Permalink to this heading">#</a></h4>
+<ul>
+    <li> What is stored in <tt>s1</tt> and <tt>s2</tt>.
+    <li> What does the line <tt>s1 = np.empty(nSamples)</tt> do and why is it necessary?
+    <li> What was <tt>popHeights</tt> again?
+</ul>
+</section>
+</section>
+<section id="justifying-n-1">
+<h3>Justifying <span class="math notranslate nohighlight">\(n-1\)</span><a class="headerlink" href="#justifying-n-1" title="Permalink to this heading">#</a></h3>
+<p>If we calculate the standard deviation of the sample as we might naively (with <span class="math notranslate nohighlight">\(n\)</span> rather than <span class="math notranslate nohighlight">\(n-1\)</span> on the bottom), we would systematically underestimate the standard deviation of the population. This bias is worse when the sample size is small.</p>
+<p>To get a sense why this is, look at the diagram below.</p>
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/sdVersions.png" width="75%" >
+<p>When calculating the standard deviation from our sample, we look at the deviations of the datapoints about our estimate of the mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>.</p>
+<p>Now, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is calculated from the sample itself (and as it happens, the formula for the mean minimizes the squared devations <span class="math notranslate nohighlight">\(\sum{{(x_i - \bar{x})}^2}\)</span>) - so there is no possible value of the mean that could result in a lower set of deviations.</p>
+<p>Therefore if we knew the true population mean <span class="math notranslate nohighlight">\(\mu\)</span> (which is similar to <span class="math notranslate nohighlight">\(\bar{x}\)</span> but won’t be exactly the same), and could calculate the deviations about it <span class="math notranslate nohighlight">\(\sum{(x_i - \mu)^2}\)</span> we would certainly get a higher value for the standard deviation.</p>
+<p>The reason the bias is worse for smaller samples is because the value of <span class="math notranslate nohighlight">\(\bar{s}\)</span> is more swayed by the particular values in the sample <span class="math notranslate nohighlight">\(x\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is small.</p>
+</section>
+<section id="vary-sample-size">
+<h3>Vary sample size<a class="headerlink" href="#vary-sample-size" title="Permalink to this heading">#</a></h3>
+<p>To examine the claim that the underestimation of the population standard deviation is worse when <span class="math notranslate nohighlight">\(n\)</span> is small (for the sd formula with <span class="math notranslate nohighlight">\(n\)</span> on the bottom), lets try simulating samples with different values of n.</p>
+<p>This is a double loop - I’m not expecting you to build this yourself but if you are keen you could try to follow through the logic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nSamples</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="c1"># create empty arrays to store the result of the simulation each of nSamples</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+
+<span class="c1"># values of n to try</span>
+<span class="n">nVals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="c1"># create some more empty arrays to store the average values </span>
+<span class="c1"># of m, s1, s2 for each value of n that we will try</span>
+<span class="n">m_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nVals</span><span class="p">))</span>
+<span class="n">s1_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nVals</span><span class="p">))</span>
+<span class="n">s2_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nVals</span><span class="p">))</span>
+
+
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nVals</span><span class="p">)):</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">nVals</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nSamples</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">popHeights</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+        <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+        <span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+
+    <span class="n">m_n</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">s1_n</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">s2_n</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+    
+    
+<span class="c1"># Plot the results</span>
+<span class="c1"># Don&#39;t worry about this - we are covering plotting next week</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nVals</span><span class="p">,</span><span class="n">s1_n</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nVals</span><span class="p">,</span><span class="n">s2_n</span><span class="p">,</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">popHeights</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span> <span class="c1"># plot the actual population sd as lback dotted line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;estimated pop. standard deviation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;using $n$&#39;</span><span class="p">,</span><span class="s1">&#39;using $n-1$&#39;</span><span class="p">,</span><span class="s1">&#39;actual population sd&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa8e2b38ee0&gt;
+</pre></div>
+</div>
+<img alt="../_images/descriptives_TutorialExercisesII_15_1.png" src="../_images/descriptives_TutorialExercisesII_15_1.png" />
+</div>
+</div>
+<p>We can see that:</p>
+<ul>
+    <li>the underestimation bias is greater for smaller sample size
+    <li> the bias is reduced, but not eliminated, for the $n-1$ version
+</ul>
+<p>In fact there is no simple solution to correct the bias completely when estimating the population standard deviation.</p>
+</section>
+<section id="hints">
+<h3>Hints<a class="headerlink" href="#hints" title="Permalink to this heading">#</a></h3>
+<p>Here are the missing bits of code - you are welcome to copy-paste them but once you have, I’d suggest trying to work through them (with your tutor if helpful) and then try to recreate from memory as in coding, you learn by doing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># formulae for mean and standard deviation</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span> <span class="c1"># mean</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># s.d. with n on the bottom</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># s.d. with n-1 on the bottom</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for loop to try 1000 samples of size n</span>
+
+<span class="n">nSamples</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="c1"># create empty arrays to store the result of the simulation</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nSamples</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">popHeights</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+    <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter1_descriptives"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -174,6 +174,7 @@ plt.figure(figsize=[15,5]) # set figure size
 # Your code here
 
 
+
 # #### j) 95% confidence interval for the mean profit per dollar
 # 
 # Create a bootstrapped confidence interval for the mean profit per dollar, separately for 

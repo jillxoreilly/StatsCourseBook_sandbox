@@ -30,7 +30,7 @@ stats.permutation_test((clouds[clouds['status']=='Seeded']['rainfall'],
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70359/3691853701.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_15990/3691853701.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m     [0;32mreturn[0m [0mnp[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0mx[0m[0;34m)[0m[0;34m-[0m[0mnp[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0my[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;34m[0m[0m
 [0;32m----> 4[0;31m stats.permutation_test((clouds[clouds['status']=='Seeded']['rainfall'],
@@ -67,7 +67,7 @@ stats.permutation_test((clouds[clouds['status']=='Seeded']['rainfall'],
 [0m[1;32m     34[0m [0;34m[0m[0m
 [1;32m     35[0m         [0;32mreturn[0m [0mnp[0m[0;34m.[0m[0mapply_along_axis[0m[0;34m([0m[0mstat_1d[0m[0;34m,[0m [0;36m0[0m[0;34m,[0m [0mz[0m[0;34m)[0m[0;34m[[0m[0;34m([0m[0;34m)[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70359/3691853701.py[0m in [0;36mdMeans[0;34m(a, y)[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_15990/3691853701.py[0m in [0;36mdMeans[0;34m(a, y)[0m
 [1;32m      1[0m [0;32mdef[0m [0mdMeans[0m[0;34m([0m[0ma[0m[0;34m,[0m[0my[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m     [0;32mreturn[0m [0mnp[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0mx[0m[0;34m)[0m[0;34m-[0m[0mnp[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0my[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0;34m[0m[0m

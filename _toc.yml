@@ -3,151 +3,111 @@
 
 format: jb-book
 root: intro
-options:  # The options key will be applied to all chapters, but not sub-sections
-  numbered: 2
-chapters:
-- file: prepwork_intro.md
-  sections:
-  - file: prepwork_datacamp.md
-  - file: prepwork_forloop.ipynb
-  - file: prepwork_diceroll_for.ipynb
-  - file: prepwork_diceroll_while.ipynb
-  - file: prepwork_simExercises.ipynb
-- file: descriptives_intro.md
-  sections:
-  - file: descriptives_outcomes.md
-  - file: descriptives_conceptCheck.md
-  - file: descriptives_MeanAndMedian.ipynb
-  - file: descriptives_SDandIQR.ipynb
-  - file: descriptives_DataCleaning.ipynb
-  - file: descriptives_groupby.ipynb
-  - file: descriptives_PythonCheck.ipynb
-  - file: descriptives_TutorialExercises.ipynb
-  - file: descriptives_TutorialExercisesII.ipynb
-- file: plotting_intro.md
-  sections:
-  - file: plotting_outcomes.md
-  - file: plotting_histogram.ipynb
-  - file: plotting_KDE.ipynb
-  - file: plotting_boxplot.ipynb
-  - file: plotting_scatterplot.ipynb
-  - file: plotting_pandas.ipynb
-  - file: plotting_tweaks.ipynb
-  - file: plotting_additionalMaterials.md  
-  - file: plotting_TutorialExercises.md
-- file: CorrCov_intro.md
-  sections:
-  - file: CorrCov_outcomes.md
-  - file: CorrCov_conceptCheck.md
-  - file: CorrCov_introCorrCov.ipynb
-  - file: CorrCov_ClimateExample.ipynb
-  - file: CorrCov_Spearman.ipynb
-  - file: CorrCov_PythonCheck.ipynb
-  - file: CorrCov_TutorialExercises.ipynb
-  - file: CorrCov_HandInAssignment.ipynb
-- file: binomial_overallIntro.md
-  sections:
-  - file: binomial_intro.md
-  - file: binomial_objectives.md
-  - file: binomial_singlecoin.ipynb
-  - file: binomial_10000reps.ipynb
-  - file: binomial_nandp.ipynb
-  - file: binomial_PMFandCDF.ipynb
-  - file: binomial_normal.ipynb
-  - file: binomial_PythonCheck.ipynb
-  - file: binomial_TutorialExercises1.ipynb
-  - file: binomial_TutorialExercises2.ipynb
-- file: CLT_intro.md
-  sections:
-  - file: CLT_outcomes.md
-  - file: CLT_ConceptCheck.md
-  - file: CLT_sampling.ipynb
-  - file: CLT_CI.ipynb
-  - file: CLT_TutorialExercises.ipynb
-  - file: CLT_Tutorial2tdist.ipynb
-- file: bootstrapping_intro.md
-  sections:
-  - file: bootstrap_outcomes.md
-  - file: bootstrap_samplingIntro.ipynb
-  - file: bootstrap_TheBootstrap.ipynb
-  - file: bootstrap_TutorialExercises1.ipynb
-- file: Assignment_intro.md
-  sections:
-  - file: IMDb_exercise.ipynb
-- file: Cheatsheet_intro.md
-  sections:
-  - file: coding_cheatsheet.ipynb
-- file: permutation_intro.md
-  sections:
-  - file: permutation_outcomes.md
-  - file: permutation_technicalnote.ipynb
-  - file: permutation_paired.ipynb
-  - file: permutation_independentSamples.ipynb
-  - file: permutation_correlation.ipynb
-  - file: permutation_more.ipynb
-  - file: permutation_TutorialExercises.ipynb
-- file: classictests_intro.md
-  sections:
-  - file: ttest_intro.md
-  - file: ttest_independentSamples.ipynb
-  - file: ttest_pairedSamples.ipynb
-  - file: ttest_oneSample.ipynb
-  - file: nonpara_intro.md
-  - file: nonpara_MannWhitneyU.ipynb
-  - file: nonpara_WilcoxonSignRank.ipynb
-  - file: ttest_furtherExercises.ipynb
-- file: power_intro.md
-  sections:
-  - file: power_outcomes.md
-  - file: power_conceptCheck.md
-  - file: power_analysis.ipynb
-  - file: power_placeholder.md
-  - file: CSVreading_instructions.ipynb
-- file: regression1_intro.md
-  sections:
-  - file: regression1_outcomes.md
-  - file: regression1_concepts.md
-  - file: regression1_interpretingSlope.md
-  - file: regression1_QandA.md
-  - file: regression1_prepwork.ipynb
-  - file: regression1_TutorialExercises.ipynb
-- file: regression2_intro.md
-  sections:
-  - file: regression2_outcomes.md
-  - file: regression2_concepts.md
-  - file: regression2_typesOfRelationship.md
-  - file: regression2_QandA.md
-  - file: regression2_TutorialExercises.ipynb
-- file: regression3_intro.md
-  sections:
-  - file: regression3_outcomes.md
-  - file: regression3_conceptsR2.md
-  - file: regression3_conceptsConditionals.md
-  - file: regression3_conceptsSignificance.md
-  - file: regression3_assumptions.md
-  - file: regression3_prepwork.ipynb
-  - file: regression3_TutorialExercises.ipynb
-- file: regression4_intro.md
-  sections:
-  - file: regression4_outcomes.md
-  - file: regression4_concepts.md
-  - file: regression4_longhandExample.md
-  - file: regression4_equations.md
-  - file: regression4_KWtest.md
-  - file: regression4_ANOVAregression.md
-  - file: regression4_prepwork.ipynb
-  - file: regression4_TutorialExercises.ipynb
-- file: regression5_intro.md
-  sections:
-  - file: regression5_outcomes.md
-  - file: regression5_concepts.md
-  - file: regression5_LogisticEquation.md
-  - file: regression5_workedExample.md
-  - file: regression5_prepwork.ipynb
-  - file: regression5_TutorialExercises.ipynb
-- file: regression6_intro.md
-  sections:
-  - file: regression6_outcomes.md
-  - file: regression6_concepts.md  
-  - file: regression6_causality.md
-  - file: regression6_TutorialExercises.md  
+parts:
+    - caption: Preparation
+      numbered: 2
+      chapters:
+      - file: prepwork_intro.md
+        sections:
+        - file: prepwork_datacamp.md
+    - caption: Exploring Data
+      numbered: 2
+      chapters:
+      - file: Chapter1_Descriptives/MT_wk1_intro.md
+        sections:
+        - file: Chapter1_Descriptives/MT_wk1_outcomes.md
+        - file: Chapter1_Descriptives/MT_wk1_MeanMedianMode.md
+        - file: Chapter1_Descriptives/MT_wk1_StDevIQR.md
+        - file: Chapter1_Descriptives/MT_wk1_Skew.md
+        - file: Chapter1_Descriptives/MT_wk1_Correlation.md
+        - file: Chapter1_Descriptives/MT_wk1_conceptCheck.md
+        - file: Chapter1_Descriptives/MT_wk1_PythonIndexing.ipynb
+        - file: Chapter1_Descriptives/MT_wk1_tables.ipynb
+        - file: Chapter1_Descriptives/MT_wk1_TutorialExercises.ipynb
+      - file: Chapter2_Visualization/MT_wk2_intro.md
+        sections:
+        - file: Chapter2_Visualization/MT_wk2_outcomes.md
+        - file: Chapter2_Visualization/MT_wk2_snsplt.ipynb
+        - file: Chapter2_Visualization/MT_wk2_histogram.ipynb
+        - file: Chapter2_Visualization/MT_wk2_boxplot.ipynb
+        - file: Chapter2_Visualization/MT_wk2_scatterplot.ipynb
+        - file: Chapter2_Visualization/MT_wk2_LinePlot.ipynb
+        - file: Chapter2_Visualization/MT_wk2_tweaks.ipynb
+        - file: Chapter2_Visualization/MT_wk2_TutorialExercises.ipynb
+        - file: Chapter2_Visualization/MT_wk2_additionalMaterials.md
+      - file: Chapter3_Wrangling/MT_wk3_intro.md
+        sections:
+        - file: Chapter3_Wrangling/MT_wk3_outcomes.md
+        - file: Chapter3_Wrangling/MT_wk3_FindOutliers.ipynb
+        - file: Chapter3_Wrangling/MT_wk3_NaNing.ipynb
+        - file: Chapter3_Wrangling/MT_wk3_NanHandling.ipynb
+        - file: Chapter3_Wrangling/MT_wk3_ZScoreQuantiles.ipynb
+        - file: Chapter3_Wrangling/MT_wk3_disaggregation.ipynb
+        - file: Chapter3_Wrangling/MT_wk3_CreateColumns.ipynb
+        - file: Chapter3_Wrangling/MT_wk3_TutorialExercises.md
+    - caption: Statistical Theory
+      numbered: 2
+      chapters:
+      - file: UnderConstruction1.md
+    - caption: Hypothesis Testing
+      numbered: 2
+      chapters:
+      - file: UnderConstruction2.md
+    - caption: Regression Models
+      numbered: 2
+      chapters:
+      - file: Chapter10_Regression1/regression1_intro.md
+        sections:
+        - file: regression1_outcomes.md
+        - file: regression1_concepts.md
+        - file: regression1_interpretingSlope.md
+        - file: regression1_QandA.md
+        - file: regression1_prepwork.ipynb
+        - file: regression1_TutorialExercises.ipynb
+      - file: Chapter11_Regression2/regression2_intro.md
+        sections:
+        - file: regression2_outcomes.md
+        - file: regression2_concepts.md
+        - file: regression2_typesOfRelationship.md
+        - file: regression2_QandA.md
+        - file: regression2_TutorialExercises.ipynb
+        - file: regression3_intro.md
+      - file: Chapter12_Regression3/regression3_intro.md
+        sections:
+        - file: regression3_outcomes.md
+        - file: regression3_conceptsR2.md
+        - file: regression3_conceptsConditionals.md
+        - file: regression3_conceptsSignificance.md
+        - file: regression3_assumptions.md
+        - file: regression3_prepwork.ipynb
+        - file: regression3_TutorialExercises.ipynb
+        - file: regression4_intro.md
+      - file: Chapter13_Regression4/regression4_intro.md
+        sections:
+        - file: regression4_outcomes.md
+        - file: regression4_concepts.md
+        - file: regression4_longhandExample.md
+        - file: regression4_equations.md
+        - file: regression4_KWtest.md
+        - file: regression4_ANOVAregression.md
+        - file: regression4_prepwork.ipynb
+        - file: regression4_TutorialExercises.ipynb
+        - file: regression5_intro.md
+      - file: Chapter14_Regression5/regression5_intro.md
+        sections:
+        - file: regression5_outcomes.md
+        - file: regression5_concepts.md
+        - file: regression5_LogisticEquation.md
+        - file: regression5_workedExample.md
+        - file: regression5_prepwork.ipynb
+        - file: regression5_TutorialExercises.ipynb
+        - file: regression6_intro.md
+      - file: Chapter15_Regression6/regression6_intro.md
+        sections:
+        - file: regression6_outcomes.md
+        - file: regression6_concepts.md
+        - file: regression6_causality.md
+        - file: regression6_TutorialExercises.md
+
+
+

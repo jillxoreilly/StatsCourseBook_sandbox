@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>9.1. Coding support sheet &#8212; Introduction to Statistics and Data Science</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding support sheet &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,12 +48,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,61 +61,100 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'coding_cheatsheet';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Permutation Testing" href="permutation_intro.html" />
-    <link rel="prev" title="9. Python Cheatsheet" href="Cheatsheet_intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/dice.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -114,1480 +163,363 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="prepwork_intro.html">
-   1. Preparatory Work
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_datacamp.html">
-     1.2. Datacamp
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_forloop.html">
-     1.3. The
-     <tt>
-      for
-     </tt>
-     loop
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_diceroll_for.html">
-     1.4. Rolling a virtual dice I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_diceroll_while.html">
-     1.5. Rolling a virtual dice II
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_simExercises.html">
-     1.6. Simulation Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="descriptives_intro.html">
-   2. Describing data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_outcomes.html">
-     2.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_conceptCheck.html">
-     2.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     2.4. Mean and Median
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_SDandIQR.html">
-     2.5. Standard deviation and IQR
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_DataCleaning.html">
-     2.6. Data cleaning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_groupby.html">
-     2.7. Grouping data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_PythonCheck.html">
-     2.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercises.html">
-     2.9. Tutorial exercises I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
-     2.11. Tutorial Exercises II - optional
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="plotting_intro.html">
-   3. Plotting Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_outcomes.html">
-     3.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_histogram.html">
-     3.3. Histogram
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_KDE.html">
-     3.4. KDE plot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_boxplot.html">
-     3.5. Boxplot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_scatterplot.html">
-     3.6. Scatterplot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_pandas.html">
-     3.7. Plotting with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_tweaks.html">
-     3.8. Tweaking plots
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_additionalMaterials.html">
-     3.9. More resources
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_TutorialExercises.html">
-     3.10. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="CorrCov_intro.html">
-   4. Correlation and Covariance
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_outcomes.html">
-     4.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_conceptCheck.html">
-     4.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_introCorrCov.html">
-     4.4. Covariance and Correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_ClimateExample.html">
-     4.6. Climate example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_Spearman.html">
-     4.7. Spearman’s Rank Correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_PythonCheck.html">
-     4.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_TutorialExercises.html">
-     4.9. Tutorial Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_HandInAssignment.html">
-     4.10. Hand-in Assignment
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="binomial_overallIntro.html">
-   5. Data generating distributions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_intro.html">
-     5.1. The Binomial Distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_objectives.html">
-     5.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_singlecoin.html">
-     5.3. Simulated coin toss
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_10000reps.html">
-     5.4. Repeat the simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_nandp.html">
-     5.5. Changing
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(p\)
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_PMFandCDF.html">
-     5.6. Binomial PMF and CDF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_normal.html">
-     5.7. Normal distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_PythonCheck.html">
-     5.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_TutorialExercises1.html">
-     5.9. Tutorial Exercises I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_TutorialExercises2.html">
-     5.10. Tutorial Exercises II
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="CLT_intro.html">
-   6. The Central Limit Theorem
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_outcomes.html">
-     6.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_sampling.html">
-     6.3. Central Limit Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_CI.html">
-     6.5. Estimating the sampling distribution
-     <i>
-      from a sample
-     </i>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_TutorialExercises.html">
-     6.7. Tutorial exercises I: The Central Limit Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_Tutorial2tdist.html">
-     6.10. Tutorial Exercises II: the
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     distribution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="bootstrapping_intro.html">
-   7. The Bootstrap
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_outcomes.html">
-     7.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_samplingIntro.html">
-     7.3. Sampling with and without replacement
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_TheBootstrap.html">
-     7.4. The bootstrap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
-     7.6. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Assignment_intro.html">
-   8. Christmas vacation assignment
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="IMDb_exercise.html">
-     8.1. Movie data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Cheatsheet_intro.html">
-   9. Python Cheatsheet
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     9.1. Coding support sheet
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="permutation_intro.html">
-   10. Permutation Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_outcomes.html">
-     10.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_technicalnote.html">
-     10.3. Sort out
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       scipy.stats
-      </span>
-     </code>
-     version
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_paired.html">
-     10.4. Permutation test for paired data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_independentSamples.html">
-     10.5. Permutation test for unpaired or independent samples data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_correlation.html">
-     10.6. Permutation test for correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_more.html">
-     10.7. Permutation testing - more practice
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.8. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="classictests_intro.html">
-   11. Classic tests
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_intro.html">
-     11.3. The t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     11.4. Independent samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     11.5. Paired Samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_oneSample.html">
-     11.6. One sample t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_intro.html">
-     11.7. Non-parametric equivalents of the t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_MannWhitneyU.html">
-     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
-     11.9. The Wilcoxon Sign-Rank Test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     11.11. Tutorial Exercises:
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     -test and non-parametric equivalents
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="power_intro.html">
-   12. Power analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_outcomes.html">
-     12.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_conceptCheck.html">
-     12.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_analysis.html">
-     12.4. Sensitivity, power, reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_placeholder.html">
-     12.9. Tutorial work and Hand in assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CSVreading_instructions.html">
-     12.10. Loading data from a .csv file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression1_intro.html">
-   13. Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_outcomes.html">
-     13.1. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_concepts.html">
-     13.2. Regression Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_interpretingSlope.html">
-     13.3. Interpreting the slope and intercept, prediction and residuals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_QandA.html">
-     13.4. Regression, Covariance and Correlation Q&amp;A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_prepwork.html">
-     13.5. Regression models in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression2_intro.html">
-   14. Multivariate Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_concepts.html">
-     14.2. Multivariate Analysis Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_typesOfRelationship.html">
-     14.3. Different types of multivariate relationship
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_QandA.html">
-     14.4. Multiple Regression Q &amp; A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_TutorialExercises.html">
-     14.5. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression3_intro.html">
-   15. Regression - Statistical Tests
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_outcomes.html">
-     15.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsR2.html">
-     15.3. Model fit:
-     <span class="math notranslate nohighlight">
-      \(R^2\)
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsConditionals.html">
-     15.4. Conditional Distributions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsSignificance.html">
-     15.5. Statistical Significance in Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_assumptions.html">
-     15.6. Assumptions in Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_prepwork.html">
-     15.7. Assessing Regression models in Python.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_TutorialExercises.html">
-     15.9. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression4_intro.html">
-   16. ANOVA
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_outcomes.html">
-     16.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_concepts.html">
-     16.3. ANOVA Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_longhandExample.html">
-     16.4. Longhand calculation example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_equations.html">
-     16.5. ANOVA Equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_KWtest.html">
-     16.6. Kruskall-Wallis test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_ANOVAregression.html">
-     16.7. ANOVA versus Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_prepwork.html">
-     16.8. ANOVA and Kruskal-Wallis in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_TutorialExercises.html">
-     16.9. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression5_intro.html">
-   17. Logistic Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_outcomes.html">
-     17.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_concepts.html">
-     17.3. Odds, logs and log odds
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_LogisticEquation.html">
-     17.4. Logistic Regression Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_workedExample.html">
-     17.5. Predicted probabilities (worked example)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_prepwork.html">
-     17.6. Logistic Regression in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_TutorialExercises.html">
-     17.7. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression6_intro.html">
-   18. Research Design
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_outcomes.html">
-     18.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_concepts.html">
-     18.3. Research Design Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_causality.html">
-     18.4. Causality
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_TutorialExercises.html">
-     18.5. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="prepwork_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="prepwork_datacamp.html">1.2. Datacamp</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_intro.html">3. Tutorial Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_outcomes.html">3.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_FindOutliers.html">3.2. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_NaNing.html">3.3. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_NanHandling.html">3.4. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_ZScoreQuantiles.html">3.5. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_TutorialExercises.html">3.8. Data Wrangling</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="regression4_longhandExample.html">4.2. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression4_TutorialExercises.html">4.3. Tutorial exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/coding_cheatsheet.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
   
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
+  <div id="rtd-footer-container"></div>
 
-      </li>
+
+      </div>
       
-      <li>
-        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/coding_cheatsheet.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/coding_cheatsheet.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fcoding_cheatsheet.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/coding_cheatsheet.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fcoding_cheatsheet.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/coding_cheatsheet.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   9.1. Coding support sheet
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-functions">
-     Pandas Functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#df-head-and-df-tail">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         df.head()
-        </span>
-       </code>
-       and
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         df.tail()
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#df-columns">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         df.columns
-        </span>
-       </code>
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">
-         query allows us to
-         <em>
-          filter
-         </em>
-         a dataframe and get only rows where a condition is met
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#creating-new-columns">
-       Creating new columns
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#using-df-assign">
-         Using
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           df.assign
-          </span>
-         </code>
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sampling-from-a-dataframe-e-g-if-bootstrapping">
-       Sampling from a dataframe (e.g. if bootstrapping)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-data">
-     Grouping data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aggregating-data">
-     Aggregating data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-functions">
-   9.2. Numpy functions
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#describing-arrays">
-     Describing arrays
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-in-arrays">
-     Searching in arrays
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-where">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.where
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#logical-statements-in-numpy">
-       Logical statements in numpy
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#np-logical-and">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           np.logical_and
-          </span>
-         </code>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#np-logical-or">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           np.logical_or
-          </span>
-         </code>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#np-logical-not">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           np.logical_not
-          </span>
-         </code>
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-numpy-random">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy.random
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-randint">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.randint
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-random">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.random
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-randn">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.randn
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-shuffle">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.shuffle
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differences-between-data-types">
-     Differences between data types
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy-vs-pandas">
-     Numpy vs. Pandas
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandas-series">
-       pandas series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#going-from-numpy-pandas">
-       Going from Numpy -&gt; Pandas
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#going-from-pandas-numpy">
-       Going from Pandas -&gt; Numpy
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Coding support sheet</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   9.1. Coding support sheet
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-functions">
-     Pandas Functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#df-head-and-df-tail">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         df.head()
-        </span>
-       </code>
-       and
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         df.tail()
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#df-columns">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         df.columns
-        </span>
-       </code>
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">
-         query allows us to
-         <em>
-          filter
-         </em>
-         a dataframe and get only rows where a condition is met
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#creating-new-columns">
-       Creating new columns
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#using-df-assign">
-         Using
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           df.assign
-          </span>
-         </code>
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sampling-from-a-dataframe-e-g-if-bootstrapping">
-       Sampling from a dataframe (e.g. if bootstrapping)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-data">
-     Grouping data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aggregating-data">
-     Aggregating data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy-functions">
-   9.2. Numpy functions
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#describing-arrays">
-     Describing arrays
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#searching-in-arrays">
-     Searching in arrays
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-where">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.where
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#logical-statements-in-numpy">
-       Logical statements in numpy
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#np-logical-and">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           np.logical_and
-          </span>
-         </code>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#np-logical-or">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           np.logical_or
-          </span>
-         </code>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#np-logical-not">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           np.logical_not
-          </span>
-         </code>
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-numpy-random">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy.random
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-randint">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.randint
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-random">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.random
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-randn">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.randn
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#np-random-shuffle">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         np.random.shuffle
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differences-between-data-types">
-     Differences between data types
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy-vs-pandas">
-     Numpy vs. Pandas
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandas-series">
-       pandas series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#going-from-numpy-pandas">
-       Going from Numpy -&gt; Pandas
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#going-from-pandas-numpy">
-       Going from Pandas -&gt; Numpy
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Coding support sheet</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Coding support sheet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-functions">Pandas Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-head-and-df-tail"><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-columns"><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">query allows us to <em>filter</em> a dataframe and get only rows where a condition is met</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-columns">Creating new columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-df-assign">Using <code class="docutils literal notranslate"><span class="pre">df.assign</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-dataframe-e-g-if-bootstrapping">Sampling from a dataframe (e.g. if bootstrapping)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-data">Grouping data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-data">Aggregating data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-functions">Numpy functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-arrays">Describing arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-in-arrays">Searching in arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-where"><code class="docutils literal notranslate"><span class="pre">np.where</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-statements-in-numpy">Logical statements in numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-and"><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-or"><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-not"><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy-random">Using <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randint"><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-random"><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randn"><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-shuffle"><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-data-types">Differences between data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-vs-pandas">Numpy vs. Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-series">pandas series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-numpy-pandas">Going from Numpy -&gt; Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-pandas-numpy">Going from Pandas -&gt; Numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="coding-support-sheet">
-<h1><span class="section-number">9.1. </span>Coding support sheet<a class="headerlink" href="#coding-support-sheet" title="Permalink to this heading">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="section" id="coding-support-sheet">
+<h1>Coding support sheet<a class="headerlink" href="#coding-support-sheet" title="Permalink to this heading">#</a></h1>
 <p>The aim of this document is to show you some functions and how they can be used. This should help you with learning how to manipulate data - both the arrays and dataframes that we are using each week in class. These will be run on a basic dataframe to show you how they are used, and what the resulting output is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1607,11 +539,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="pandas-functions">
+<div class="section" id="pandas-functions">
 <h2>Pandas Functions<a class="headerlink" href="#pandas-functions" title="Permalink to this heading">#</a></h2>
 <p>Pandas is a library that allows effective use of dataframes (similar to excel sheets). Using Pandas, we can do a variety of things that you will see below.</p>
 <p>In this cheat sheet, we will take a short hand for any data frame – dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code></p>
-<section id="df-head-and-df-tail">
+<div class="section" id="df-head-and-df-tail">
 <h3><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code><a class="headerlink" href="#df-head-and-df-tail" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>these functions show you the <em>first five</em> and <em>last five</em> rows of your dataframe, respectively</p></li>
@@ -1756,8 +688,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="df-columns">
+</div>
+<div class="section" id="df-columns">
 <h3><code class="docutils literal notranslate"><span class="pre">df.columns</span></code><a class="headerlink" href="#df-columns" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>this function lets us look at the names of the columns we have in the data</p></li>
@@ -1836,7 +768,7 @@ Name: Type, dtype: object
 </div>
 </div>
 </div>
-<section id="query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">
+<div class="section" id="query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">
 <h4>query allows us to <em>filter</em> a dataframe and get only rows where a condition is met<a class="headerlink" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met" title="Permalink to this heading">#</a></h4>
 <p>some caveats:</p>
 <ul class="simple">
@@ -2101,9 +1033,9 @@ Name: Colour, dtype: object
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="creating-new-columns">
+</div>
+</div>
+<div class="section" id="creating-new-columns">
 <h3>Creating new columns<a class="headerlink" href="#creating-new-columns" title="Permalink to this heading">#</a></h3>
 <p>There are two main ways of creating a new column:</p>
 <ul class="simple">
@@ -2248,7 +1180,7 @@ Name: Colour, dtype: object
 </table>
 </div></div></div>
 </div>
-<section id="using-df-assign">
+<div class="section" id="using-df-assign">
 <h4>Using <code class="docutils literal notranslate"><span class="pre">df.assign</span></code><a class="headerlink" href="#using-df-assign" title="Permalink to this heading">#</a></h4>
 <p>with the <code class="docutils literal notranslate"><span class="pre">df.assign</span></code>, you specify the name and a value, for example:
 <code class="docutils literal notranslate"><span class="pre">df.assign(length</span> <span class="pre">=</span> <span class="pre">0)</span></code> will create a new column called ‘length’ and set every value of it to 0</p>
@@ -2344,7 +1276,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 8, 16,  1,  6,  4,  1, 15,  7,  9,  6, 18, 19])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3, 18, 17,  6,  7, 19,  5,  8,  4,  7,  5,  1])
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2379,7 +1311,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2387,7 +1319,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>16</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2395,7 +1327,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>1</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2411,15 +1343,15 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>4</td>
+      <td>7</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section id="sampling-from-a-dataframe-e-g-if-bootstrapping">
+</div>
+</div>
+<div class="section" id="sampling-from-a-dataframe-e-g-if-bootstrapping">
 <h3>Sampling from a dataframe (e.g. if bootstrapping)<a class="headerlink" href="#sampling-from-a-dataframe-e-g-if-bootstrapping" title="Permalink to this heading">#</a></h3>
 <p>Pandas has an in-built function that allows you to sample from a dataframe: <code class="docutils literal notranslate"><span class="pre">df.sample()</span></code></p>
 <p>With this function, you can either:</p>
@@ -2470,36 +1402,36 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>cucumber</td>
-      <td>veg</td>
-      <td>green</td>
-      <td>4</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>apple</td>
-      <td>fruit</td>
-      <td>green</td>
-      <td>2</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>strawberry</td>
-      <td>fruit</td>
-      <td>red</td>
-      <td>4</td>
-      <td>1</td>
-    </tr>
-    <tr>
       <th>2</th>
       <td>orange</td>
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>plum</td>
+      <td>fruit</td>
+      <td>purple</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
       <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>18</td>
     </tr>
   </tbody>
 </table>
@@ -2539,12 +1471,20 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>17</td>
+    </tr>
+    <tr>
       <th>4</th>
       <td>kiwi</td>
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>4</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2552,7 +1492,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>16</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>0</th>
@@ -2560,23 +1500,15 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>lychee</td>
-      <td>fruit</td>
-      <td>white</td>
-      <td>4</td>
-      <td>6</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section id="grouping-data">
+</div>
+</div>
+<div class="section" id="grouping-data">
 <h2>Grouping data<a class="headerlink" href="#grouping-data" title="Permalink to this heading">#</a></h2>
 <p>Grouping data is important to do. It allows us to group data that are similar along a dimension (for example, group parts of our dataset by their type - veg or fruit) and do something with that grouped data</p>
 <p>In practice, this is useful in psychology experiments as it allows us to do the same thing across many participants by grouping based on a participant ID. When analysing other types of data, it helps us get statistics by grouping based on categorical variables</p>
@@ -2602,7 +1534,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f9b6701c730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fa11f43fcd0&gt;
 </pre></div>
 </div>
 </div>
@@ -2649,18 +1581,18 @@ dtype: int64
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_70736</span><span class="o">/</span><span class="mf">2378309076.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># the actual output displayed is a pandas series, not a dataframe</span>
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_45058/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># the actual output displayed is a pandas series, not a dataframe</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5573</span>         <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">5574</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">5575</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5576</span> 
-<span class="g g-Whitespace">   </span><span class="mi">5577</span>     <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5985</span>             <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
+<span class="g g-Whitespace">   </span><span class="mi">5986</span>             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5987</span>         <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">5988</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">5989</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
 <span class="ne">AttributeError</span>: &#39;Series&#39; object has no attribute &#39;columns&#39;
 </pre></div>
@@ -2775,8 +1707,8 @@ dtype: int64
 </div>
 </div>
 </div>
-</section>
-<section id="aggregating-data">
+</div>
+<div class="section" id="aggregating-data">
 <h2>Aggregating data<a class="headerlink" href="#aggregating-data" title="Permalink to this heading">#</a></h2>
 <p>This describes how we can apply a function over our data, creating aggregate (summary) measures. You have done this already by now, getting the mean of a variable, for example.</p>
 <p>Some functions are relatively straightforward based on their name, and there is a slightly different (but potentially more useful) way of doing it too:</p>
@@ -3366,10 +2298,10 @@ dtype: object
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="numpy-functions">
-<h1><span class="section-number">9.2. </span>Numpy functions<a class="headerlink" href="#numpy-functions" title="Permalink to this heading">#</a></h1>
+</div>
+</div>
+<div class="section" id="numpy-functions">
+<h1>Numpy functions<a class="headerlink" href="#numpy-functions" title="Permalink to this heading">#</a></h1>
 <p>Numpy is a python library that has functions that help you deal with arrays, or lists. Here you’ll see a few functions in numpy that are really helpful and interact well with pandas dataframes to help you manipulate your data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3382,7 +2314,7 @@ dtype: object
 </div>
 </div>
 </div>
-<section id="describing-arrays">
+<div class="section" id="describing-arrays">
 <h2>Describing arrays<a class="headerlink" href="#describing-arrays" title="Permalink to this heading">#</a></h2>
 <p>We can describe arrays with functions similar to pandas:</p>
 <ul class="simple">
@@ -3392,8 +2324,8 @@ dtype: object
 <li><p><code class="docutils literal notranslate"><span class="pre">array.std()</span></code> - gets the standard deviation of the arry</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">array.size</span></code>  - gets the size of the array (the number of elements). For a 1-D array, this is its length</p></li>
 </ul>
-</section>
-<section id="searching-in-arrays">
+</div>
+<div class="section" id="searching-in-arrays">
 <h2>Searching in arrays<a class="headerlink" href="#searching-in-arrays" title="Permalink to this heading">#</a></h2>
 <p>Sometimes we want to search arrays to find if certain conditions are met. Numpy has a few functions that are very useful for doing exactly that. These funcions interact with pandas dataframes <strong>really well</strong>, and help us manipulate our data more easily.</p>
 <ul class="simple">
@@ -3403,7 +2335,7 @@ dtype: object
 <li><p><code class="docutils literal notranslate"><span class="pre">np.less</span></code> and <code class="docutils literal notranslate"><span class="pre">np.less_equal</span></code> – x &lt; y and x &lt;= y</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">np.isin</span></code></p></li>
 </ul>
-<section id="np-where">
+<div class="section" id="np-where">
 <h3><code class="docutils literal notranslate"><span class="pre">np.where</span></code><a class="headerlink" href="#np-where" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">np.where</span></code> is a function that we can read easily. it finds “where” elements of an array meet a condition. It has two types of use.</p>
 <p>Firstly,</p>
@@ -3627,8 +2559,8 @@ Name: length2, dtype: bool
 </div>
 </div>
 <p>the error message above can be fixed by using numpy-based <em>logical statements</em></p>
-</section>
-<section id="logical-statements-in-numpy">
+</div>
+<div class="section" id="logical-statements-in-numpy">
 <h3>Logical statements in numpy<a class="headerlink" href="#logical-statements-in-numpy" title="Permalink to this heading">#</a></h3>
 <p>numpy has inbuilt functions that let you do logical comparisons between two equally sized arrays. This is nice if you want to have multiple conditions met. The following statements are likely to be useful to you:</p>
 <ul class="simple">
@@ -3636,7 +2568,7 @@ Name: length2, dtype: bool
 <li><p><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code></p></li>
 </ul>
-<section id="np-logical-and">
+<div class="section" id="np-logical-and">
 <h4><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code><a class="headerlink" href="#np-logical-and" title="Permalink to this heading">#</a></h4>
 <p>this looks to see if two criteria are both met. If the two criteria are met, it outputs a <code class="docutils literal notranslate"><span class="pre">True</span></code>. If only one (or neither) are met, it outputs a <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
 <div class="cell docutils container">
@@ -3767,8 +2699,8 @@ dtype: bool
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="np-logical-or">
+</div>
+<div class="section" id="np-logical-or">
 <h4><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code><a class="headerlink" href="#np-logical-or" title="Permalink to this heading">#</a></h4>
 <p>this function looks to see if either one of the criteria is met (rather than both). If either of the criteria are True, its output will be True. If both are False, its output will be False</p>
 <p>For example, we can find all instances where the colour of our food is either green <em>or</em> yellow</p>
@@ -3932,8 +2864,8 @@ Name: Colour, dtype: bool
 </div></div></div>
 </div>
 <p>finally….</p>
-</section>
-<section id="np-logical-not">
+</div>
+<div class="section" id="np-logical-not">
 <h4><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code><a class="headerlink" href="#np-logical-not" title="Permalink to this heading">#</a></h4>
 <p>this checks that neither criteria is met. If neither criteria is met, it outputs a <code class="docutils literal notranslate"><span class="pre">True</span></code>. If one or more criteria are met, if outputs a <code class="docutils literal notranslate"><span class="pre">False</span></code>. This is mostly useful for when you want to find where something is <em>not</em> true.</p>
 <div class="cell docutils container">
@@ -4173,10 +3105,10 @@ Name: Colour, dtype: bool
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-</section>
-<section id="using-numpy-random">
+</div>
+</div>
+</div>
+<div class="section" id="using-numpy-random">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code><a class="headerlink" href="#using-numpy-random" title="Permalink to this heading">#</a></h2>
 <p>Numpy has a sub-package that is used for doing random things! Not random things, <em>random</em> things. It has functions that enable us to create sequences of random numbers both as integers (whole numbers) and decimals. It also has functions that let us make random choices between items of arrays so we can sample things randomly. Below are some functions that will be useful for you:</p>
 <ul class="simple">
@@ -4186,7 +3118,7 @@ Name: Colour, dtype: bool
 <li><p><code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code></p></li>
 </ul>
-<section id="np-random-randint">
+<div class="section" id="np-random-randint">
 <h3><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code><a class="headerlink" href="#np-random-randint" title="Permalink to this heading">#</a></h3>
 <p>This function allows us to create an array of random numbers from a specific bound. These numbers are drawn from a <em>discrete uniform distribution</em>. That means that there should be an equal probability of getting any number within this bound. It uses the following syntax:</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.randint(low</span> <span class="pre">=</span> <span class="pre">lower_bound,</span> <span class="pre">high</span> <span class="pre">=</span> <span class="pre">upper_bound,</span> <span class="pre">size</span> <span class="pre">=</span> <span class="pre">number_of_random_numbers_you_want)</span></code></p>
@@ -4230,11 +3162,11 @@ Name: Colour, dtype: bool
  &lt;BarContainer object of 11 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/coding_cheatsheet_77_1.png" src="_images/coding_cheatsheet_77_1.png" />
+<img alt="_images/a541a75323ca5ac132dda7b6b24cd0b637eca25c24762cf411bc4f363901c5f9.png" src="_images/a541a75323ca5ac132dda7b6b24cd0b637eca25c24762cf411bc4f363901c5f9.png" />
 </div>
 </div>
-</section>
-<section id="np-random-random">
+</div>
+<div class="section" id="np-random-random">
 <h3><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code><a class="headerlink" href="#np-random-random" title="Permalink to this heading">#</a></h3>
 <p>While <code class="docutils literal notranslate"><span class="pre">np.randint</span></code> takes whole numbers in a range of values, <code class="docutils literal notranslate"><span class="pre">np.random</span></code> takes a random number of decimal values within the range 0 and 1. You can choose how many random numbers you generate:</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.random(size</span> <span class="pre">=</span> <span class="pre">n_samples)</span></code></p>
@@ -4261,11 +3193,11 @@ Name: Colour, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/coding_cheatsheet_80_0.png" src="_images/coding_cheatsheet_80_0.png" />
+<img alt="_images/8a5058fcced5f4a8c260180cdae07c6e6791e49a4f1b8d236470e5add98196b9.png" src="_images/8a5058fcced5f4a8c260180cdae07c6e6791e49a4f1b8d236470e5add98196b9.png" />
 </div>
 </div>
-</section>
-<section id="np-random-randn">
+</div>
+<div class="section" id="np-random-randn">
 <h3><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code><a class="headerlink" href="#np-random-randn" title="Permalink to this heading">#</a></h3>
 <p>This function allows us to draw samples from the <em>standard normal</em> distribution - i.e. a normal distribution with mean = 0 and std = 1. We can draw as many samples as we want by passing a number:</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.randn(1000)</span></code></p>
@@ -4292,7 +3224,7 @@ Name: Colour, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/coding_cheatsheet_83_0.png" src="_images/coding_cheatsheet_83_0.png" />
+<img alt="_images/68c833d5f008aa6e30f2083131126c1618d90e7312802b36dfb94a93dea7cfe1.png" src="_images/68c833d5f008aa6e30f2083131126c1618d90e7312802b36dfb94a93dea7cfe1.png" />
 </div>
 </div>
 <p>#### <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code></p>
@@ -4323,11 +3255,11 @@ Name: Colour, dtype: bool
         1.5536981 , -0.81021613,  1.03252248, -0.24121646,  0.25466204])
 </pre></div>
 </div>
-<img alt="_images/coding_cheatsheet_85_1.png" src="_images/coding_cheatsheet_85_1.png" />
+<img alt="_images/7198d877f55b5e19463c9633397dab78807205c3151bc18e75695b01711da208.png" src="_images/7198d877f55b5e19463c9633397dab78807205c3151bc18e75695b01711da208.png" />
 </div>
 </div>
-</section>
-<section id="np-random-shuffle">
+</div>
+<div class="section" id="np-random-shuffle">
 <h3><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code><a class="headerlink" href="#np-random-shuffle" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>this function can be used to randomly shuffle the elements of an array</p></li>
@@ -4360,16 +3292,16 @@ Name: Colour, dtype: bool
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="differences-between-data-types">
+</div>
+</div>
+<div class="section" id="differences-between-data-types">
 <h2>Differences between data types<a class="headerlink" href="#differences-between-data-types" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>this is an extra section that just highlights the difference between the different data types mentioned so far, and how we can convert between them.</p></li>
 <li><p>some bits of this may be confusing. It is an extra section that isn’t immediately relevant, but good information to have.</p></li>
 </ul>
-</section>
-<section id="numpy-vs-pandas">
+</div>
+<div class="section" id="numpy-vs-pandas">
 <h2>Numpy vs. Pandas<a class="headerlink" href="#numpy-vs-pandas" title="Permalink to this heading">#</a></h2>
 <p>Numpy arrays are an ‘efficient’ way of storing data within python. The functions that work on them from within the numpy package are optimised to be quick. This doesn’t matter when handling small amounts of data, but when you are handling large datasets this quickly becomes incredibly important.</p>
 <p>Pandas is a package for dataframe manipulation and has two key data formats.</p>
@@ -4530,7 +3462,7 @@ Name: Colour, dtype: bool
 </div>
 <p>When we had the heights as a numpy array, we didn’t really have much to help us know what is going on. With dataframes, we can put as much data as we want in (they can have different formats too, like strings or numbers or booleans) and assign headers that let us know what is contained within a column. This lets us store lots of information about individual observations in our dataset very clearly).</p>
 <p>Dataframes are different to numpy arrays. A dataframe is basically an excel sheet within python. Each column can have a header (like in excel) and it looks like a big table. An array is just a list of information one after the other. Sometimes we want things in dataframes, sometimes we want things in numpy arrays.</p>
-<section id="pandas-series">
+<div class="section" id="pandas-series">
 <h3>pandas series<a class="headerlink" href="#pandas-series" title="Permalink to this heading">#</a></h3>
 <p>When we take a single column from a dataframe, it is no longer a dataframe. Pandas call it a <em>Series</em></p>
 <div class="cell docutils container">
@@ -4564,8 +3496,8 @@ Name: height, dtype: float64
 <p>Broadly speaking, there are equivalent ways of doing things between the two data structures, but they are slightly different.</p>
 <p>### Moving between pandas and numpy</p>
 <p>As the two packages are similar, we can move between them pretty easily.</p>
-</section>
-<section id="going-from-numpy-pandas">
+</div>
+<div class="section" id="going-from-numpy-pandas">
 <h3>Going from Numpy -&gt; Pandas<a class="headerlink" href="#going-from-numpy-pandas" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>we can create a dataframe from an array simply by calling:</p>
@@ -4575,8 +3507,8 @@ Name: height, dtype: float64
 </ul>
 </li>
 </ul>
-</section>
-<section id="going-from-pandas-numpy">
+</div>
+<div class="section" id="going-from-pandas-numpy">
 <h3>Going from Pandas -&gt; Numpy<a class="headerlink" href="#going-from-pandas-numpy" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>we can turn a dataframe into a numpy array by calling:</p>
@@ -4708,9 +3640,9 @@ Name: height, dtype: float64
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -4724,7 +3656,7 @@ Name: height, dtype: float64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -4732,50 +3664,129 @@ Name: height, dtype: float64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Cheatsheet_intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>Python Cheatsheet</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="permutation_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Permutation Testing</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Coding support sheet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-functions">Pandas Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-head-and-df-tail"><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-columns"><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">query allows us to <em>filter</em> a dataframe and get only rows where a condition is met</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-columns">Creating new columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-df-assign">Using <code class="docutils literal notranslate"><span class="pre">df.assign</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-dataframe-e-g-if-bootstrapping">Sampling from a dataframe (e.g. if bootstrapping)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-data">Grouping data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-data">Aggregating data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-functions">Numpy functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-arrays">Describing arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-in-arrays">Searching in arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-where"><code class="docutils literal notranslate"><span class="pre">np.where</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-statements-in-numpy">Logical statements in numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-and"><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-or"><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-not"><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy-random">Using <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randint"><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-random"><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randn"><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-shuffle"><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-data-types">Differences between data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-vs-pandas">Numpy vs. Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-series">pandas series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-numpy-pandas">Going from Numpy -&gt; Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-pandas-numpy">Going from Pandas -&gt; Numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Jill O'Reilly & Lindsay Richards<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -164,15 +164,16 @@
 
 
 # create a new column and fill it with NaN for now
-data['age4'] = np.nan
+# data['age4'] = np.nan
 
 # start filling in the values
-data.loc[(data['age'] < 30),['age4']]='under 30'
+# if this looks unfamiliar, check Sammi's cheatsheet (chapter 9 of this coursebook)
+# data.loc[data['age'].isin(range(30, 46)), 'age4'] = "30 - 45"
 
 
 # Now run an ANOVA including `age4` as a control variable
 
-# In[ ]:
+# In[10]:
 
 
 # your code here

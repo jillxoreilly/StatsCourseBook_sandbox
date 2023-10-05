@@ -88,7 +88,6 @@ plt.show()
 # In[4]:
 
 
-
 nReps=10000
 mDiff=np.empty(nReps)
 nLonsdale=len(wb[wb['College']=='Lonsdale'])

@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie data &#8212; Introduction to Statistics and Data Science</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,12 +48,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,59 +61,100 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Collection_Jan2022';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/dice.jpg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,1167 +163,329 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="prepwork_intro.html">
-   1. Preparatory Work
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_datacamp.html">
-     1.2. Datacamp
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_forloop.html">
-     1.3. The
-     <tt>
-      for
-     </tt>
-     loop
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_diceroll_for.html">
-     1.4. Rolling a virtual dice I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_diceroll_while.html">
-     1.5. Rolling a virtual dice II
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="prepwork_simExercises.html">
-     1.6. Simulation Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="descriptives_intro.html">
-   2. Describing data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_outcomes.html">
-     2.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_conceptCheck.html">
-     2.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     2.4. Mean and Median
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_SDandIQR.html">
-     2.5. Standard deviation and IQR
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_DataCleaning.html">
-     2.6. Data cleaning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_groupby.html">
-     2.7. Grouping data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_PythonCheck.html">
-     2.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercises.html">
-     2.9. Tutorial exercises I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
-     2.11. Tutorial Exercises II - optional
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="plotting_intro.html">
-   3. Plotting Data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_outcomes.html">
-     3.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_histogram.html">
-     3.3. Histogram
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_KDE.html">
-     3.4. KDE plot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_boxplot.html">
-     3.5. Boxplot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_scatterplot.html">
-     3.6. Scatterplot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_pandas.html">
-     3.7. Plotting with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_tweaks.html">
-     3.8. Tweaking plots
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_additionalMaterials.html">
-     3.9. More resources
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotting_TutorialExercises.html">
-     3.10. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="CorrCov_intro.html">
-   4. Correlation and Covariance
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_outcomes.html">
-     4.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_conceptCheck.html">
-     4.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_introCorrCov.html">
-     4.4. Covariance and Correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_ClimateExample.html">
-     4.6. Climate example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_Spearman.html">
-     4.7. Spearman’s Rank Correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_PythonCheck.html">
-     4.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_TutorialExercises.html">
-     4.9. Tutorial Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CorrCov_HandInAssignment.html">
-     4.10. Hand-in Assignment
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="binomial_overallIntro.html">
-   5. Data generating distributions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_intro.html">
-     5.1. The Binomial Distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_objectives.html">
-     5.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_singlecoin.html">
-     5.3. Simulated coin toss
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_10000reps.html">
-     5.4. Repeat the simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_nandp.html">
-     5.5. Changing
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     and
-     <span class="math notranslate nohighlight">
-      \(p\)
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_PMFandCDF.html">
-     5.6. Binomial PMF and CDF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_normal.html">
-     5.7. Normal distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_PythonCheck.html">
-     5.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_TutorialExercises1.html">
-     5.9. Tutorial Exercises I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="binomial_TutorialExercises2.html">
-     5.10. Tutorial Exercises II
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="CLT_intro.html">
-   6. The Central Limit Theorem
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_outcomes.html">
-     6.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_sampling.html">
-     6.3. Central Limit Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_CI.html">
-     6.5. Estimating the sampling distribution
-     <i>
-      from a sample
-     </i>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_TutorialExercises.html">
-     6.7. Tutorial exercises I: The Central Limit Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CLT_Tutorial2tdist.html">
-     6.10. Tutorial Exercises II: the
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     distribution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="bootstrapping_intro.html">
-   7. The Bootstrap
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_outcomes.html">
-     7.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_samplingIntro.html">
-     7.3. Sampling with and without replacement
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_TheBootstrap.html">
-     7.4. The bootstrap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
-     7.6. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Assignment_intro.html">
-   8. Christmas vacation assignment
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="IMDb_exercise.html">
-     8.1. Movie data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Cheatsheet_intro.html">
-   9. Python Cheatsheet
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="coding_cheatsheet.html">
-     9.1. Coding support sheet
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="permutation_intro.html">
-   10. Permutation Testing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_outcomes.html">
-     10.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_technicalnote.html">
-     10.3. Sort out
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       scipy.stats
-      </span>
-     </code>
-     version
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_paired.html">
-     10.4. Permutation test for paired data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_independentSamples.html">
-     10.5. Permutation test for unpaired or independent samples data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_correlation.html">
-     10.6. Permutation test for correlation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_more.html">
-     10.7. Permutation testing - more practice
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.8. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="classictests_intro.html">
-   11. Classic tests
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_intro.html">
-     11.3. The t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     11.4. Independent samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     11.5. Paired Samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_oneSample.html">
-     11.6. One sample t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_intro.html">
-     11.7. Non-parametric equivalents of the t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_MannWhitneyU.html">
-     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
-     11.9. The Wilcoxon Sign-Rank Test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     11.11. Tutorial Exercises:
-     <span class="math notranslate nohighlight">
-      \(t\)
-     </span>
-     -test and non-parametric equivalents
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="power_intro.html">
-   12. Power analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_outcomes.html">
-     12.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_conceptCheck.html">
-     12.3. Concepts Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_analysis.html">
-     12.4. Sensitivity, power, reproducibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="power_placeholder.html">
-     12.9. Tutorial work and Hand in assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CSVreading_instructions.html">
-     12.10. Loading data from a .csv file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression1_intro.html">
-   13. Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_outcomes.html">
-     13.1. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_concepts.html">
-     13.2. Regression Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_interpretingSlope.html">
-     13.3. Interpreting the slope and intercept, prediction and residuals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_QandA.html">
-     13.4. Regression, Covariance and Correlation Q&amp;A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_prepwork.html">
-     13.5. Regression models in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression2_intro.html">
-   14. Multivariate Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_concepts.html">
-     14.2. Multivariate Analysis Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_typesOfRelationship.html">
-     14.3. Different types of multivariate relationship
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_QandA.html">
-     14.4. Multiple Regression Q &amp; A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_TutorialExercises.html">
-     14.5. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression3_intro.html">
-   15. Regression - Statistical Tests
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_outcomes.html">
-     15.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsR2.html">
-     15.3. Model fit:
-     <span class="math notranslate nohighlight">
-      \(R^2\)
-     </span>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsConditionals.html">
-     15.4. Conditional Distributions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsSignificance.html">
-     15.5. Statistical Significance in Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_assumptions.html">
-     15.6. Assumptions in Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_prepwork.html">
-     15.7. Assessing Regression models in Python.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_TutorialExercises.html">
-     15.9. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression4_intro.html">
-   16. ANOVA
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_outcomes.html">
-     16.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_concepts.html">
-     16.3. ANOVA Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_longhandExample.html">
-     16.4. Longhand calculation example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_equations.html">
-     16.5. ANOVA Equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_KWtest.html">
-     16.6. Kruskall-Wallis test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_ANOVAregression.html">
-     16.7. ANOVA versus Regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_prepwork.html">
-     16.8. ANOVA and Kruskal-Wallis in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression4_TutorialExercises.html">
-     16.9. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression5_intro.html">
-   17. Logistic Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_outcomes.html">
-     17.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_concepts.html">
-     17.3. Odds, logs and log odds
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_LogisticEquation.html">
-     17.4. Logistic Regression Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_workedExample.html">
-     17.5. Predicted probabilities (worked example)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_prepwork.html">
-     17.6. Logistic Regression in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression5_TutorialExercises.html">
-     17.7. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression6_intro.html">
-   18. Research Design
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_outcomes.html">
-     18.2. Learning Objectives
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_concepts.html">
-     18.3. Research Design Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_causality.html">
-     18.4. Causality
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression6_TutorialExercises.html">
-     18.5. Tutorial exercises
-    </a>
-   </li>
-  </ul>
- </li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="prepwork_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="prepwork_datacamp.html">1.2. Datacamp</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_Descriptives/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_Visualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_intro.html">3. Tutorial Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_outcomes.html">3.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_FindOutliers.html">3.2. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_NaNing.html">3.3. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_NanHandling.html">3.4. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_ZScoreQuantiles.html">3.5. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_Wrangling/MT_wk3_TutorialExercises.html">3.8. Data Wrangling</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="regression4_longhandExample.html">4.2. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression4_TutorialExercises.html">4.3. Tutorial exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Collection_Jan2022.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
   
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
+  <div id="rtd-footer-container"></div>
 
-      </li>
+
+      </div>
       
-      <li>
-        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Collection_Jan2022.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Collection_Jan2022.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCollection_Jan2022.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Collection_Jan2022.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCollection_Jan2022.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Collection_Jan2022.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-and-view-the-data">
-   Import and view the data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-find-and-remove-outliers">
-     a) Find and remove outliers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-plot-the-relationship-between-budget-and-gross-turnover">
-     b) Plot the relationship between Budget and Gross Turnover
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-comment-on-the-plot-made-in-b">
-     c) Comment on the plot made in (b)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-is-there-a-correlation-between-budget-and-gross-turnover">
-     d) Is there a correlation between Budget and Gross Turnover?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#e-add-a-column-to-the-dataframe-for-profit-m">
-     e) Add a column to the dataframe for ‘Profit ($M)’
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#f-what-is-the-relationship-between-budget-and-profit">
-     f) What is the relationship between Budget and Profit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#g-add-a-column-containing-profit-per-of-budget">
-     g) Add a column containing Profit per $ of budget
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-plot-histograms-of-profit-per-dollar-budget">
-     i) Plot histograms of profit per dollar budget
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#j-95-confidence-interval-for-the-mean-profit-per-dollar">
-     j) 95% confidence interval for the mean profit per dollar
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#k-comment-on-the-confidence-intervals-obtained-in-the-previous-question">
-     k) Comment on the confidence intervals obtained in the previous question.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Movie data</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-and-view-the-data">
-   Import and view the data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-find-and-remove-outliers">
-     a) Find and remove outliers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-plot-the-relationship-between-budget-and-gross-turnover">
-     b) Plot the relationship between Budget and Gross Turnover
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-comment-on-the-plot-made-in-b">
-     c) Comment on the plot made in (b)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-is-there-a-correlation-between-budget-and-gross-turnover">
-     d) Is there a correlation between Budget and Gross Turnover?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#e-add-a-column-to-the-dataframe-for-profit-m">
-     e) Add a column to the dataframe for ‘Profit ($M)’
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#f-what-is-the-relationship-between-budget-and-profit">
-     f) What is the relationship between Budget and Profit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#g-add-a-column-containing-profit-per-of-budget">
-     g) Add a column containing Profit per $ of budget
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#i-plot-histograms-of-profit-per-dollar-budget">
-     i) Plot histograms of profit per dollar budget
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#j-95-confidence-interval-for-the-mean-profit-per-dollar">
-     j) 95% confidence interval for the mean profit per dollar
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#k-comment-on-the-confidence-intervals-obtained-in-the-previous-question">
-     k) Comment on the confidence intervals obtained in the previous question.
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Movie data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">Import and view the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-find-and-remove-outliers">a) Find and remove outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-plot-the-relationship-between-budget-and-gross-turnover">b) Plot the relationship between Budget and Gross Turnover</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-comment-on-the-plot-made-in-b">c) Comment on the plot made in (b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-is-there-a-correlation-between-budget-and-gross-turnover">d) Is there a correlation between Budget and Gross Turnover?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-add-a-column-to-the-dataframe-for-profit-m">e) Add a column to the dataframe for ‘Profit ($M)’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-what-is-the-relationship-between-budget-and-profit">f) What is the relationship between Budget and Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-add-a-column-containing-profit-per-of-budget">g) Add a column containing Profit per $ of budget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-plot-histograms-of-profit-per-dollar-budget">i) Plot histograms of profit per dollar budget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#j-95-confidence-interval-for-the-mean-profit-per-dollar">j) 95% confidence interval for the mean profit per dollar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-comment-on-the-confidence-intervals-obtained-in-the-previous-question">k) Comment on the confidence intervals obtained in the previous question.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="movie-data">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="section" id="movie-data">
 <h1>Movie data<a class="headerlink" href="#movie-data" title="Permalink to this heading">#</a></h1>
 <p>The file ‘MovieProfits.csv’ contains data on 609 movies from the years 2008-2012, from the website rottentomatoes.com</p>
 <p>For each Movie we have some information including:</p>
@@ -1285,7 +498,7 @@ title="Print to PDF"
 <p>You will complete a series of data analysis tasks as instructed in the questions below.</p>
 <p>You will receive an overall grade from your tutor.</p>
 <p>Each question-part carries roughly equal weight.</p>
-<section id="set-up-python-libraries">
+<div class="section" id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
@@ -1302,8 +515,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="import-and-view-the-data">
+</div>
+<div class="section" id="import-and-view-the-data">
 <h2>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1444,7 +657,7 @@ title="Print to PDF"
 <p>609 rows × 6 columns</p>
 </div></div></div>
 </div>
-<section id="a-find-and-remove-outliers">
+<div class="section" id="a-find-and-remove-outliers">
 <h3>a) Find and remove outliers<a class="headerlink" href="#a-find-and-remove-outliers" title="Permalink to this heading">#</a></h3>
 <p>There are some erroneous values in the columns ‘Year’ and ‘Run Time (min)’.</p>
 <ul>
@@ -1459,8 +672,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>[ your comments here]</p>
-</section>
-<section id="b-plot-the-relationship-between-budget-and-gross-turnover">
+</div>
+<div class="section" id="b-plot-the-relationship-between-budget-and-gross-turnover">
 <h3>b) Plot the relationship between Budget and Gross Turnover<a class="headerlink" href="#b-plot-the-relationship-between-budget-and-gross-turnover" title="Permalink to this heading">#</a></h3>
 <ul>
     <li> Create a scatterplot showing the relationship between Budget and Gross Turnover
@@ -1474,8 +687,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="c-comment-on-the-plot-made-in-b">
+</div>
+<div class="section" id="c-comment-on-the-plot-made-in-b">
 <h3>c) Comment on the plot made in (b)<a class="headerlink" href="#c-comment-on-the-plot-made-in-b" title="Permalink to this heading">#</a></h3>
 <ul>
     <li> Do movies with a higher budget have a higher gross turnover?
@@ -1490,8 +703,8 @@ Support your answer with descriptive statistics where appropriate<div class="cel
 </div>
 </div>
 <p>[ your comments here ]</p>
-</section>
-<section id="d-is-there-a-correlation-between-budget-and-gross-turnover">
+</div>
+<div class="section" id="d-is-there-a-correlation-between-budget-and-gross-turnover">
 <h3>d) Is there a correlation between Budget and Gross Turnover?<a class="headerlink" href="#d-is-there-a-correlation-between-budget-and-gross-turnover" title="Permalink to this heading">#</a></h3>
 <ul>
 <li>Calculate the correlation coefficient
@@ -1504,8 +717,8 @@ Support your answer with descriptive statistics where appropriate<div class="cel
 </div>
 </div>
 <p>[ your comments here]</p>
-</section>
-<section id="e-add-a-column-to-the-dataframe-for-profit-m">
+</div>
+<div class="section" id="e-add-a-column-to-the-dataframe-for-profit-m">
 <h3>e) Add a column to the dataframe for ‘Profit ($M)’<a class="headerlink" href="#e-add-a-column-to-the-dataframe-for-profit-m" title="Permalink to this heading">#</a></h3>
 <p>… Where profit is defined as Gross Turnover minus Budget</p>
 <div class="cell docutils container">
@@ -1517,8 +730,8 @@ Support your answer with descriptive statistics where appropriate<div class="cel
 </div>
 </div>
 </div>
-</section>
-<section id="f-what-is-the-relationship-between-budget-and-profit">
+</div>
+<div class="section" id="f-what-is-the-relationship-between-budget-and-profit">
 <h3>f) What is the relationship between Budget and Profit<a class="headerlink" href="#f-what-is-the-relationship-between-budget-and-profit" title="Permalink to this heading">#</a></h3>
 <ul>
 <li> Create a scatterplot for Budget vs Profit
@@ -1542,8 +755,8 @@ Support your answer with descriptive statistics where appropriate<div class="cel
 </div>
 </div>
 <p>[ your comments here ]</p>
-</section>
-<section id="g-add-a-column-containing-profit-per-of-budget">
+</div>
+<div class="section" id="g-add-a-column-containing-profit-per-of-budget">
 <h3>g) Add a column containing Profit per $ of budget<a class="headerlink" href="#g-add-a-column-containing-profit-per-of-budget" title="Permalink to this heading">#</a></h3>
 <p>This should be defined as Profit/Budget</p>
 <div class="cell docutils container">
@@ -1553,8 +766,8 @@ Support your answer with descriptive statistics where appropriate<div class="cel
 </div>
 </div>
 </div>
-</section>
-<section id="i-plot-histograms-of-profit-per-dollar-budget">
+</div>
+<div class="section" id="i-plot-histograms-of-profit-per-dollar-budget">
 <h3>i) Plot histograms of profit per dollar budget<a class="headerlink" href="#i-plot-histograms-of-profit-per-dollar-budget" title="Permalink to this heading">#</a></h3>
 <p>Create three histograms containing the distribution of profit per dollar budget for:</p>
 <ul>
@@ -1579,8 +792,8 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
 </div>
 </div>
 </div>
-</section>
-<section id="j-95-confidence-interval-for-the-mean-profit-per-dollar">
+</div>
+<div class="section" id="j-95-confidence-interval-for-the-mean-profit-per-dollar">
 <h3>j) 95% confidence interval for the mean profit per dollar<a class="headerlink" href="#j-95-confidence-interval-for-the-mean-profit-per-dollar" title="Permalink to this heading">#</a></h3>
 <p>Create a bootstrapped confidence interval for the mean profit per dollar, separately for</p>
 <ul>
@@ -1602,7 +815,7 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70228/3010601722.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
     <span class="n">m</span> <span class="o">=</span> <span class="c1"># your code here</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -1631,17 +844,17 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
 </div>
 </div>
 </div>
-</section>
-<section id="k-comment-on-the-confidence-intervals-obtained-in-the-previous-question">
+</div>
+<div class="section" id="k-comment-on-the-confidence-intervals-obtained-in-the-previous-question">
 <h3>k) Comment on the confidence intervals obtained in the previous question.<a class="headerlink" href="#k-comment-on-the-confidence-intervals-obtained-in-the-previous-question" title="Permalink to this heading">#</a></h3>
 <p>The mean is also called the expected value - so the mean profit per dollar is also the expected profit per dollar (if we were to make a new movie).</p>
 <ul>
 <li>Is the expected profit per dollar higher for low- or high- budget movies?
 <li>Is the expected profit per dollar more uncertain/variable for low- or high- budget movies?
 </ul><p>[ your comment here ]</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1655,7 +868,7 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1663,36 +876,96 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">Import and view the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-find-and-remove-outliers">a) Find and remove outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-plot-the-relationship-between-budget-and-gross-turnover">b) Plot the relationship between Budget and Gross Turnover</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-comment-on-the-plot-made-in-b">c) Comment on the plot made in (b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-is-there-a-correlation-between-budget-and-gross-turnover">d) Is there a correlation between Budget and Gross Turnover?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-add-a-column-to-the-dataframe-for-profit-m">e) Add a column to the dataframe for ‘Profit ($M)’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-what-is-the-relationship-between-budget-and-profit">f) What is the relationship between Budget and Profit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-add-a-column-containing-profit-per-of-budget">g) Add a column containing Profit per $ of budget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-plot-histograms-of-profit-per-dollar-budget">i) Plot histograms of profit per dollar budget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#j-95-confidence-interval-for-the-mean-profit-per-dollar">j) 95% confidence interval for the mean profit per dollar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-comment-on-the-confidence-intervals-obtained-in-the-previous-question">k) Comment on the confidence intervals obtained in the previous question.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Jill O'Reilly & Lindsay Richards<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

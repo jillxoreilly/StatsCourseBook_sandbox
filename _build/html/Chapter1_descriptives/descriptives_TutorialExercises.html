@@ -1,0 +1,1402 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1.9. Tutorial exercises I &#8212; Introduction to Statistics and Data Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Plotting Data" href="../Chapter2_visualization/plotting_intro.html" />
+    <link rel="prev" title="1.8. Key Python syntax: indexing" href="MT_wk1_PythonIndexing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/dice.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Statistics and Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exploring Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="descriptives_intro.html">
+   1. Describing data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_outcomes.html">
+     1.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_MeanMedianMode.html">
+     1.3. Mean, median and mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_StDevIQR.html">
+     1.4. Standard Deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Skew.html">
+     1.5. Skew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_Correlation.html">
+     1.6. Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     1.7. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MT_wk1_PythonIndexing.html">
+     1.8. Key Python syntax: indexing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.9. Tutorial exercises I
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter2_visualization/plotting_intro.html">
+   2. Plotting Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/plotting_outcomes.html">
+     2.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_snsplt.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Seaborn
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_histogram.html">
+     2.4. Histogram and KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_boxplot.html">
+     2.5. Boxplot and Violinplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_scatterplot.html">
+     2.6. Scatterplot and 2D Histogram or KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter2_visualization/MT_wk2_tweaks.html">
+     2.7. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_additionalMaterials.html">
+     2.8. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting_TutorialExercises.html">
+     2.9. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_intro.html">
+   3. Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_FindOutliers.html">
+     3.3. Locating bad datapoints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3_wrangling/MT_wk3_NaNing.html">
+     3.4. Neutralizing bad datapoints
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Chapter1_descriptives/descriptives_TutorialExercises.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Chapter1_descriptives/descriptives_TutorialExercises.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FChapter1_descriptives/descriptives_TutorialExercises.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Chapter1_descriptives/descriptives_TutorialExercises.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1.9. Tutorial exercises I
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#car-park-exercise">
+     Car park exercise
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-python-libraries">
+       Set up Python libraries
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-and-view-the-data">
+       Load and view the data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-cleaning">
+       Data cleaning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-report-for-speedyferry">
+   1.10. Your report for SpeedyFerry
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description-of-vehicle-types-and-sizes">
+     Description of vehicle types and sizes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#size-and-number-of-parking-spaces-in-each-zone">
+     Size and number of parking spaces in each zone
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-end">
+       The end!
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial exercises I</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1.9. Tutorial exercises I
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#car-park-exercise">
+     Car park exercise
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-up-python-libraries">
+       Set up Python libraries
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-and-view-the-data">
+       Load and view the data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-cleaning">
+       Data cleaning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-report-for-speedyferry">
+   1.10. Your report for SpeedyFerry
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description-of-vehicle-types-and-sizes">
+     Description of vehicle types and sizes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#size-and-number-of-parking-spaces-in-each-zone">
+     Size and number of parking spaces in each zone
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-end">
+       The end!
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-i">
+<h1><span class="section-number">1.9. </span>Tutorial exercises I<a class="headerlink" href="#tutorial-exercises-i" title="Permalink to this heading">#</a></h1>
+<p>You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss with your tutor)</p>
+<section id="car-park-exercise">
+<h2>Car park exercise<a class="headerlink" href="#car-park-exercise" title="Permalink to this heading">#</a></h2>
+<p>In this exercise, you will plan car parking at a ferry terminal and inside the ferry itself.</p>
+<p>You will be given data about the lengths of vehicles in a <tt>.csv</tt> file. By plotting the data and calculating descriptive statististics, you will produce a short report recommending the size and number of parking spots required.</p>
+<div style = "    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    vertical-align: middle;">
+<h2>The brief:</h2> 
+<p>The SpeedyFerry Company are planning a new terminal. Vehicles will arrive at the terminal in advance of their sailing time and be parked in a car park to await boarding.</p>
+<p>SpeedyFerry would like to know how to mark out the car park. They want to fit as many parking spaces into their land as possible, whilst still making sure that the vehicles fit in the spaces
+<ul></p>
+<li> How long and wide should the parking spots be?
+<li> Should different vehicle types be separated in different sections of the car park?
+<li> If so, what ratio of long vehicle places to short vehicle places is needed?
+        </ul>
+<p><b>Your task is to produce a report answering these questions, justifying you answer with plots and descriptive statistics based on the sample data provided by SpeedyFerry, introduced below</b></p>
+</div>
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/carsBanner.png" width=100% alt="Picture of some cars" /><section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-and-view-the-data">
+<h3>Load and view the data<a class="headerlink" href="#load-and-view-the-data" title="Permalink to this heading">#</a></h3>
+<p>To make our plan for car parking, we need some information about the vehicles to be accommodated.</p>
+<p>SpeedyFerry have provided a data file with a complete list of the vehicles parked at a vehicle-ferry terminal at 1pm on Sunday 24th April 2022, which they regard as a representative sample.</p>
+<p>Let’s load the datafile “data/vehicles.csv” and have a look what information we have in the dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vehicles</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles_2.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">vehicles</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.9187</td>
+      <td>1.5320</td>
+      <td>1.8030</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.6486</td>
+      <td>1.5936</td>
+      <td>1.6463</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.5785</td>
+      <td>1.5447</td>
+      <td>1.7140</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5563</td>
+      <td>1.5549</td>
+      <td>1.7331</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.0321</td>
+      <td>1.5069</td>
+      <td>1.7320</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1359</th>
+      <td>15.5000</td>
+      <td>4.2065</td>
+      <td>2.5112</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1360</th>
+      <td>14.4960</td>
+      <td>4.1965</td>
+      <td>2.5166</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1361</th>
+      <td>9999.0000</td>
+      <td>4.1964</td>
+      <td>2.4757</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1362</th>
+      <td>14.3700</td>
+      <td>4.2009</td>
+      <td>2.5047</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1363</th>
+      <td>14.2350</td>
+      <td>4.2016</td>
+      <td>2.5212</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+<p>1364 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>That was a long list of vehicles!</p>
+<ul class="simple">
+<li><p>What information do we have about each vehicle?</p></li>
+</ul>
+</section>
+<section id="data-cleaning">
+<h3>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h3>
+<p>Some implausible vehicle lengths are in the sample. They must be data entry errors.</p>
+<p>Find them and replace them with <tt>NaNs</tt>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to find the long vehicles</span>
+
+<span class="n">vehicles</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;length&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="c1"># replace the incorrect vehicle lengths with NaNs</span>
+<span class="c1"># vehicles.loc(.....)=np.nan</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1022</th>
+      <td>9999.0000</td>
+      <td>2.9010</td>
+      <td>2.2571</td>
+      <td>towing</td>
+    </tr>
+    <tr>
+      <th>1361</th>
+      <td>9999.0000</td>
+      <td>4.1964</td>
+      <td>2.4757</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1121</th>
+      <td>9999.0000</td>
+      <td>3.8834</td>
+      <td>2.4869</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1093</th>
+      <td>9999.0000</td>
+      <td>3.9173</td>
+      <td>2.5168</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1008</th>
+      <td>94.7230</td>
+      <td>2.8883</td>
+      <td>2.2566</td>
+      <td>towing</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3.2169</td>
+      <td>1.5708</td>
+      <td>1.7401</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>469</th>
+      <td>3.1957</td>
+      <td>1.5372</td>
+      <td>1.7438</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>811</th>
+      <td>3.1682</td>
+      <td>1.5888</td>
+      <td>1.7338</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>512</th>
+      <td>3.1197</td>
+      <td>1.4932</td>
+      <td>1.7817</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>653</th>
+      <td>3.1109</td>
+      <td>1.5512</td>
+      <td>1.7912</td>
+      <td>car</td>
+    </tr>
+  </tbody>
+</table>
+<p>1364 rows × 4 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="your-report-for-speedyferry">
+<h1><span class="section-number">1.10. </span>Your report for SpeedyFerry<a class="headerlink" href="#your-report-for-speedyferry" title="Permalink to this heading">#</a></h1>
+<div style = "    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    vertical-align: middle;">
+<p>This is a <tt>stub</tt> for your report to SpeedyFerry.</p>
+<p>The text in each markdown cell is given to guide you. You will replace this with your own text.</p>
+<p>Similarly, you will edit the code in each code cell to produce the necessary plots and statistics.</p>
+<p>This stub is quite structured to guide you through the process. Later in the course, you will develop your reports with less structured guidance.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data</span>
+<span class="n">vehicles</span> <span class="o">=</span> <span class="c1">### your code here to load the csv file</span>
+
+<span class="c1"># replace bad values with NaNs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_4896/669523579.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">vehicles</span> <span class="o">=</span> <span class="c1">### your code here to load the csv file</span>
+               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<section id="description-of-vehicle-types-and-sizes">
+<h2>Description of vehicle types and sizes<a class="headerlink" href="#description-of-vehicle-types-and-sizes" title="Permalink to this heading">#</a></h2>
+<p>Based on the sample data recorded at 1pm on Sunday 24th April 2022, the vehicles to be accommodated fall into XXX categories:</p>
+<ul class="simple">
+<li><p>cars</p></li>
+<li><p>xxx</p></li>
+<li><p>xxx</p></li>
+</ul>
+<p>The majority of vehicles are cars.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code to count vehicles by type - </span>
+<span class="c1"># hint use groupby() and describe(), or use value_counts()</span>
+<span class="n">vehicles</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="8" halign="left">length</th>
+      <th colspan="5" halign="left">height</th>
+      <th colspan="8" halign="left">width</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>...</th>
+      <th>75%</th>
+      <th>max</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>car</th>
+      <td>981.0</td>
+      <td>4.269801</td>
+      <td>1.683456</td>
+      <td>3.1109</td>
+      <td>3.81810</td>
+      <td>4.1216</td>
+      <td>4.52020</td>
+      <td>45.438</td>
+      <td>981.0</td>
+      <td>1.580810</td>
+      <td>...</td>
+      <td>1.6119</td>
+      <td>1.8993</td>
+      <td>981.0</td>
+      <td>1.791925</td>
+      <td>0.046921</td>
+      <td>1.6241</td>
+      <td>1.7602</td>
+      <td>1.79040</td>
+      <td>1.82090</td>
+      <td>1.9580</td>
+    </tr>
+    <tr>
+      <th>towing</th>
+      <td>53.0</td>
+      <td>198.786094</td>
+      <td>1372.101739</td>
+      <td>7.2561</td>
+      <td>8.13230</td>
+      <td>8.7012</td>
+      <td>9.23470</td>
+      <td>9999.000</td>
+      <td>53.0</td>
+      <td>2.897838</td>
+      <td>...</td>
+      <td>2.9064</td>
+      <td>2.9445</td>
+      <td>53.0</td>
+      <td>2.248326</td>
+      <td>0.008222</td>
+      <td>2.2292</td>
+      <td>2.2442</td>
+      <td>2.24790</td>
+      <td>2.25400</td>
+      <td>2.2642</td>
+    </tr>
+    <tr>
+      <th>truck</th>
+      <td>330.0</td>
+      <td>104.695470</td>
+      <td>949.142610</td>
+      <td>11.1480</td>
+      <td>12.57725</td>
+      <td>14.4005</td>
+      <td>15.08325</td>
+      <td>9999.000</td>
+      <td>330.0</td>
+      <td>4.072725</td>
+      <td>...</td>
+      <td>4.2009</td>
+      <td>4.2137</td>
+      <td>330.0</td>
+      <td>2.501304</td>
+      <td>0.015871</td>
+      <td>2.4629</td>
+      <td>2.4898</td>
+      <td>2.50145</td>
+      <td>2.51155</td>
+      <td>2.5467</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 24 columns</p>
+</div></div></div>
+</div>
+<p>The length and width of vehicles differs substantially between classes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># produce a plot to illustrate the distribution of lengths and widths for each class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicles</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;length&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;type&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;vehicle length (m)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicles</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;type&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;vehicle width (m)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/descriptives_TutorialExercises_16_0.png" src="../_images/descriptives_TutorialExercises_16_0.png" />
+</div>
+</div>
+<p>The mean length of cars is 4.20m (sd 0.51), the mean length of trucks &lt; your text here &gt; and tows &lt; your text here &gt;.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to output the mean and s.d. of length for each class</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mean width of cars is &lt; your text here giving descriptives for width of each class &gt;</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to output the mean and s.d. of width for each class</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>therefore we would recommend …..[your comment on how to segregate the parking areas for vehicle classes]……:</p>
+</section>
+<section id="size-and-number-of-parking-spaces-in-each-zone">
+<h2>Size and number of parking spaces in each zone<a class="headerlink" href="#size-and-number-of-parking-spaces-in-each-zone" title="Permalink to this heading">#</a></h2>
+<p>We recommend that the parking spaces in each zone should be sized to fit the 95th centile in length and width of each vehicle class.
+The exact lengths are: /<your text here/></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit this code to give the 95th percentile (0.95 quantile) of measurements for each vehicle type</span>
+<span class="c1">#</span>
+
+<span class="n">vehicles</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">q</span><span class="c1"># complete the line!......</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>car</th>
+      <td>4.61130</td>
+      <td>1.62480</td>
+      <td>1.83000</td>
+    </tr>
+    <tr>
+      <th>towing</th>
+      <td>9.27982</td>
+      <td>2.91196</td>
+      <td>2.25472</td>
+    </tr>
+    <tr>
+      <th>truck</th>
+      <td>15.21260</td>
+      <td>4.20212</td>
+      <td>2.51552</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Given the observed frequencies in each vehicle class, we recommend the following minimum number of spaces in each zone, which is our observed vehicle counts +10% /&lt; your text here - /&gt;</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code to give the number of vehicles in each class - </span>
+<span class="c1"># hint - similar to the code above but use .count() instead of .quantile()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>car</th>
+      <td>981</td>
+      <td>981</td>
+      <td>981</td>
+    </tr>
+    <tr>
+      <th>towing</th>
+      <td>53</td>
+      <td>53</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>truck</th>
+      <td>330</td>
+      <td>330</td>
+      <td>330</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="the-end">
+<h3>The end!<a class="headerlink" href="#the-end" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter1_descriptives"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="MT_wk1_PythonIndexing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1.8. </span>Key Python syntax: indexing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Chapter2_visualization/plotting_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Plotting Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jill O'Reilly & Lindsay Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
